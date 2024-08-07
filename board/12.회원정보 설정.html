@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원정보 설정</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* main 또는 section 부분 */
+        h4{
+            margin-bottom: 20px;
+        }
+    
+        body {
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            margin: 0 auto;
+        }
+    
+        main {
+            display: block;
+            position: relative;
+            padding: 20px;
+            width: 600px;
+            margin: 50px auto;
+            background-color: white;
+        }
+
+        main > div {
+            display: block; 
+            position: relative; 
+        }
+
+        main > div > div {
+            position: absolute; 
+            right: 0px;  
+            text-align: right;
+        }
+
+        table {
+            border: 2px solid black;
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        th, td {
+            padding: 10px;
+            border: 0.1px solid #ccc;
+        }
+        th {
+            text-align: left;
+            width: 150px;
+        }
+
+        td {
+            align-items: center;
+            border: 0.5px solid #ccc;
+        }
+        
+        img{
+            margin-left: 5px;
+        }
+
+        table div{
+            display: flex;
+            align-items: center;
+            float: left;
+        }
+    
+        input[type="text"], input[type="password"], input[type="email"] {
+            width: 164px;
+            padding: 5px;
+        }
+        
+        .btn_cancel {
+            background-color: white;
+            border: 1px solid #BEBEBE;
+            
+        }
+
+        .btn_update{
+            width: 85px;
+            height: 27px;
+            background-color: #2E658A;
+            font-size: 12px;
+            border: none;
+            color: white;
+        }
+
+        input[type="button"]{
+            width: 45px;
+            height: 35px;
+            padding: 5px 10px;
+            border: 1px solid #BEBEBE;
+            background-color: white;
+        }
+        input[type="submit"] {
+            background-color: #EFEFEF;
+            border: 1px solid #BEBEBE;
+            width: 66px;
+            height: 35px;
+        }
+ 
+        th {
+        background-color: #F5F8F9;
+        }
+
+        td {
+            box-sizing: border-box;
+            width: 400px;
+        }
+
+        .btn-red{
+            width: 58px;
+            height: 27px;
+            background-color: red;
+            color: white;
+            border: 1px white ;
+        }
+
+
+        .address-fields {
+            display: block;
+            margin-top: 10px;
+        }
+    
+        .address-fields input {
+            width: auto;
+            display: inline-block;
+            margin-top: 5px;
+        }
+    
+        .address-fields input[type="text"] {
+            width: calc(100% - 15px); 
+            margin-right: 5px;
+        }
+    
+        .text_nickname{
+            font: initial bolder;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        
+        </style>
+</head>
+<body>
+    <!-- 해더부분 -->
+    <header>
+        <h5>Board System</h5>
+    </header>
+    <!-- ★수정부분 바디 또는 메인 부분★ -->
+    <!-- 목표 : 글자만 쓰자 -->
+    <main>
+        <div id="wrapper">
+            <h4>회원정보 설정</h4>
+            <table>
+                <tr>
+                    <th>아이디</th>
+                    <td>abc</td>
+                </tr>
+                <tr>
+                    <th>비밀번호</th>
+                    <td><input type="password" placeholder="비밀번호 입력"></td>
+                </tr>
+                <tr>
+                    <th>비밀번호 확인</th>
+                    <td >
+                        <input type="password" placeholder="비밀번호 입력 확인">
+                        <button class="btn_update">비밀번호 수정</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th>회원가입일자</th>
+                    <td>2022-01-01 12:45:12</td>
+                </tr>
+            </table>
+    
+            <h4>개인정보 수정</h4>
+            <table class="tb_info">
+                <tr>
+                    <th>이름</th>
+                    <td>
+                        <input type="text" placeholder="이름 입력">
+                    </td>
+                </tr>
+                <tr>
+                    <th>별명</th>
+                    <td style="display: flexbox;">
+                        <div>
+                            <p class="text_nickname">공백없는 한글, 영문, 숫자 입력</p>
+                        </div>
+                        <div>
+                            <input type="text" placeholder="별명 입력">
+                            <img src="./images/chk_id.gif" alt="중복확인">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>이메일</th>
+                    <td>
+                        <div>
+                            <input type="email" placeholder="이메일 입력">
+                            <img src="./images/chk_auth.gif" alt="인증번호 받기">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>휴대폰</th>
+                    <td>
+                        <input type="text" placeholder="휴대폰 입력">
+                    </td>
+                </tr>
+                <tr>
+                    <th>주소</th>
+                    <td>
+                        <div>
+                            <input type="text" placeholder="우편번호">
+                            <img src="./images/chk_post.gif" alt="우편번호 찾기">
+                        </div>
+                        <div class="address-fields">
+                            <input type="text" placeholder="주소 검색">
+                            <input type="text" placeholder="상세주소 입력">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>회원탈퇴</th>
+                    <td>
+                        <button class="btn-red">탈퇴하기</button>
+                    </td>
+                </tr>
+            </table>
+            <div>
+                <input type="button" value="취소">
+                <input type="submit" value="회원수정">
+            </div>
+        </div>
+    </main>
+    <!-- 푸터 부분 -->
+     <div>
+        <footer>
+            <div>
+                <p>Copyrightⓒ 김철학(개발에반하다.)</p>
+            </div>
+            <div>
+                <p>v1.0.1</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

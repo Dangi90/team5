@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이용약관</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* main 또는 section 부분 */
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        padding: 20px;
+      }
+
+      section {
+        padding: 20px;
+        width: 100%;
+        max-width: 600px;
+        box-sizing: border-box;
+      }
+
+      .text {
+        width: 100%;
+        height: 237px;
+        border: 1px solid black;
+        margin-bottom: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      .tb_create {
+        width: 100%;
+        margin-bottom: 0;
+        position: relative;
+      }
+
+      .tb_create td {
+        border: 0;
+        position: relative;
+      }
+
+      .tb_create input[type="checkbox"] {
+        position: absolute;
+        bottom: 15px;
+        right: 95px;
+      }
+
+      #agree_privacy1 {
+        right: 95px;
+      }
+
+      .tb_create label {
+        position: absolute;
+        bottom: 13px;
+        right: 5px; /* 체크박스와 겹치지 않도록 조정 */
+        cursor: pointer;
+      }
+
+      /*하단 버튼 부분*/
+      .button-container {
+        display: flex;
+        justify-content: right;
+      }
+
+      .button-container input[type="button"] {
+        padding: 10px 20px;
+        border: 1px solid black;
+        background-color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 해더부분 -->
+    <header class="container">
+      <h5>Board System</h5>
+    </header>
+    <!-- ★수정부분 바디 또는 메인 부분★ -->
+    <!-- 목표 : 글자만 쓰자 -->
+    <main>
+      <section>
+        <div>
+          <h6>사이트 이용약관</h6>
+        </div>
+        <table class="tb_create">
+          <tbody>
+            <tr>
+              <td>
+                <!-- <input type="text" class="text"> -->
+                <textarea
+                  style="
+                    box-sizing: border-box;
+                    resize: none;
+                    width: 100%;
+                    height: 237px;
+                    padding: 12px;
+                  "
+                ></textarea>
+                <input type="checkbox" id="agree_privacy1" />
+                <label for="agree_privacy1">동의합니다.</label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <h6>개인정보취급방침</h6>
+        </div>
+        <table class="tb_create">
+          <tbody>
+            <tr>
+              <td>
+                <textarea
+                  style="
+                    box-sizing: border-box;
+                    resize: none;
+                    width: 100%;
+                    height: 237px;
+                    padding: 12px;
+                  "
+                ></textarea>
+                <input type="checkbox" id="agree_privacy2" />
+                <label for="agree_privacy2">동의합니다.</label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="button-container">
+          <input type="button" value="취소" />
+          <input type="button" value="다음" />
+        </div>
+      </section>
+    </main>
+    <!-- 푸터 부분 -->
+    <div>
+      <footer class="container">
+        <div>
+          <p>Copyrightⓒ 김철학(개발에반하다.)</p>
+        </div>
+        <div>
+          <p>v1.0.1</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

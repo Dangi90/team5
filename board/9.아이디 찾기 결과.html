@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Board System</title>
+    <style>
+      section {
+        margin: 0 auto;
+      }
+
+      form > h6 {
+        font-size: 12px;
+        margin-bottom: 6px;
+      }
+
+      main > section {
+        width: 600px;
+        height: 298px;
+        position: relative;
+      }
+
+      .form__table {
+        border-top: 2px solid #111111;
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .form__table td {
+        border: 1px solid #e9e9e9;
+        box-sizing: border-box;
+        height: 42px;
+        padding-left: 12.5px;
+      }
+
+      .description {
+        font-size: 12px;
+        margin-top: 12px;
+      }
+
+      .action-button-group {
+        display: flex;
+        justify-content: end;
+        gap: 3px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+
+      .action-button-group__button {
+        height: 35px;
+        padding: 10px;
+        box-sizing: border-box;
+        background-color: white;
+        border: 1px solid #bebebe;
+        font-weight: 400;
+        font-size: 12px;
+
+        &:hover {
+          background-color: rgb(228, 228, 228);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="container">
+      <h5>Board System</h5>
+    </header>
+
+    <main>
+      <section>
+        <form>
+          <h6>아이디 찾기 결과</h6>
+          <table class="form__table">
+            <tbody>
+              <tr>
+                <td>
+                  <p>이름</p>
+                </td>
+                <td>홍길동</td>
+              </tr>
+              <tr>
+                <td>
+                  <p>아이디</p>
+                </td>
+                <td>honggildong</td>
+              </tr>
+              <tr>
+                <td>
+                  <p>이메일</p>
+                </td>
+                <td>honggildong@gamil.com</td>
+              </tr>
+              <tr>
+                <td>
+                  <p>날자</p>
+                </td>
+                <td>2022-11-16 10:20</td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+
+        <p class="description">고객님의 정보와 일치하는 아이디 입니다.</p>
+
+        <div class="action-button-group">
+          <button class="action-button-group__button">로그인</button>
+          <button class="action-button-group__button">비밀번호 찾기</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container">
+      <div>
+        <p>Copyrightⓒ 김철학(개발에반하다.)</p>
+      </div>
+      <div>
+        <p>v1.0.1</p>
+      </div>
+    </footer>
+  </body>
+</html>

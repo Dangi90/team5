@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>비밀번호 찾기</title>
+    <style>
+      section {
+        width: 600px;
+        height: auto;
+        position: relative;
+        padding: 20px;
+        margin: 0 auto;
+      }
+
+      form > h6 {
+        font-size: 12px;
+        margin-bottom: 6px;
+      }
+
+      table {
+        border-top: 2px solid black;
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid #5050501a;
+        box-sizing: border-box;
+        padding: 10px;
+      }
+
+      th {
+        width: 100px;
+        text-align: left;
+        background-color: #f4f4f4;
+      }
+
+      .form__input {
+        width: calc(100% - 110px);
+        height: 24px;
+        background: #f7f7f7;
+        border: 1px solid #e4eaec;
+        box-sizing: border-box;
+        padding-left: 6px;
+        font-size: 14px;
+      }
+
+      .form__button {
+        height: 30px;
+        padding: 6px;
+        box-sizing: border-box;
+        border: 1px solid #bebebe;
+        margin-left: 5px;
+      }
+
+      .description {
+        font-size: 12px;
+        line-height: 20px;
+        margin-bottom: 20px;
+      }
+
+      .action-button-group {
+        display: flex;
+        justify-content: end;
+        gap: 3px;
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+      }
+
+      .action-button-group__button {
+        height: 35px;
+        padding: 10px;
+        box-sizing: border-box;
+        background-color: white;
+        border: 1px solid #bebebe;
+        font-weight: 400;
+        font-size: 12px;
+
+        &:hover {
+          background-color: rgb(228, 228, 228);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="container">
+      <h5>Board System</h5>
+    </header>
+
+    <main>
+      <section>
+        <h2>비밀번호 찾기</h2>
+        <form>
+          <table>
+            <tbody>
+              <tr>
+                <th>아이디</th>
+                <td>
+                  <input
+                    class="form__input"
+                    type="text"
+                    placeholder="아이디 입력"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <th>이메일</th>
+                <td>
+                  <input
+                    class="form__input"
+                    type="email"
+                    placeholder="이메일 입력"
+                  />
+                  <button class="form__button" type="button">
+                    인증번호 받기
+                  </button>
+                  <div style="margin-top: 6px"></div>
+                  <input
+                    class="form__input"
+                    type="text"
+                    placeholder="인증번호 입력"
+                  />
+                  <button class="form__button" type="button">확인</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+
+        <p class="description">
+          비밀번호를 찾고자 하는 아이디와 이메일을 입력해 주세요.<br />
+          회원가입시 입력한 아이디와 이메일 주소가 같아야, 인증번호를 받을 수
+          있습니다.<br />
+          인증번호를 입력 후 확인 버튼을 누르세요.
+        </p>
+        <div class="action-button-group">
+          <button class="action-button-group__button">취소</button>
+          <button class="action-button-group__button">다음</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container">
+      <div>
+        <p>Copyrightⓒ 김철학(개발에반하다.)</p>
+      </div>
+      <div>
+        <p>v1.0.1</p>
+      </div>
+    </footer>
+  </body>
+</html>

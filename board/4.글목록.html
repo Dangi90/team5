@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이용약관</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+          /* main 또는 section 부분 */
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0;
+            background-color: white;
+            margin-bottom: 30px;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+            font-size: 12px;
+            color: #999;
+            padding: 0px;
+            margin-top: 40px;
+        }
+
+        main {
+            display: flex;
+            height: 50%;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        section{
+            width: 800px;
+            position: relative;
+        }
+
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 13px;
+            padding-bottom: 13px;
+        }
+
+        form {
+            text-align: right;
+
+        }
+
+        table {
+            border: 1px solid black;
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #d1dee2;
+            text-align: center;
+            width: 150px;
+        }
+
+        .th2 {
+            width: 45%;
+        }
+
+        .th4 {
+            width: 18%
+        }
+
+        td {
+            /* display: block; */
+            text-align: center;
+        }
+
+        .main-footer{
+            position: relative;
+            margin: 10px;
+        }
+
+        .button {
+            color: #f2f2f2;
+            text-align: center;
+        }
+
+        .write {
+            text-align: right;
+
+        }
+
+        .write-button {
+            padding: 3px;
+            position: absolute;
+            background-color : #4B545E;
+            border : 1px solid #3B3C3F;
+            color : white;
+            bottom : 0;
+            right : 0;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <!-- 해더부분 -->
+    <header>
+        <div class="container" >
+            <div style="display: flex; justify-content: space-between;">
+                <p>Board System</p>
+                <span>홍길동님 반갑습니다. [<a href="#">로그아웃</a>]</span>
+            </div>
+        </div>
+    </header>
+    <!-- ★수정부분 바디 또는 메인 부분★ -->
+    <!-- 목표 : 글자만 쓰자 -->
+    <main>
+        <section>
+            <div class="main-header">
+                <div>글목록 </div>
+                <form class="form">
+                    <input type="search" placeholder="제목 키워드, 글쓴이 검색">
+                    <input type="submit" value="검색">
+                </form>
+            </div>
+            <table>
+                <tr>
+                    <th>번호</th>
+                    <th class="th2">제목</th>
+                    <th>글쓴이</th>
+                    <th class="th4">날짜</th>
+                    <th>조회</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>테스트 제목입니다.[3]</td>
+                    <td>길동이</td>
+                    <td>20-5-12</td>
+                    <td>12</td>
+                </tr>
+            </table>
+            <div class="main-footer">
+                <div class="button">
+                    <input type="button" value="이전">
+                    <input type="button" value="1">
+                    <input type="button" value="2">
+                    <input type="button" value="3">
+                    <input type="button" value="다음">
+                </div>
+                <div class="write">
+                    <input type="button" class="write-button" value="글쓰기">
+                </div>
+            </div>
+        </section>
+
+        </div>
+
+    </main>
+    <!-- 푸터 부분 -->
+    <div>
+        <footer class="container">
+            <div>
+                <p>Copyrightⓒ 김철학(개발에반하다.)</p>
+            </div>
+            <div>
+                <p>v1.0.1</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
