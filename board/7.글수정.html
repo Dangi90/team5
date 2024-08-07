@@ -12,16 +12,17 @@
       padding: 0;
     }
     .container {
-      width: 80%;
+      width: 800px;
       margin: auto;
       padding-top: 0; /* 상단 여백 제거 */
     }
     .header {
+      display: flex;
+      box-sizing: border-box;
       text-align: right;
       padding: 10px 0;
-      display: flex;
       justify-content: space-between;
-      align-items: center;
+      margin-bottom: 30px;
     }
     .header a {
       text-decoration: none;
@@ -82,11 +83,11 @@
     .footer {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      margin-top: 20px;
-      padding: 10px 0;
+      box-sizing: border-box;
       font-size: 12px;
-      color: #888;
+      color: #999;
+      padding: 0px;
+      margin-top: 40px;
     }
     .footer span {
       flex: 1;
@@ -127,8 +128,8 @@
 <body>
 <div class="container">
   <div class="header">
-    <div class="title">Board System</div>
-    <div>홍길동님 반갑습니다. [<a href="#">로그아웃</a>]</div>
+    <div class="title"><h5>Board System</h5></div>
+    <div><h5>홍길동님 반갑습니다. [<a href="#">로그아웃</a>]</h5></div>
   </div>
   <h1 style="margin-bottom: 0;">글수정</h1>
   <form>
