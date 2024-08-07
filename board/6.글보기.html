@@ -11,7 +11,7 @@
       line-height: 1.6;
     }
     .container {
-      width: 80%;
+      width: 800px;
       margin: auto;
     }
 
@@ -21,6 +21,7 @@
       text-align: right;
       padding: 10px 0;
       justify-content: space-between;
+      margin-bottom: 30px;
     }
     .header > div:nth-child(2) {
       right: 10px;
@@ -37,6 +38,7 @@
     table {
       width: 100%;
       border-collapse: collapse;
+      
     }
     th, td {
       border: 1px solid #ddd;
@@ -74,11 +76,10 @@
       color: white;
     }
     .comment-section {
-      margin-top: 10px; /* 기존 20px에서 10px로 변경 */
+      margin-top: 20px;
     }
     .comment-section h4 {
       border-bottom: 1px dotted #333; /* 실선으로 변경 */
-      margin-top: 10px; /* 댓글목록 위쪽 여백 추가 */
     }
     .comment-section .comment-list {
       padding-top: 10px;
@@ -88,34 +89,35 @@
       background-color: #f4f4f4;
     }
     .comment-section .comment-item {
-      display: flex;
-      justify-content: space-between;
       margin-left: 10px;
       padding: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
     }
-    .comment-section .comment-item-content {
-      flex: 1;
-      margin-right: 10px; /* 내용과 버튼 사이에 간격 추가 */
-      margin-top: -20px;
-    }
+    
     .comment-section .comment-item:first-child {
       border-top: none;
     }
-    .comment-section .comment-box {
-      margin-top: 10px; /* 기존 20px에서 10px로 변경 */
+    .no-comments {
+      text-align: center; /* 가운데 정렬 */
+      width: 100%; /* 전체 너비 설정 */
+
     }
     .comment-box {
       border: 1px solid #ddd;
       padding: 10px;
+      margin-top: 10px;
+      left: 10px;
       background-color: #f4f4f4;
     }
     .footer {
-      margin-top: 20px;
-      padding: 10px 0;
-      border-top: 1px solid #ddd;
+      margin-top: 40px;
       color: #888; /* 회색 글자 */
       display: flex;
       justify-content: space-between;
+      padding: 0px;
+      font-size: 12px;
     }
     .comment-buttons {
       margin-top: 20px;
@@ -128,7 +130,7 @@
       color: black;
       text-decoration: none;
     }
-    .comment-item_no-comments {
+    .comment-item_no-comments{
       text-align: center;
     }
   </style>
@@ -137,10 +139,10 @@
 <div class="container">
   <div class="header">
     <div>
-        <p>Board System</p>
+        <h5>Board System</h5>
     </div>
     <div>
-        <span>홍길동님 반갑습니다. [<a href="#">로그아웃</a>]</span>
+        <h5>홍길동님 반갑습니다. [<a href="#">로그아웃</a>]</h5>
     </div>
   </div>
   <h3 style="margin-bottom: 0;">글보기</h3>
@@ -167,10 +169,10 @@
   <div class="comment-section">
     <div class="comment-list">
       <h4>댓글목록</h4>
-      <div class="comment-item">
-        <div class="comment-item-content">
+      <div class="comment-item" style="width: auto; ">
+        <div>
           <strong>길동이</strong> 20-05-20<br>
-          &nbsp;&nbsp;댓글 샘플입니다.
+          <p style="margin-left: 15px;">댓글 샘플입니다.</p>
         </div>
         <div class="comment-buttons">
           <button type="button" class="cancel">삭제</button>
@@ -182,7 +184,7 @@
     
     <div class="comment-box">
       <h4>댓글쓰기</h4>
-      <textarea style="width: 100%; height: 100px; border: none;"></textarea>
+      <textarea style="width: 100%; height: 100px; border: none"></textarea>
       <div class="button-group">
         <button type="button" class="cancel">취소</button>
         <button type="submit">작성완료</button>
@@ -197,3 +199,4 @@
 </div>
 </body>
 </html>
+
