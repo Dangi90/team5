@@ -8,20 +8,34 @@
   <style>
 
     .header {
-    display: flex;
-    box-sizing: border-box;
-    text-align: right;
-    padding: 10px 0;
-    justify-content: space-between;
+      display: flex;
+      box-sizing: border-box;
+      text-align: right;
+      padding: 10px 0;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+    footer {
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+      font-size: 12px;
+      color: #999;
+      padding: 0px;
+      margin-top: 40px;
     }
 
+    form{
+      height: 50%;
+    }
+    
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
     }
     .container {
-      width: 80%;
+      width: 800px;
       margin: auto;
       padding-top: 70px;
     }
@@ -77,12 +91,7 @@
       background-color: #333;
       color: white; /* 수정된 부분 */
     }
-    .footer {
-      margin-top: 20px;
-      text-align: center;
-      font-size: 12px;
-      color: #888;
-    }
+
   </style>
 </head>
 <body>
@@ -90,10 +99,10 @@
 <div class="container">
     <div class="header">
     <div>
-        <p>Board System</p>
+        <h5>Board System</h5>
     </div>
-    <div>
-        <span>홍길동님 반갑습니다. [<a href="#">로그아웃</a>]</span>
+    <div style="display: flex;">
+      <h5>홍길동님 반갑습니다. [<a href="#">로그아웃</a>] </h5>
     </div>
   </div>
   <h1>글쓰기</h1>
@@ -125,13 +134,15 @@
   </form>
 
 </div>
-<footer>
-    <div class="footer">
-        <p>Copyright© 김철학(개발에반하다.)</p>
-    </div>
-    <div>
-        <p>v1.0.1</p>
-    </div>
-</footer>
+<div>
+  <footer class="container">
+      <div>
+          <p>Copyrightⓒ 김철학(개발에반하다.)</p>
+      </div>
+      <div>
+          <p>v1.0.1</p>
+      </div>
+  </footer>
+</div>
 </body>
 </html>
