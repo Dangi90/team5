@@ -1,0 +1,169 @@
+.container {
+  width: 980px;
+  margin: 0 auto;
+}
+
+.container--aside {
+  width: 980px;
+  margin: 0 auto;
+  display: flex;
+
+  & > aside {
+    width: 176px;
+    height: 650px;
+  }
+
+  & > main {
+    flex: 1;
+  }
+}
+
+header {
+  height: 142px;
+  box-sizing: border-box;
+}
+
+.header__top-container {
+  height: 92px;
+  position: relative;
+}
+
+.header__top-container > ul {
+  display: flex;
+  width: 240px;
+  justify-content: space-between;
+  position: absolute;
+  top: 17px;
+  right: 0;
+}
+
+.header__top-container > ul > li:not(:last-child) > a::after {
+  content: "|";
+  left: 4px;
+  top: -1px;
+  position: relative;
+}
+
+.header__top-container > img:nth-of-type(1) {
+  position: absolute;
+  top: 20px;
+  left: 395px;
+}
+
+.header__top-container > img:nth-of-type(2) {
+  position: absolute;
+  top: 59px;
+  left: 751px;
+}
+
+.header__bottom-container {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.header__bottom-container > a {
+  display: flex;
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.header__bottom-container__menu-line {
+  position: absolute;
+  top: -12px;
+}
+
+.header__bottom-container__menu {
+  align-items: center;
+}
+
+.header__bottom-container__menu-badge {
+  position: absolute;
+  top: -22px;
+  left: 98px;
+}
+
+.sub-top {
+  height: 184px;
+  background-image: url(../images/sub_top_bg.jpg);
+  position: relative;
+
+  & > div {
+    width: 326px;
+    height: 37px;
+    background-image: url(../images/sub_top_tit1.png);
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+  }
+}
+
+aside {
+  position: relative;
+}
+
+.aside__title {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+.aside__list {
+  position: absolute;
+  top: 81px;
+  background-image: url(../images/sub_aside_bg_lnb.png);
+  width: 175px;
+  height: 233px;
+}
+
+.aside__bg {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.aside__list__item {
+  position: absolute;
+  top: 26px;
+  width: 100%;
+  height: 29px;
+}
+/* footer */
+footer {
+  height: 120px;
+  box-sizing: border-box;
+}
+
+footer {
+  width: 100%;
+  height: auto;
+}
+
+footer > div {
+  width: 100%;
+}
+
+footer .terms {
+  float: left;
+  margin-top: 14px;
+  color: #eee;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+footer .terms > a {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+footer .info {
+  align-content: center;
+  margin-top: 16px;
+  color: #aca9a9;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 26px;
+}
