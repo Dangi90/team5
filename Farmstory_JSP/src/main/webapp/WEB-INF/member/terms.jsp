@@ -1,8 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>팜스토리::회원가입</title>    
+    <title>팜스토리::약관</title>    
     <link rel="stylesheet" href="../css/style.css"/>
     <style>
         #user > img {
@@ -32,9 +34,37 @@
                 <li><a href="/Farmstory_JSP/community/notice.do">커뮤니티</a></li>
            	</ul>
         </header>
-        <div id="user">
-            <img src="./images/register.png" alt="회원가입 샘플">
-        </div>
+        <!-- 기존 이미지 태그 제거 -->
+        <main>
+            <section class="terms">
+                <table>
+                    <caption>사이트 이용약관</caption>
+                    <tr>
+                        <td>
+                            <textarea readonly>${termsDto.term_content1}</textarea>
+                            <p>
+                                <label><input type="checkbox" name="chk1"/> 동의합니다.</label>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <caption>개인정보 취급방침</caption>
+                    <tr>
+                        <td>
+                            <textarea readonly>${termsDto.content2}</textarea>
+                            <p>
+                                <label><input type="checkbox" name="chk2"/> 동의합니다.</label>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                <div>
+                    <a href="/Farmstory_JSP/member/login.do" class="btnCancel">취소</a>
+                    <a href="/Farmstory_JSP/member/register.do" class="btnNext">다음</a>
+                </div>
+            </section>
+        </main>
         <footer>
             <img src="../images/footer_logo.png" alt="로고"/>
             <p>
@@ -45,6 +75,5 @@
             </p>
         </footer>
     </div>
-    
 </body>
 </html>

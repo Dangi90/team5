@@ -1,19 +1,18 @@
 package com.farmstory.DTO;
 
 public class UserDTO {
+	
 	private String uid;
 	private String pass;
 	private String name;
 	private String nick;
 	private String email;
 	private String hp;
-	private String role;
-	private String zip;
-	private String addr1;
-	private String addr2;
+	private String grade;
+	private String addr;
 	private String regip;
-	private String regDate;
-	private String leaveDate;
+	private String regdate;
+	
 	public String getUid() {
 		return uid;
 	}
@@ -50,29 +49,17 @@ public class UserDTO {
 	public void setHp(String hp) {
 		this.hp = hp;
 	}
-	public String getRole() {
-		return role;
+	public String getGrade() {
+		return grade;
 	}
-	public void setRole(String role) {
-		this.role = role;
+	public void setGrade(String grade) {
+		this.grade = grade;
 	}
-	public String getZip() {
-		return zip;
+	public String getAddr() {
+		return addr;
 	}
-	public void setZip(String zip) {
-		this.zip = zip;
-	}
-	public String getAddr1() {
-		return addr1;
-	}
-	public void setAddr1(String addr1) {
-		this.addr1 = addr1;
-	}
-	public String getAddr2() {
-		return addr2;
-	}
-	public void setAddr2(String addr2) {
-		this.addr2 = addr2;
+	public void setAddr(String addr) {
+		this.addr = addr;
 	}
 	public String getRegip() {
 		return regip;
@@ -80,28 +67,18 @@ public class UserDTO {
 	public void setRegip(String regip) {
 		this.regip = regip;
 	}
-	public String getRegDate() {
-		return regDate;
+	public String getRegdate() {
+		return regdate;
 	}
-	public void setRegDate(String regDate) {
-		this.regDate = regDate;
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
 	}
-	public String getLeaveDate() {
-		return leaveDate;
-	}
-	public void setLeaveDate(String leaveDate) {
-		this.leaveDate = leaveDate;
-	}
-	
-	
 	@Override
 	public String toString() {
-		return "UserDTO [uid=" + uid + ", pass=" + pass + ", name=" + name + ", nick=" + nick + ", email=" + email
-				+ ", hp=" + hp + ", role=" + role + ", zip=" + zip + ", addr1=" + addr1 + ", addr2=" + addr2
-				+ ", regip=" + regip + ", regDate=" + regDate + ", leaveDate=" + leaveDate + "]";
+		return "MemberDTO [uid=" + uid + ", pass=" + pass + ", name=" + name + ", nick=" + nick + ", email=" + email
+				+ ", hp=" + hp + ", grade=" + grade + ", addr=" + addr + ", regip=" + regip + ", regdate=" + regdate
+				+ "]";
 	}
-	
-	
 	
 	
 }
