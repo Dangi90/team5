@@ -5,11 +5,12 @@ USE farm_story;
 -- Terms 테이블 생성
 CREATE TABLE Terms (
     term_id INT AUTO_INCREMENT PRIMARY KEY,
-    term_content TEXT NOT NULL
+    term_content1 TEXT NOT NULL,
+    term_content2 TEXT NOT NULL
 );
 
 -- User 테이블 생성
-CREATE TABLE user (
+CREATE TABLE User (
     uid VARCHAR(50) PRIMARY KEY,
     pass CHAR(64) NOT NULL,
     name VARCHAR(20) NOT NULL,
