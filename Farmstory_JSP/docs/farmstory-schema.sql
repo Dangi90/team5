@@ -2,14 +2,14 @@ DROP DATABASE IF EXISTS farm_story;
 CREATE DATABASE farm_story;
 USE farm_story;
 
--- Creating Terms table
+-- Terms 테이블 생성
 CREATE TABLE Terms (
     term_id INT AUTO_INCREMENT PRIMARY KEY,
     term_content TEXT NOT NULL
 );
 
--- Creating User table
-CREATE TABLE User (
+-- User 테이블 생성
+CREATE TABLE user (
     uid VARCHAR(50) PRIMARY KEY,
     pass CHAR(64) NOT NULL,
     name VARCHAR(20) NOT NULL,
@@ -19,10 +19,10 @@ CREATE TABLE User (
     grade VARCHAR(10),
     addr VARCHAR(100),
     regip VARCHAR(20),
-    regdate DATETIME DEFAULT CURRENT_TIMESTAMP
+    regdate DATETIME DEFAULT NOW()
 );
 
--- Creating Article table
+-- Article 테이블 생성
 CREATE TABLE Article (
     no INT AUTO_INCREMENT PRIMARY KEY,
     user_uid VARCHAR(50),
@@ -30,10 +30,21 @@ CREATE TABLE Article (
     content TEXT NOT NULL,
     regdate DATETIME DEFAULT NOW(),
     views INT DEFAULT 0,
+    cate VARCHAR(20),
     FOREIGN KEY (user_uid) REFERENCES User(uid)
 );
 
--- Creating Product table
+-- ArticleFile 테이블 생성
+CREATE TABLE ArticleFile (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    origin_name VARCHAR(100),
+    stored_name VARCHAR(100),
+    regdate DATETIME DEFAULT NOW(),
+    article_no INT,
+    FOREIGN KEY (article_no) REFERENCES Article(no)
+);
+
+-- Product 테이블 생성
 CREATE TABLE Product (
     no INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -46,10 +57,10 @@ CREATE TABLE Product (
     thumb_img VARCHAR(100) NOT NULL,
     info_img VARCHAR(100) NOT NULL,
     explain_img VARCHAR(100) NOT NULL,
-    regdate DATETIME
+    regdate DATETIME DEFAULT NOW()
 );
 
--- Creating Order table
+-- Order 테이블 생성
 CREATE TABLE `Order` (
     no INT AUTO_INCREMENT PRIMARY KEY,
     product_no INT NOT NULL,
