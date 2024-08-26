@@ -1,4 +1,4 @@
-package Util;
+package com.farmstory.Util;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

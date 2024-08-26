@@ -1,4 +1,4 @@
-package DTO;
+package com.farmstory.DTO;
 
 public class UserDTO {
 	private String uid;
