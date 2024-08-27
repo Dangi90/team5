@@ -2,6 +2,7 @@ package com.farmstory.service;
 
 import com.farmstory.DAO.ArticleDAO;
 import com.farmstory.DTO.ArticleDTO;
+import com.farmstory.DTO.response.ArticleWithNickDTO;
 
 import java.util.List;
 
@@ -14,8 +15,8 @@ public class ArticleService {
 
 	private ArticleDAO articleDAO = new ArticleDAO();
 
-	public List<ArticleDTO> getArticlesByGroupAndCategory(String group, String category) {
-		return articleDAO.getArticlesByCategory(group, category);
+	public List<ArticleWithNickDTO> getArticlesByGroupAndCategory(String group, String category) {
+		return articleDAO.getArticlesByCategoryWithNick(group, category);
 	}
 
 	public void createArticle(ArticleDTO article) {

@@ -62,7 +62,7 @@ public class ModifyController extends HttpServlet {
             int id = Integer.parseInt(idParam);
 
             ArticleDTO article = new ArticleDTO();
-            article.setId(id);
+            article.setNo(id);
             article.setUserUid(userUid);
             article.setTitle(title);
             article.setContent(content);

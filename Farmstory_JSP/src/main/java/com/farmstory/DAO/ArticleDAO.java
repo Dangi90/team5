@@ -7,6 +7,7 @@ import java.util.List;
 import javax.naming.NamingException;
 
 import com.farmstory.DTO.ArticleDTO;
+import com.farmstory.DTO.response.ArticleWithNickDTO;
 import com.farmstory.Util.DBHelper;
 
 public class ArticleDAO extends DBHelper {
@@ -37,11 +38,12 @@ public class ArticleDAO extends DBHelper {
 
 			if (rs.next()) {
 				article = new ArticleDTO();
-				article.setId(rs.getInt("id"));
+				article.setNo(rs.getInt("id"));
 				article.setUserUid(rs.getString("user_uid"));
 				article.setTitle(rs.getString("title"));
 				article.setContent(rs.getString("content"));
 				article.setRegdate(rs.getString("regdate"));
+				
 				article.setViews(rs.getInt("views"));
 			}
 		} catch (Exception e) {
@@ -58,7 +60,7 @@ public class ArticleDAO extends DBHelper {
 			pstmt.setString(1, article.getTitle());
 			pstmt.setString(2, article.getContent());
 			pstmt.setString(3, article.getUserUid());
-			pstmt.setInt(4, article.getId());
+			pstmt.setInt(4, article.getNo());
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -96,6 +98,37 @@ public class ArticleDAO extends DBHelper {
 				article.setViews(rs.getInt(6));
 				article.setGroup(rs.getString(7));
 				article.setCate(rs.getString(8));
+				articles.add(article);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			closeAll();
+		}
+
+		return articles;
+	}
+	
+	public List<ArticleWithNickDTO> getArticlesByCategoryWithNick(String group, String category) {
+		String sql = "SELECT article.*, nick FROM article LEFT JOIN user ON user.uid = article.user_uid WHERE `group`=? AND cate=? ";
+		List<ArticleWithNickDTO> articles = new ArrayList<>();
+		try (Connection conn = getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setString(1, group);
+			pstmt.setString(2, category);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next())
+			{
+				ArticleWithNickDTO article = new ArticleWithNickDTO();
+				article.setNo(rs.getInt(1));
+				article.setUserUid(rs.getString(2));
+				article.setTitle(rs.getString(3));
+				article.setContent(rs.getString(4));
+				article.setRegdate(rs.getString(5));
+				article.setViews(rs.getInt(6));
+				article.setGroup(rs.getString(7));
+				article.setCate(rs.getString(8));
+				article.setNick(rs.getString(9));
 				articles.add(article);
 			}
 		} catch (Exception e) {

@@ -3,6 +3,7 @@ package com.farmstory.controller.article;
 
 import com.farmstory.DAO.ArticleDAO;
 import com.farmstory.DTO.ArticleDTO;
+import com.farmstory.DTO.response.ArticleWithNickDTO;
 import com.farmstory.service.ArticleService;
 
 import jakarta.servlet.RequestDispatcher;
@@ -36,10 +37,9 @@ public class ListController extends HttpServlet {
         }
         
         
-         List<ArticleDTO> articles =  service.getArticlesByGroupAndCategory(group, category);
-         logger.debug("article 리스트 : {}", articles);
+         List<ArticleWithNickDTO> articles =  service.getArticlesByGroupAndCategory(group, category);
+         logger.debug("article doGet : {}", articles);
          
-
          request.setAttribute("articles", articles);
         
         // 동적으로 JSP 파일 경로를 설정
