@@ -3,6 +3,8 @@ package com.farmstory.controller.article;
 
 import com.farmstory.DAO.ArticleDAO;
 import com.farmstory.DTO.ArticleDTO;
+import com.farmstory.service.ArticleService;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -13,10 +15,15 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @WebServlet("/article/list.do")
 public class ListController extends HttpServlet {
 
     private ArticleDAO articleDAO = new ArticleDAO();
+    private ArticleService service = ArticleService.getInstance();
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -28,10 +35,12 @@ public class ListController extends HttpServlet {
             return;
         }
         
-        // 해당 카테고리의 게시글 목록을 가져옴
-        List<ArticleDTO> articles = articleDAO.getArticlesByCategory(category);
+        
+         List<ArticleDTO> articles =  service.getArticlesByGroupAndCategory(group, category);
+         logger.debug("article 리스트 : {}", articles);
+         
 
-        request.setAttribute("articles", articles);
+         request.setAttribute("articles", articles);
         
         // 동적으로 JSP 파일 경로를 설정
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/" + group + "/" + category +".jsp");

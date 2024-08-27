@@ -1,19 +1,19 @@
 package com.farmstory.DTO;
 
 public class ArticleDTO {
-    private int id;
+    private int no;
     private String userUid; // 작성자의 UID
     private String title;
     private String content;
     private String regdate; // 작성일시
     private int views; // 조회수
+    private String group;
     private String cate;
-    
-	public int getId() {
-		return id;
+	public int getNo() {
+		return no;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setNo(int no) {
+		this.no = no;
 	}
 	public String getUserUid() {
 		return userUid;
@@ -45,6 +45,12 @@ public class ArticleDTO {
 	public void setViews(int views) {
 		this.views = views;
 	}
+	public String getGroup() {
+		return group;
+	}
+	public void setGroup(String group) {
+		this.group = group;
+	}
 	public String getCate() {
 		return cate;
 	}
@@ -53,7 +59,7 @@ public class ArticleDTO {
 	}
 	@Override
 	public String toString() {
-		return "ArticleDTO [id=" + id + ", userUid=" + userUid + ", title=" + title + ", content=" + content
-				+ ", regdate=" + regdate + ", views=" + views + ", cate=" + cate + "]";
+		return "ArticleDTO [no=" + no + ", userUid=" + userUid + ", title=" + title + ", content=" + content
+				+ ", regdate=" + regdate + ", views=" + views + ", group=" + group + ", cate=" + cate + "]";
 	}
 }
