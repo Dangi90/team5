@@ -4,4 +4,4 @@
 	/* response.sendRedirect("/Farmstory_JSP/index.do"); */
 %>
 
-<jsp:forward page="/WEB-INF/index.html"></jsp:forward>
+<jsp:forward page="/WEB-INF/index.jsp"></jsp:forward>
