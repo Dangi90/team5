@@ -8,9 +8,9 @@ import org.slf4j.LoggerFactory;
 import com.farmstory.DTO.UserDTO;
 import com.farmstory.Util.DBHelper;
 import com.farmstory.Util.SQL;
+import com.mysql.cj.log.LogFactory;
 
 public class UserDAO extends DBHelper {
-	
 	private static UserDAO instance = new UserDAO();
 	public static UserDAO getInstance() {
 		return instance;
@@ -54,6 +54,8 @@ public class UserDAO extends DBHelper {
 	
 	
  	public void insertUser(UserDTO dto) {
+ 		logger.debug("grade 값 : {}", dto.getGrade());
+ 		
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(SQL.INSERT_USER);
@@ -65,12 +67,12 @@ public class UserDAO extends DBHelper {
 			psmt.setString(6, dto.getHp());
 			psmt.setString(7, dto.getGrade());
 			psmt.setString(8, dto.getAddr());
-			psmt.setString(10, dto.getRegip());
-			psmt.setString(11, dto.getRegdate());
+			psmt.setString(9, dto.getRegip());
+			// psmt.setString(11, dto.getRegdate());
 			psmt.executeUpdate();
 			closeAll();
 		}catch (Exception e) {
-			logger.error(e.getMessage());
+			logger.error("insertUser Exception", e);
 		}
 	}
 	public UserDTO selectUser(String uid, String pass) {
@@ -100,7 +102,7 @@ public class UserDAO extends DBHelper {
 			}
 			closeAll();
 		}catch (Exception e) {
-			logger.error(e.getMessage());
+			logger.error("selectUser Exception", e);
 		}
 		
 		return user;

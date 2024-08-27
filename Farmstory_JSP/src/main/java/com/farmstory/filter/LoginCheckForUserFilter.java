@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebFilter(urlPatterns = {"/member/login.do", "/member/terms.do", "/member/register.do"})
+// @WebFilter(urlPatterns = {"/member/login.do", "/member/terms.do", "/member/register.do"})
 public class LoginCheckForUserFilter implements Filter {
 
 	@Override

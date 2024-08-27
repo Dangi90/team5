@@ -1,6 +1,9 @@
-package com.farmstory.controller.member;
+package com.farmstory.controller.user;
 
 import java.io.IOException;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.farmstory.DTO.UserDTO;
 import com.farmstory.service.UserService;
@@ -14,6 +17,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/member/register.do")
 public class RegisterController extends HttpServlet {
+	Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	private static final long serialVersionUID = 1L;
 	
@@ -27,7 +31,7 @@ public class RegisterController extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+		logger.trace("회원가입 시작");
 		// 데이터 수신
 		String uid = req.getParameter("uid");
 		String pass = req.getParameter("pass1");
@@ -38,8 +42,8 @@ public class RegisterController extends HttpServlet {
 		String grade = req.getParameter("grade");
 		String addr = req.getParameter("addr");
 		String regip = req.getRemoteAddr();
-		String regdate = req.getParameter("regdate");
-		
+		// String regdate = req.getParameter("regdate");
+		logger.debug("grade 값 : {}", grade);
 		// DTO 생성
 		UserDTO userDto = new UserDTO();
 		userDto.setUid(uid);
@@ -51,7 +55,7 @@ public class RegisterController extends HttpServlet {
 		userDto.setGrade(grade);
 		userDto.setAddr(addr);
 		userDto.setRegip(regip);
-		userDto.setRegdate(regdate);
+		// userDto.setRegdate(regdate);
 		
 		// 데이터 저장
 		service.insertUser(userDto);
