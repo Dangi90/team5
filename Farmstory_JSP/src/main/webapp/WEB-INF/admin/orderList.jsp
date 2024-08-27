@@ -1,8 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>팜스토리</title>
+    <title>íì¤í ë¦¬</title>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -28,25 +30,25 @@
 <body>
     <div id="container">
         <header>
-            <a href="./index.html" class="logo"><img src="../images/admin_logo.jpg" alt="로고"/></a>
+            <a href="./index.html" class="logo"><img src="../images/admin_logo.jpg" alt="ë¡ê³ "/></a>
             <p>
                 <a href="#">HOME |</a>
-                <a href="#">로그아웃 |</a>
-                <a href="#">고객센터</a>
+                <a href="#">ë¡ê·¸ìì |</a>
+                <a href="#">ê³ ê°ì¼í°</a>
             </p>
         </header>
         <main>
             <aside>
-                <h3>주요기능</h3>
+                <h3>ì£¼ìê¸°ë¥</h3>
                 <ul>
-                    <li><a href="#">상품관리</a></li>
-                    <li class="on"><a href="#">주문관리</a></li>
-                    <li><a href="#">회원관리</a></li>                    
+                    <li><a href="#">ìíê´ë¦¬</a></li>
+                    <li class="on"><a href="#">ì£¼ë¬¸ê´ë¦¬</a></li>
+                    <li><a href="#">íìê´ë¦¬</a></li>                    
                 </ul>
             </aside>
             <section id="orderList">
                 <nav>
-                    <h3>주문목록</h3>
+                    <h3>ì£¼ë¬¸ëª©ë¡</h3>
                 </nav>
 
                 <article>
@@ -54,32 +56,32 @@
                     <table border="0">
                         <tr>
                             <th><input type="checkbox" name="all"/></th>
-                            <th>주문번호</th>
-                            <th>상품명</th>
-                            <th>판매가격</th>
-                            <th>수량</th>
-                            <th>배송비</th>
-                            <th>합계</th>
-                            <th>주문자</th>
-                            <th>주문일</th>
-                            <th>확인</th>
+                            <th>ì£¼ë¬¸ë²í¸</th>
+                            <th>ìíëª</th>
+                            <th>íë§¤ê°ê²©</th>
+                            <th>ìë</th>
+                            <th>ë°°ì¡ë¹</th>
+                            <th>í©ê³</th>
+                            <th>ì£¼ë¬¸ì</th>
+                            <th>ì£¼ë¬¸ì¼</th>
+                            <th>íì¸</th>
                         </tr>
                         <tr>
                             <td><input type="checkbox" name=""/></td>
                             <td>1001</td>
-                            <td>사과 500g</td>                            
-                            <td>4,000원</td>
+                            <td>ì¬ê³¼ 500g</td>                            
+                            <td>4,000ì</td>
                             <td>2</td>
-                            <td>3,000원</td>
-                            <td>11,000원</td>
-                            <td>김유신</td>
+                            <td>3,000ì</td>
+                            <td>11,000ì</td>
+                            <td>ê¹ì ì </td>
                             <td>2023-01-01 13:06:14</td>
-                            <td><a href="#" class="showPopup">[상세확인]</a></td>
+                            <td><a href="#" class="showPopup">[ìì¸íì¸]</a></td>
                         </tr>
                     </table>
 
                     <p>
-                        <a href="#" class="orderDelete">선택삭제</a>                        
+                        <a href="#" class="orderDelete">ì íì­ì </a>                        
                     </p>
                     
                     <p class="paging">
@@ -103,53 +105,53 @@
         <div id="orderPopup">
             <section>
                 <nav>
-                    <h1>상세주문내역</h1>
-                    <button class="btnClose">닫기</button>
+                    <h1>ìì¸ì£¼ë¬¸ë´ì­</h1>
+                    <button class="btnClose">ë«ê¸°</button>
                 </nav>
 
                 <article>  
-                    <h3>기본정보</h3>
+                    <h3>ê¸°ë³¸ì ë³´</h3>
                     <table border="0">
                         <tr>
-                            <td rowspan="7" class="thumb"><img src="../images//sample_item1.jpg" alt="사과 500g"></td>
-                            <td>상품번호</td>
+                            <td rowspan="7" class="thumb"><img src="../images//sample_item1.jpg" alt="ì¬ê³¼ 500g"></td>
+                            <td>ìíë²í¸</td>
                             <td>1011</td>
                         </tr>
                         <tr>
-                            <td>상품명</td>
-                            <td>사과 500g</td>
+                            <td>ìíëª</td>
+                            <td>ì¬ê³¼ 500g</td>
                         </tr>
                         <tr>
-                            <td>판매가격</td>
-                            <td>4,000원</td>
+                            <td>íë§¤ê°ê²©</td>
+                            <td>4,000ì</td>
                         </tr>
                         <tr>
-                            <td>수량</td>
-                            <td>2개</td>
+                            <td>ìë</td>
+                            <td>2ê°</td>
                         </tr>
                         <tr>
-                            <td>배송비</td>
-                            <td>3,000원</td>
+                            <td>ë°°ì¡ë¹</td>
+                            <td>3,000ì</td>
                         </tr>
                         <tr>
-                            <td>합계</td>
-                            <td>11,000원</td>
+                            <td>í©ê³</td>
+                            <td>11,000ì</td>
                         </tr>
                         <tr>
-                            <td>주문자</td>
-                            <td>홍길동</td>
+                            <td>ì£¼ë¬¸ì</td>
+                            <td>íê¸¸ë</td>
                         </tr>                        
                     </table>
 
-                    <h3>배송지 정보</h3>
+                    <h3>ë°°ì¡ì§ ì ë³´</h3>
                     <table border="0">
                         <tr>
-                            <td>받는분</td>
-                            <td>홍길동</td>
+                            <td>ë°ëë¶</td>
+                            <td>íê¸¸ë</td>
                         </tr>
                         <tr>
-                            <td>배송지</td>
-                            <td>부산광역시 부산진구 대연동 120 루미너스 10층</td>
+                            <td>ë°°ì¡ì§</td>
+                            <td>ë¶ì°ê´ì­ì ë¶ì°ì§êµ¬ ëì°ë 120 ë£¨ë¯¸ëì¤ 10ì¸µ</td>
                         </tr>
                     </table>
                 </article>
