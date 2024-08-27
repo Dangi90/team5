@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,16 +36,16 @@
 
                     <ul class="lnb">
                         <li><a href="./story.do">농작물이야기</a></li>
-                        <li><a href="./grow.do">텃밭가꾸기</a></li>
-                        <li class="on"><a href="./school.do">귀농학교</a></li>
+                        <li class="on"><a href="./grow.do">텃밭가꾸기</a></li>
+                        <li><a href="./school.do">귀농학교</a></li>
                     </ul>
 
                 </aside>
                 <article>
                     <nav>
-                        <img src="../images/sub_nav_tit_cate3_school.png" alt="귀농학교"/>
+                        <img src="../images/sub_nav_tit_cate3_grow.png" alt="텃밭가꾸기"/>
                         <p>
-                            HOME > 농작물이야기 > <em>귀농학교</em>
+                            HOME > 농작물이야기 > <em>텃밭가꾸기</em>
                         </p>
                     </nav>
 
