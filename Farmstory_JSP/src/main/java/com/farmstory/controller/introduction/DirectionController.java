@@ -16,7 +16,7 @@ public class DirectionController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/introduction/direction.html");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/introduction/direction.jsp");
 		dispatcher.forward(req, resp);
 		
 	}

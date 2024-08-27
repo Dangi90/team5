@@ -7,21 +7,21 @@ pageEncoding="UTF-8"%>
     <title>팜스토리::로그인</title>    
     <link rel="stylesheet" href="../css/style.css"/>
     <style>
-        #user {
-            display: flex;
-            justify-content: center;
-            width: auto;
-        }
-        .btnLogin {
-        	height: 40px;
-        	text-align: right;
-        }
-           .box{
-        border: 1px solid #BEBEBE;  
-        margin: 0 auto;
-        width: 372px;
-        height: 240px;
+    #user {
+        display: flex;
+        justify-content: center;
+        width: auto;
     }
+    .btnLogin {
+    	height: 40px;
+    	text-align: right;
+    }
+       .box{
+    border: 1px solid #BEBEBE;  
+    margin: 0 auto;
+    width: 372px;
+    height: 240px;
+	}
 
     .contain {
         width: 100%;
