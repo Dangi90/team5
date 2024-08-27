@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +12,7 @@
     * {
             margin: 0;
             padding: 0;
-            font: normal 12px '고딕';
+            font: normal 12px 'ê³ ë';
         }
         ul, ol {list-style: none;}
         a {text-decoration: none; color: #111;}
@@ -46,7 +48,7 @@
             background-image: url('../images/head_top_line.png')
         }
         
-        /*logospace 는 로고, 사이드로고, 로그인| 담고있음*/
+        /*logospace ë ë¡ê³ , ì¬ì´ëë¡ê³ , ë¡ê·¸ì¸| ë´ê³ ìì*/
         .logospace {
             width : 980px;
             height : 80px;
@@ -109,11 +111,11 @@
         height: 30px;
         margin-top :5px;
         border-top: 5px solid rgb(145, 142, 142);
-        /*안의 글자 a들을 중앙으로 배치하는 방법*/
+        /*ìì ê¸ì aë¤ì ì¤ìì¼ë¡ ë°°ì¹íë ë°©ë²*/
         position : flex;
         text-align: center;
         }
-        /*장보기 뱃지*/
+        /*ì¥ë³´ê¸° ë±ì§*/
         .badge {
             position : absolute;
             margin-top :-10px;
@@ -286,9 +288,9 @@
             left: 42px;
             top: 1px;
 
-            font-family: Arial, Helvetica, sans-serif; /* 폰트 패밀리 */
-            font-style: normal; /* 폰트 스타일 */
-            font-weight: 400; /* 폰트 굵기 */
+            font-family: Arial, Helvetica, sans-serif; /* í°í¸ í¨ë°ë¦¬ */
+            font-style: normal; /* í°í¸ ì¤íì¼ */
+            font-weight: 400; /* í°í¸ êµµê¸° */
             font-size: 12px;
             line-height: 15px;
             display: flex;
@@ -1689,7 +1691,7 @@
             left: 470px;
             right: 470px;
             top: 1069px;
-            background-color: #F8F9FA; /* 배경색 추가 */
+            background-color: #F8F9FA; /* ë°°ê²½ì ì¶ê° */
             
             overflow :hidden
         }
@@ -1709,7 +1711,7 @@
         height: 10px;
         background: url('../images/footer_top_line.png');
       }
-      /*info3개 들음*/
+      /*info3ê° ë¤ì*/
       #Paragraph {
         float : right;
         margin-top:10px;
@@ -1782,9 +1784,9 @@
                 <a href="#" class="sale"><img src="../images/head_txt_img.png" alt="htxt" class = "headlog2"></a>
                 <p>
                     <a href="#">HOME | </a>
-                    <a href="#">로그인 | </a>
-                    <a href="#"> 회원가입 | </a>
-                    <a href="#"> 고객센터 </a>
+                    <a href="#">ë¡ê·¸ì¸ | </a>
+                    <a href="#"> íìê°ì | </a>
+                    <a href="#"> ê³ ê°ì¼í° </a>
                 </p>
             </div>
         </div>
@@ -1793,11 +1795,11 @@
                 <ul class = "navfont">
             <div><img src="../images/head_menu_badge.png" class = "badge"></div>          
                  
-                    <li><a href="#">팜스토리소개</a></li>
-                    <li><a href="#">장보기</a></li>
-                    <li><a href="#">농작물이야기</a></li>
-                    <li><a href="#">이벤트</a></li>
-                    <li><a href="#">커뮤니티</a></li>
+                    <li><a href="#">íì¤í ë¦¬ìê°</a></li>
+                    <li><a href="#">ì¥ë³´ê¸°</a></li>
+                    <li><a href="#">ëìë¬¼ì´ì¼ê¸°</a></li>
+                    <li><a href="#">ì´ë²¤í¸</a></li>
+                    <li><a href="#">ì»¤ë®¤ëí°</a></li>
                 </ul>
             </nav>
         </div>
@@ -1815,99 +1817,99 @@
                     <div class="smallhello">                
                         <div class="smallhello2">
                             <div><img src="../images/sub_page_nav_ico.gif" alt=""></div> 
-                          HOME > 장보기 >&nbsp;<span class="highlight">장보기</span>
+                          HOME > ì¥ë³´ê¸° >&nbsp;<span class="highlight">ì¥ë³´ê¸°</span>
                        </div>
                     </div>
                 </nav>
-                <p>장바구니 전체(10)</p>
+                <p>ì¥ë°êµ¬ë ì ì²´(10)</p>
                 <section class="cart">
                     <ul class="carthead">
                         <li>
                             <input type="checkbox" id="selectAll">
                         </li>
-                        <li><p class="image">이미지</p></li>
-                        <li><p class="kind">종류</p></li>
-                        <li><p class="Productname">상품명</p></li>
-                        <li><p class="quantity">수량</p></li>
-                        <li><p class="discount">할인</p></li>
-                        <li><p class="point">포인트</p></li>
-                        <li><p class="price">가격</p></li>
-                        <li><p class="subtotal">소계</p></li>
+                        <li><p class="image">ì´ë¯¸ì§</p></li>
+                        <li><p class="kind">ì¢ë¥</p></li>
+                        <li><p class="Productname">ìíëª</p></li>
+                        <li><p class="quantity">ìë</p></li>
+                        <li><p class="discount">í ì¸</p></li>
+                        <li><p class="point">í¬ì¸í¸</p></li>
+                        <li><p class="price">ê°ê²©</p></li>
+                        <li><p class="subtotal">ìê³</p></li>
                     </ul>
                     <div class="cartbody">
                         <div class="cartbody1">
-                            <p>장바구니에 상품이 없습니다</p>
+                            <p>ì¥ë°êµ¬ëì ìíì´ ììµëë¤</p>
                         </div>
                         <div class="cartbody2">
                             <input type="checkbox" id="select1">
                             <img src="../images/market_item1.jpg" class="image1" alt="apple">
-                            <p class="kind1">과일</p>
-                            <p class="Productname1">사과 500g</p>
+                            <p class="kind1">ê³¼ì¼</p>
+                            <p class="Productname1">ì¬ê³¼ 500g</p>
                             <p class="quantity1">1</p>
                             <p class="discount1">10%</p>
                             <p class="point1">40p</p>
                             <p class="price1">4,000</p>
-                            <div class="subtotal1"><p class="subtotal1_1">3,600원</p></div>
+                            <div class="subtotal1"><p class="subtotal1_1">3,600ì</p></div>
                         </div>
                         <div class="cartbody3">
                             <input type="checkbox" id="select2">
                             <img src="../images/market_item1.jpg" class="image2" alt="apple">
-                            <p class="kind2">과일</p>
-                            <p class="Productname2">사과 500g</p>
+                            <p class="kind2">ê³¼ì¼</p>
+                            <p class="Productname2">ì¬ê³¼ 500g</p>
                             <p class="quantity2">1</p>
                             <p class="discount2">10%</p>
                             <p class="point2">40p</p>
                             <p class="price2">4,000</p>
-                            <div class="subtotal2"><p class="subtotal2_1">3,600원</p></div>
+                            <div class="subtotal2"><p class="subtotal2_1">3,600ì</p></div>
                         </div>
                         <div class="cartbody4">
                             <input type="checkbox" id="select3">
                             <img src="../images/market_item1.jpg" class="image3" alt="apple">
-                            <p class="kind3">과일</p>
-                            <p class="Productname3">사과 500g</p>
+                            <p class="kind3">ê³¼ì¼</p>
+                            <p class="Productname3">ì¬ê³¼ 500g</p>
                             <p class="quantity3">1</p>
                             <p class="discount3">10%</p>
                             <p class="point3">40p</p>
                             <p class="price3">4,000</p>
-                            <div class="subtotal3"><p class="subtotal3_1">3,600원</p></div>
+                            <div class="subtotal3"><p class="subtotal3_1">3,600ì</p></div>
                         </div>
 
                         
                   
                 </section>
                 <div class="button">
-                    <button class="deleteselect"><p>선택삭제</p></button>
+                    <button class="deleteselect"><p>ì íì­ì </p></button>
                 </div>
                 <div class="boarder">
                     <div class="table">
-                        <p class="allcount">전체합계</p>
+                        <p class="allcount">ì ì²´í©ê³</p>
                         <div class="bdquantity">
-                            <p class="bdquantity1_1">상품수</p>
+                            <p class="bdquantity1_1">ìíì</p>
                             <p class="bdquantity1_2">1</p>
                         </div>
                         <div class="bdprice">
-                            <p class="bdprice1_1">상품금액</p>
+                            <p class="bdprice1_1">ìíê¸ì¡</p>
                             <p class="bdprice1_2">27,000</p>
                         </div>
                         <div class="bddcprice">
-                            <p class="bddcprice1_1">할인금액</p>
-                            <p class="bddcprice1_2">5,000원</p>
+                            <p class="bddcprice1_1">í ì¸ê¸ì¡</p>
+                            <p class="bddcprice1_2">5,000ì</p>
                         </div>
                         <div class="bddelfee">
-                            <p class="bddelfee1_1">배송비</p>
-                            <p class="bddelfee1_2">5,000원</p>
+                            <p class="bddelfee1_1">ë°°ì¡ë¹</p>
+                            <p class="bddelfee1_2">5,000ì</p>
                         </div>
                         <div class="bdpoint">
-                            <p class="bdpoint1_1">포인트</p>
-                            <p class="bdpoint1_2">4,000원</p>
+                            <p class="bdpoint1_1">í¬ì¸í¸</p>
+                            <p class="bdpoint1_2">4,000ì</p>
                         </div>
                         <div class="bdallcount">
-                            <p class="bdallcount1_1">전체주문금액</p>
+                            <p class="bdallcount1_1">ì ì²´ì£¼ë¬¸ê¸ì¡</p>
                             <p class="bdallcount1_2">23,000</p>
                         </div>
                     </div>
                     <div class="button2">
-                        <button class="btnorder"><p>주문하기</p></button>
+                        <button class="btnorder"><p>ì£¼ë¬¸íê¸°</p></button>
                     </div>
                 </div>
                
@@ -1934,12 +1936,12 @@
               <img src="../images/footer_logo.png" class="logo" alt="farmstoryfootlogo">
               <div id="Paragraph">
                   <p class="info1">
-                      (주)팜스토리 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-부산진구-123호 / 벤처기업확인 서울지방중소기업청 제 012345678-9-01234호
-                      등록번호 팜스토리01234 (2013.04.01) / 발행인 : 홍길동<br>
-                      대표 : 김철학 / 이메일 : chhak0503@gmail.com / 전화 : 01) 234-5678 / 부산광역시 부산진구 부전동 123
+                      (ì£¼)íì¤í ë¦¬ / ì¬ììë±ë¡ë²í¸ 123-45-67890 / íµì íë§¤ìì ê³  ì  2013-ë¶ì°ì§êµ¬-123í¸ / ë²¤ì²ê¸°ìíì¸ ìì¸ì§ë°©ì¤ìê¸°ìì²­ ì  012345678-9-01234í¸
+                      ë±ë¡ë²í¸ íì¤í ë¦¬01234 (2013.04.01) / ë°íì¸ : íê¸¸ë<br>
+                      ëí : ê¹ì² í / ì´ë©ì¼ : chhak0503@gmail.com / ì í : 01) 234-5678 / ë¶ì°ê´ì­ì ë¶ì°ì§êµ¬ ë¶ì ë 123
                   </p>
                   <p class="info2">
-                      copyrightⓒ 김철학(개발에반하다.) All rights reserved.
+                      copyrightâ ê¹ì² í(ê°ë°ìë°íë¤.) All rights reserved.
                   </p>
                   <p class="info3">
                       farmstory ver1.0.1
