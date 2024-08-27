@@ -2,8 +2,8 @@ package com.farmstory.service;
 
 import java.util.List;
 
-import com.farmstory.DAO.TermsDao;
-import com.farmstory.DTO.TermsDto;
+import com.farmstory.DAO.TermsDAO;
+import com.farmstory.DTO.TermsDTO;
 
 public class TermsService {
 
@@ -13,19 +13,19 @@ public class TermsService {
 	}
 	private TermsService() {}
 	
-	private TermsDao dao = TermsDao.getInstance();
+	private TermsDAO dao = TermsDAO.getInstance();
 	
 	
-	public void insertTerms(TermsDto dto) {
+	public void insertTerms(TermsDTO dto) {
 		dao.insertTerms(dto);
 	}
-	public TermsDto selectTerms() {
+	public TermsDTO selectTerms() {
 		return dao.selectTerms();
 	}
-	public List<TermsDto> selectTermses() {		
+	public List<TermsDTO> selectTermses() {		
 		return dao.selectTermses();
 	}
-	public void updateTerms(TermsDto dto) {
+	public void updateTerms(TermsDTO dto) {
 		dao.updateTerms(dto);
 	}
 	public void deleteTerms() {

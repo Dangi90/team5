@@ -29,7 +29,7 @@ public class TermsController extends HttpServlet {
 		logger.debug("terms : {}", termsDto);
 		req.setAttribute("termsDto", termsDto);
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/member/terms.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/member/terms.html");
 		dispatcher.forward(req, resp);
 	}
 	

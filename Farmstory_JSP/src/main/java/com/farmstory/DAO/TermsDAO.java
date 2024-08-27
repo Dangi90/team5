@@ -5,34 +5,34 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.farmstory.DTO.TermsDto;
+import com.farmstory.DTO.TermsDTO;
 import com.farmstory.Util.DBHelper;
 import com.farmstory.Util.SQL;
 
-public class TermsDao extends DBHelper {
+public class TermsDAO extends DBHelper {
 
-	private static TermsDao instance = new TermsDao();
-	public static TermsDao getInstance() {
+	private static TermsDAO instance = new TermsDAO();
+	public static TermsDAO getInstance() {
 		return instance;
 	}
-	private TermsDao() {}
+	private TermsDAO() {}
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	
-	public void insertTerms(TermsDto dto) {
+	public void insertTerms(TermsDTO dto) {
 		
 	}
-	public TermsDto selectTerms() {
+	public TermsDTO selectTerms() {
 		
-		TermsDto dto = null;
+		TermsDTO dto = null;
 		try {
 			conn = getConnection();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(SQL.SELECT_TERMS);
 			
 			if(rs.next()) {
-				dto = new TermsDto();
+				dto = new TermsDTO();
 				dto.setTerm_id(rs.getInt(1));
 				dto.setTerm_content1(rs.getString(2));
 				dto.setTerm_content2(rs.getString(3));
@@ -43,7 +43,7 @@ public class TermsDao extends DBHelper {
 		}
 		return dto;
 	}
-	public List<TermsDto> selectTermses() {
+	public List<TermsDTO> selectTermses() {
 		try {
 			
 		}catch (Exception e) {
@@ -51,7 +51,7 @@ public class TermsDao extends DBHelper {
 		}
 		return null;
 	}
-	public void updateTerms(TermsDto dto) {}
+	public void updateTerms(TermsDTO dto) {}
 	public void deleteTerms() {}
 	
 }
