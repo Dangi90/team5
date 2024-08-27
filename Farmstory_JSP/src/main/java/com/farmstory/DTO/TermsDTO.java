@@ -1,6 +1,6 @@
 package com.farmstory.DTO;
 
-public class TermsDto {
+public class TermsDTO {
 	
 	private int term_id;
 	private String term_content1;
