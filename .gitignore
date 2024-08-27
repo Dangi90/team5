@@ -1,2 +1,21 @@
-.vscode/
 /.metadata/
+
+# Ignore Eclipse project files
+/.classpath
+/.project
+/.settings/
+
+# Ignore Tomcat server configuration files
+/.metadata/
+/Servers/
+/wtpwebapps/
+
+# Ignore OS specific files
+.DS_Store
+Thumbs.db
+
+# Ignore logs and temp files
+/logs/
+/temp/
+build/
+/target/

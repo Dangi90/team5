@@ -76,3 +76,26 @@ CREATE TABLE `Order` (
     FOREIGN KEY (product_no) REFERENCES Product(no),
     FOREIGN KEY (user_id) REFERENCES User(uid)
 );
+
+-- 테이블 데이터 farm_story.article:~1 rows (대략적) 내보내기
+INSERT INTO `article` (`no`, `user_uid`, `title`, `content`, `regdate`, `views`, `cate`) VALUES
+	(1, 'user1', 'title1', 'content1', '2024-08-27 14:08:49', 10, NULL);
+
+-- 테이블 데이터 farm_story.articlefile:~1 rows (대략적) 내보내기
+INSERT INTO `articlefile` (`id`, `origin_name`, `stored_name`, `regdate`, `article_no`) VALUES
+	(1, 'name1', 'name1', '2024-08-27 14:13:07', 1);
+
+-- 테이블 데이터 farm_story.order:~1 rows (대략적) 내보내기
+INSERT INTO `order` (`no`, `product_no`, `product_name`, `product_price`, `count`, `product_delivery_fee`, `total_price`, `user_id`, `receiver`, `receive_addr`) VALUES
+	(1, 1, 'productName1', 1000, 1, 500, 1500, 'user1', 'user2', 'addr1');
+
+-- 테이블 데이터 farm_story.product:~1 rows (대략적) 내보내기
+INSERT INTO `product` (`no`, `name`, `type`, `price`, `point`, `discount`, `delivery_fee`, `stack`, `thumb_img`, `info_img`, `explain_img`, `regdate`) VALUES
+	(1, 'product1', 'type1', 1000, 100, 10, 500, 50, 'img1', 'img2', 'img3', '2024-08-27 14:11:58');
+
+-- 테이블 데이터 farm_story.terms:~0 rows (대략적) 내보내기
+
+-- 테이블 데이터 farm_story.user:~1 rows (대략적) 내보내기
+INSERT INTO `user` (`uid`, `pass`, `name`, `nick`, `email`, `hp`, `grade`, `addr`, `regip`, `regdate`) VALUES
+	('user1', '1234', 'name1', 'nick1', 'email1', NULL, NULL, NULL, NULL, '2024-08-27 14:09:30');
+
