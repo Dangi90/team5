@@ -20,7 +20,6 @@ public class TermsController extends HttpServlet {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	private static final long serialVersionUID = 1L;
 
-	private TermsService service = TermsService.getInstance();
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

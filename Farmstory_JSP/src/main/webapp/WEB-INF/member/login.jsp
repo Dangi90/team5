@@ -1,17 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>팜스토리::약관</title>    
+    <title>팜스토리::로그인</title>    
     <link rel="stylesheet" href="../css/style.css"/>
     <style>
-        .terms  {
-			display: grid;
-			justify-content: center;
-			justify-item: center; 
-			text-align: center;
+        #user > section{
+        	display: flex; 
+        	justify-content: center;
         }
     </style>
 </head>
@@ -35,39 +33,30 @@
                 <li><a href="/Farmstory_JSP/event/info.do">이벤트</a></li>
                 <li><a href="/Farmstory_JSP/community/notice.do">커뮤니티</a></li>
            	</ul>
-           	</ul>
         </header>
-        <!-- 기존 이미지 태그 제거 -->
-        <main>
-            <section class="terms">
-                <table>
-                    <caption>사이트 이용약관</caption>
-                    <tr>
-                        <td>
-                            <textarea readonly>${termsDto.term_content1}</textarea>
-                            <p>
-                                <label><input type="checkbox" name="chk1"/> 동의합니다.</label>
-                            </p>
-                        </td>
-                    </tr>
-                </table>
-                <table>
-                    <caption>개인정보 취급방침</caption>
-                    <tr>
-                        <td>
-                            <textarea readonly>${termsDto.term_content2}</textarea>
-                            <p>
-                                <label><input type="checkbox" name="chk2"/> 동의합니다.</label>
-                            </p>
-                        </td>
-                    </tr>
-                </table>
-                <div>
-                    <a href="/Farmstory_JSP/member/login.do" class="btnCancel">취소</a>
-                    <a href="/Farmstory_JSP/member/register.do" class="btnNext">다음</a>
-                </div>
-            </section>
-        </main>
+        <div id="user">
+      <section class="login">
+        <form action="/Farmstory_JSP/member/login.do" method="post">
+            <table border="1">
+                <tr>
+                    <td rowspan = "2"><img src="../images/login_ico_pw.png" alt="회원"></td>
+                    <td><input type="text" name="uid" placeholder="아이디 입력"></td>
+                </tr>
+                <tr>
+                	<td><input type="password" name="pass" placeholder="비밀번호 입력"></td>
+                </tr>
+            </table>
+         	<div>
+	            <h3>회원 로그인 안내</h3>
+	            <p>
+	                아직 회원이 아니시면 회원으로 가입하세요.
+	            </p>
+	            <a href="/Farmstory_JSP/member/terms.do">회원가입</a>
+        	</div>
+            <input type="submit" value="로그인" class="btnLogin">
+        </form>
+    </section>
+        </div>
         <footer>
             <img src="../images/footer_logo.png" alt="로고"/>
             <p>
@@ -78,5 +67,6 @@
             </p>
         </footer>
     </div>
+    
 </body>
 </html>
