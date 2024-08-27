@@ -20,8 +20,8 @@ public class ListController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	String group = request.getParameter("group");
         String category = request.getParameter("cate");
-        String group = request.getParameter("group");
 
         if (category == null || group == null || category.isEmpty() || group.isEmpty()) {
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid category or group");
@@ -34,7 +34,7 @@ public class ListController extends HttpServlet {
         request.setAttribute("articles", articles);
         
         // 동적으로 JSP 파일 경로를 설정
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/article/" + group + "/list.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/" + group + "/" + category +".html");
         dispatcher.forward(request, response);
     }
 }

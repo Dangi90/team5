@@ -35,7 +35,7 @@ pageEncoding="UTF-8"%>
             </ul>
         </header>
         <div id="user">
-            <form action="/Farmstory_JSP/user/register.do" method="post">
+            <form action="/Farmstory_JSP/member/register.do" method="post">
             <table border="1">
                 <caption>사이트 이용정보 입력</caption>
                 <tr>

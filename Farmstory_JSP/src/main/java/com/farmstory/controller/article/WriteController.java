@@ -15,18 +15,18 @@ public class WriteController extends HttpServlet {
 
     private ArticleDAO articleDAO = new ArticleDAO();
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String group = request.getParameter("group");
-        String category = request.getParameter("cate");
-
-        if (group == null || group.isEmpty() || category == null || category.isEmpty()) {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid parameters");
-            return;
-        }
-
-        request.getRequestDispatcher("/article/" + group + "/write.jsp").forward(request, response);
-    }
+//    @Override
+//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        String group = request.getParameter("group");
+//        String category = request.getParameter("cate");
+//
+//        if (group == null || group.isEmpty() || category == null || category.isEmpty()) {
+//            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid parameters");
+//            return;
+//        }
+//
+//        request.getRequestDispatcher("/article/" + group + "/write.jsp").forward(request, response);
+//    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
