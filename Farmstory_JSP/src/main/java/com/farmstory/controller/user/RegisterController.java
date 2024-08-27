@@ -44,6 +44,7 @@ public class RegisterController extends HttpServlet {
 		String regip = req.getRemoteAddr();
 		// String regdate = req.getParameter("regdate");
 		logger.debug("grade 값 : {}", grade);
+		
 		// DTO 생성
 		UserDTO userDto = new UserDTO();
 		userDto.setUid(uid);
