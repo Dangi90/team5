@@ -52,7 +52,7 @@
                     <caption>개인정보 취급방침</caption>
                     <tr>
                         <td>
-                            <textarea readonly>${termsDto.content2}</textarea>
+                            <textarea readonly>${termsDto.term_content2}</textarea>
                             <p>
                                 <label><input type="checkbox" name="chk2"/> 동의합니다.</label>
                             </p>
