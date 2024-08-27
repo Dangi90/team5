@@ -16,7 +16,7 @@ public class ViewController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/market/view.html");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/market/view.jsp");
 		dispatcher.forward(req, resp);
 		
 	}

@@ -26,7 +26,7 @@ public class ListController extends HttpServlet {
         request.setAttribute("productList", productList);
 
         // JSP 페이지로 포워딩
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/admin/productList.html");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/admin/productList.jsp");
         dispatcher.forward(request, response);
     }
 

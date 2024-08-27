@@ -16,7 +16,7 @@ public class ProductList extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/admin/ProductList.html");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/admin/ProductList.jsp");
 		dispatcher.forward(req, resp);
 		
 	}

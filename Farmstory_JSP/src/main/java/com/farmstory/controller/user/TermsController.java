@@ -5,7 +5,7 @@ import java.io.IOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.farmstory.DTO.TermsDto;
+import com.farmstory.DTO.TermsDTO;
 import com.farmstory.service.TermsService;
 
 import jakarta.servlet.RequestDispatcher;
@@ -25,11 +25,11 @@ public class TermsController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		TermsDto termsDto = service.selectTerms();
+		TermsDTO termsDto = service.selectTerms();
 		logger.debug("terms : {}", termsDto);
 		req.setAttribute("termsDto", termsDto);
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/member/terms.html");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/member/terms.jsp");
 		dispatcher.forward(req, resp);
 	}
 	
