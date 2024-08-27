@@ -31,6 +31,7 @@ CREATE TABLE Article (
     content TEXT NOT NULL,
     regdate DATETIME DEFAULT NOW(),
     views INT DEFAULT 0,
+    `group` VARCHAR(20),
     cate VARCHAR(20),
     FOREIGN KEY (user_uid) REFERENCES User(uid)
 );
@@ -77,9 +78,10 @@ CREATE TABLE `Order` (
     FOREIGN KEY (user_id) REFERENCES User(uid)
 );
 
+
 -- 테이블 데이터 farm_story.article:~1 rows (대략적) 내보내기
-INSERT INTO `article` (`no`, `user_uid`, `title`, `content`, `regdate`, `views`, `cate`) VALUES
-	(1, 'user1', 'title1', 'content1', '2024-08-27 14:08:49', 10, NULL);
+INSERT INTO `article` (`no`, `user_uid`, `title`, `content`, `regdate`, `views`, 'group',`cate`) VALUES
+	(1, 'user1', 'title1', 'content1', '2024-08-27 14:08:49', 10,'croptalk', 'story');
 
 -- 테이블 데이터 farm_story.articlefile:~1 rows (대략적) 내보내기
 INSERT INTO `articlefile` (`id`, `origin_name`, `stored_name`, `regdate`, `article_no`) VALUES

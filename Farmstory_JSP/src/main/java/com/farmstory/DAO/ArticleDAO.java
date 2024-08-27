@@ -42,13 +42,14 @@ public class ArticleDAO {
 
     // 게시글 작성
     public void insertArticle(ArticleDTO article) {
-        String sql = "INSERT INTO articles (user_uid, title, content, regdate, views) VALUES (?, ?, ?, NOW(), 0)";
+        String sql = "INSERT INTO articles (user_uid, title, content, cate, regdate, views) VALUES (?, ?, ?, ?, NOW(), 0)";
 
         try (Connection conn = getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, article.getUserUid());
             pstmt.setString(2, article.getTitle());
             pstmt.setString(3, article.getContent());
+            pstmt.setString(4, article.getCate());
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

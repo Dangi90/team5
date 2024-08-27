@@ -6,13 +6,18 @@ import com.farmstory.DTO.ArticleDTO;
 import java.util.List;
 
 public class ArticleService {
+	private static ArticleService instance = new ArticleService();
+	public static ArticleService getInstance() {
+		return instance;
+	}
+	
     private ArticleDAO articleDAO = new ArticleDAO();
 
     public List<ArticleDTO> getArticlesByCategory(String category) {
         return articleDAO.getArticlesByCategory(category);
     }
 
-    public void insertArticle(ArticleDTO article) {
+    public void createArticle(ArticleDTO article) {
         articleDAO.insertArticle(article);
     }
 

@@ -2,6 +2,8 @@ package com.farmstory.controller.article;
 
 import com.farmstory.DAO.ArticleDAO;
 import com.farmstory.DTO.ArticleDTO;
+import com.farmstory.service.ArticleService;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -12,7 +14,7 @@ import java.io.IOException;
 
 @WebServlet("/article/write.do")
 public class WriteController extends HttpServlet {
-
+	private ArticleService service = ArticleService.getInstance();
     private ArticleDAO articleDAO = new ArticleDAO();
 
 //    @Override
@@ -45,8 +47,10 @@ public class WriteController extends HttpServlet {
         article.setUserUid(userUid);
         article.setTitle(title);
         article.setContent(content);
+        article.setCate(category);
 
-        articleDAO.insertArticle(article);
+        service.createArticle(article);
+        
         response.sendRedirect("list.do?group=" + group + "&cate=" + category);
     }
 }
