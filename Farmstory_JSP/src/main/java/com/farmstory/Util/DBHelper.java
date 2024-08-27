@@ -20,7 +20,7 @@ public class DBHelper {
 	
 	protected Connection getConnection() throws NamingException, SQLException {
 		Context ctx = (Context) new InitialContext().lookup("java:comp/env");
-		DataSource ds = (DataSource) ctx.lookup("jdbc/jboard");
+		DataSource ds = (DataSource) ctx.lookup("jdbc/farm_story");
 		return ds.getConnection();
 	}
 	
