@@ -51,7 +51,7 @@ public class LoginController extends HttpServlet {
 			
 		}else {
 			// 회원이 아닐 경우 -> 다시 로그인 리다이렉트
-			resp.sendRedirect("/Farmstory_jsp/member/login.do?success=100");
+			resp.sendRedirect("/Farmstory_jsp/member/login.do");
 		}
 	}
 }

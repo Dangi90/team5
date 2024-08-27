@@ -7,37 +7,47 @@ pageEncoding="UTF-8"%>
     <title>팜스토리::회원가입</title>    
     <link rel="stylesheet" href="../css/style.css"/>
     <style>
-        #user > img {
-            display: block;
-            margin: 20px auto;
+        #user{
+        	display: flex;
+        	justify-content: center;
+        	width: auto;
+        }
+        .div-table__caption1 {
+        	text-align: left
+        }
+        .div-table__caption2{
+        	text-align: left
+        }
+        .form-div{
+        text-align: right;
         }
     </style>
 </head>
 <body>
     <div id="container">
         <header>
-            <a href="./index.html" class="logo"><img src="../images/logo.png" alt="로고"/></a>
-            <p>
-                <a href="#">HOME |</a>
-                <a href="#">로그인 |</a>
-                <a href="#">회원가입 |</a>
-                <a href="./admin/">관리자 |</a>
+            <a href="../index.do" class="logo"><img src="../images/logo.png" alt="로고"/></a>
+             <p>
+                <a href="../index.do">HOME |</a>
+                <a href="./login.do">로그인 |</a>
+                <a href="./register.do">회원가입 |</a>
+                <a href="./admin/index.do">관리자 |</a>
                 <a href="#">고객센터</a>
             </p>
             <img src="../images/head_txt_img.png" alt="3만원 이상 무료배송"/>
             
             <ul class="gnb">
-                <li><a href="./introduction/hello.html">팜스토리소개</a></li>
-                <li><a href="./market/list.html"><img src="../images/head_menu_badge.png" alt="30%"/>장보기</a></li>
-                <li><a href="./croptalk/story.html">농작물이야기</a></li>
-                <li><a href="./event/event.html">이벤트</a></li>
-                <li><a href="./community/notice.html">커뮤니티</a></li>
-            </ul>
+                <li><a href="/Farmstory_JSP/introduction/hello.do">팜스토리소개</a></li>
+                <li><a href="/Farmstory_JSP/market/list.do"><img src="../images/head_menu_badge.png" alt="30%"/>장보기</a></li>
+                <li><a href="/Farmstory_JSP/croptalk/story.do">농작물이야기</a></li>
+                <li><a href="/Farmstory_JSP/event/info.do">이벤트</a></li>
+                <li><a href="/Farmstory_JSP/community/notice.do">커뮤니티</a></li>
+           	</ul>
         </header>
         <div id="user">
             <form action="/Farmstory_JSP/user/register.do" method="post">
             <table border="1">
-                <caption>사이트 이용정보 입력</caption>
+                <caption class="div-table__caption1">사이트 이용정보 입력</caption>
                 <tr>
                     <td>아이디</td>
                     <td>
@@ -61,7 +71,7 @@ pageEncoding="UTF-8"%>
                 </tr>
             </table>
             <table border="1">
-                <caption>개인정보 입력</caption>
+                <caption class="div-table__caption2">개인정보 입력</caption>
                 <tr>
                     <td>이름</td>
                     <td>
@@ -112,8 +122,7 @@ pageEncoding="UTF-8"%>
                     </td>
                 </tr>
             </table>
-
-            <div>
+            <div class="form-div">
                 <a href="/jboard/user/login.do" class="btnCancel">취소</a>
                 <input type="submit"   class="btnSubmit" value="회원가입"/>
             </div>    

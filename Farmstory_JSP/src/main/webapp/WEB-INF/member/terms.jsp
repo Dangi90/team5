@@ -7,9 +7,11 @@
     <title>팜스토리::약관</title>    
     <link rel="stylesheet" href="../css/style.css"/>
     <style>
-        #user > img {
-            display: block;
-            margin: 20px auto;
+        .terms  {
+			display: grid;
+			justify-content: center;
+			justify-item: center; 
+			text-align: center;
         }
     </style>
 </head>
@@ -32,6 +34,7 @@
                 <li><a href="/Farmstory_JSP/croptalk/story.do">농작물이야기</a></li>
                 <li><a href="/Farmstory_JSP/event/info.do">이벤트</a></li>
                 <li><a href="/Farmstory_JSP/community/notice.do">커뮤니티</a></li>
+           	</ul>
            	</ul>
         </header>
         <!-- 기존 이미지 태그 제거 -->
