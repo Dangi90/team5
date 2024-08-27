@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Farmstory_JSP/src/main/java"/>
+	<classpathentry kind="lib" path="Farmstory_JSP/src/main/webapp/WEB-INF/lib/activation-1.1.1.jar"/>
+	<classpathentry kind="lib" path="Farmstory_JSP/src/main/webapp/WEB-INF/lib/gson-2.11.0.jar"/>
+	<classpathentry kind="lib" path="Farmstory_JSP/src/main/webapp/WEB-INF/lib/jakarta.servlet.jsp.jstl-3.0.1.jar"/>
+	<classpathentry kind="lib" path="Farmstory_JSP/src/main/webapp/WEB-INF/lib/jakarta.servlet.jsp.jstl-api-3.0.0.jar"/>
+	<classpathentry kind="lib" path="Farmstory_JSP/src/main/webapp/WEB-INF/lib/javax.mail-1.6.2.jar"/>
+	<classpathentry kind="lib" path="Farmstory_JSP/src/main/webapp/WEB-INF/lib/logback-classic-1.5.7.jar"/>
+	<classpathentry kind="lib" path="Farmstory_JSP/src/main/webapp/WEB-INF/lib/logback-core-1.5.7.jar"/>
+	<classpathentry kind="lib" path="Farmstory_JSP/src/main/webapp/WEB-INF/lib/mysql-connector-j-8.2.0.jar"/>
+	<classpathentry kind="lib" path="Farmstory_JSP/src/main/webapp/WEB-INF/lib/slf4j-api-2.0.16.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
