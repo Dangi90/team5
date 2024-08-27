@@ -16,7 +16,7 @@ CREATE TABLE User (
     name VARCHAR(20) NOT NULL,
     nick VARCHAR(50) NOT NULL UNIQUE,
     email VARCHAR(50),
-    hp CHAR(11),
+    hp CHAR(13),
     grade VARCHAR(10),
     addr VARCHAR(100),
     regip VARCHAR(20),
