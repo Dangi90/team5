@@ -4,28 +4,28 @@ pageEncoding="UTF-8"%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>íì¤í ë¦¬::ì°¾ìì¤ìëê¸¸</title>
+    <title>팜스토리::찾아오시는길</title>
     <link rel="stylesheet" href="../css/style.css"/>
 </head>
 <body>
     <div id="container">
         <header>
-            <a href="../index.jsp" class="logo"><img src="../images/logo.png" alt="ë¡ê³ "/></a>
+            <a href="../index.jsp" class="logo"><img src="../images/logo.png" alt="로고"/></a>
              <p>
                 <a href="../index.jsp">HOME |</a>
-            	<a href="/Farmstory_JSP/member/login.do">ë¡ê·¸ì¸ |</a>
-                <a href="/Farmstory_JSP/member/register.do">íìê°ì |</a>
-                <a href="./admin/index.do">ê´ë¦¬ì |</a>
-                <a href="#">ê³ ê°ì¼í°</a>
+            	<a href="/Farmstory_JSP/member/login.do">로그인 |</a>
+                <a href="/Farmstory_JSP/member/register.do">회원가입 |</a>
+                <a href="./admin/index.do">관리자 |</a>
+                <a href="#">고객센터</a>
             </p>
-            <img src="../images/head_txt_img.png" alt="3ë§ì ì´ì ë¬´ë£ë°°ì¡"/>
+            <img src="../images/head_txt_img.png" alt="3만원 이상 무료배송"/>
             
             <ul class="gnb">
-                <li><a href="/Farmstory_JSP/introduction/hello.do">íì¤í ë¦¬ìê°</a></li>
-                <li><a href="/Farmstory_JSP/market/list.do"><img src="../images/head_menu_badge.png" alt="30%"/>ì¥ë³´ê¸°</a></li>
-                <li><a href="/Farmstory_JSP/croptalk/story.do">ëìë¬¼ì´ì¼ê¸°</a></li>
-                <li><a href="/Farmstory_JSP/event/info.do">ì´ë²¤í¸</a></li>
-                <li><a href="/Farmstory_JSP/community/notice.do">ì»¤ë®¤ëí°</a></li>
+                <li><a href="/Farmstory_JSP/introduction/hello.do">팜스토리소개</a></li>
+                <li><a href="/Farmstory_JSP/market/list.do"><img src="../images/head_menu_badge.png" alt="30%"/>장보기</a></li>
+                <li><a href="/Farmstory_JSP/croptalk/story.do">농작물이야기</a></li>
+                <li><a href="/Farmstory_JSP/event/info.do">이벤트</a></li>
+                <li><a href="/Farmstory_JSP/community/notice.do">커뮤니티</a></li>
            	</ul>
         </header>
 
@@ -33,41 +33,41 @@ pageEncoding="UTF-8"%>
             <div><img src="../images/sub_top_tit1.png" alt="INTRODUCTION"></div>
             <section class="introduction">
                 <aside>
-                    <img src="../images/sub_aside_cate1_tit.png" alt="íì¤í ë¦¬ ìê°"/>
+                    <img src="../images/sub_aside_cate1_tit.png" alt="팜스토리 소개"/>
 
                     <ul class="lnb">
-                        <li><a href="./hello.do">ì¸ì¬ë§</a></li>
-                        <li class="on"><a href="./direction.do">ì°¾ìì¤ìë ê¸¸</a></li>
+                        <li><a href="./hello.do">인사말</a></li>
+                        <li class="on"><a href="./direction.do">찾아오시는 길</a></li>
                     </ul>
 
                 </aside>
                 <article>
                     <nav>
-                        <img src="../images/sub_nav_tit_cate1_tit2.png" alt="ì°¾ìì¤ìëê¸¸"/>
+                        <img src="../images/sub_nav_tit_cate1_tit2.png" alt="찾아오시는길"/>
                         <p>
-                            HOME > íì¤í ë¦¬ìê° > <em>ì°¾ìì¤ìëê¸¸</em>
+                            HOME > 팜스토리소개 > <em>찾아오시는길</em>
                         </p>
                     </nav>
 
-                    <!-- ë´ì© ìì -->
+                    <!-- 내용 시작 -->
                     <p>
-                        <strong>íì¤í ë¦¬</strong><br>
-                        ì£¼ì: ê²½ê¸°ë ì´ì²ì ìíë¤êµ¬ ì ëë¤ë 123<br>
-                        ì í: 01-234-5678<br>
+                        <strong>팜스토리</strong><br>
+                        주소: 경기도 이천시 잘한다구 신난다동 123<br>
+                        전화: 01-234-5678<br>
                     </p>
                     <p>
-                        <strong>ì°¾ìì¤ìëê¸¸</strong><br>
-                        <!-- * ì¹´ì¹´ì¤ë§µ - ì§ëí¼ê°ê¸° -->
-                        <!-- 1. ì§ë ë¸ë -->
+                        <strong>찾아오시는길</strong><br>
+                        <!-- * 카카오맵 - 지도퍼가기 -->
+                        <!-- 1. 지도 노드 -->
                         <div id="daumRoughmapContainer1668214668575" class="root_daum_roughmap root_daum_roughmap_landing"></div>
                     </p>
                     <!--
-                        2. ì¤ì¹ ì¤í¬ë¦½í¸
-                        * ì§ë í¼ê°ê¸° ìë¹ì¤ë¥¼ 2ê° ì´ì ë£ì ê²½ì°, ì¤ì¹ ì¤í¬ë¦½í¸ë íëë§ ì½ìí©ëë¤.
+                        2. 설치 스크립트
+                        * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
                     -->
                     <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
 
-                    <!-- 3. ì¤í ì¤í¬ë¦½í¸ -->
+                    <!-- 3. 실행 스크립트 -->
                     <script charset="UTF-8">
                         new daum.roughmap.Lander({
                             "timestamp" : "1668214668575",
@@ -76,7 +76,7 @@ pageEncoding="UTF-8"%>
                             "mapHeight" : "400"
                         }).render();
                     </script>
-                    <!-- ë´ì© ë -->
+                    <!-- 내용 끝 -->
 
                 </article>
             </section>
@@ -85,12 +85,12 @@ pageEncoding="UTF-8"%>
         
         
         <footer>
-            <img src="../images/footer_logo.png" alt="ë¡ê³ "/>
+            <img src="../images/footer_logo.png" alt="로고"/>
             <p>
-                (ì£¼)íì¤í ë¦¬ / ì¬ììë±ë¡ë²í¸ 123-45-67890 / íµì íë§¤ìì ê³  ì  2013-íì¤í ë¦¬êµ¬-123í¸ / ë²¤ì²ê¸°ìíì¸ ìì¸ì§ë°©ì¤ìê¸°ìì²­ ì  012345678-9-01234í¸<br />
-                ë±ë¡ë²í¸ íì¤í ë¦¬01234 (2013.04.01) / ë°íì¸ : íê¸¸ë<br />
-                ëí : íê¸¸ë / ì´ë©ì¼ : email@mail.mail / ì í : 01) 234-5678 / ê²½ê¸°ë ì±ë¨ì ìíë¤êµ¬ ì ëë¤ë 345<br />
-                <em>Copyright(C)íê¸¸ë All rights reserved.</em>
+                (주)팜스토리 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-팜스토리구-123호 / 벤처기업확인 서울지방중소기업청 제 012345678-9-01234호<br />
+                등록번호 팜스토리01234 (2013.04.01) / 발행인 : 홍길동<br />
+                대표 : 홍길동 / 이메일 : email@mail.mail / 전화 : 01) 234-5678 / 경기도 성남시 잘한다구 신난다동 345<br />
+                <em>Copyright(C)홍길동 All rights reserved.</em>
             </p>
         </footer>
     </div>    
