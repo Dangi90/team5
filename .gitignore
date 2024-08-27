@@ -1,21 +1,37 @@
 /.metadata/
+/.recommenders/
 
-# Ignore Eclipse project files
-/.classpath
-/.project
-/.settings/
+*.class
 
-# Ignore Tomcat server configuration files
-/.metadata/
-/Servers/
-/wtpwebapps/
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
 
-# Ignore OS specific files
-.DS_Store
-Thumbs.db
+# Package Files #
+*.jar
+*.war
+*.ear
 
-# Ignore logs and temp files
-/logs/
-/temp/
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# netbeans
+nbproject/private/
 build/
-/target/
+nbbuild/
+
+# the dist file could make some problems
+# dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+.nb-gradle/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
