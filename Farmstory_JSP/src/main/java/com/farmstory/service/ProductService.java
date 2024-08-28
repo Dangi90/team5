@@ -29,7 +29,7 @@ public class ProductService {
     }
 
     // 상품 조회 (단일)
-    public ProductDTO getProduct(int no) {
+    public ProductDTO getProduct(String no) {
         return productDAO.getProduct(no);
     }
 

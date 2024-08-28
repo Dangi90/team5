@@ -15,11 +15,29 @@ public class ProductDTO {
 	private String explain_img;
 	private String datetime;
 	
+	
+	
+	// 추가
+	private String regdate;
+	
+	public String getRegdate() {
+		return regdate;
+	}
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
+	}
+	
+	
+	
+	
 	public int getNo() {
 		return no;
 	}
 	public void setNo(int no) {
 		this.no = no;
+	}
+	public void setNo(String no) {
+		this.no = Integer.parseInt(no);
 	}
 	public String getName() {
 		return name;
@@ -87,14 +105,12 @@ public class ProductDTO {
 	public void setDatetime(String datetime) {
 		this.datetime = datetime;
 	}
-	
 	@Override
 	public String toString() {
-		return "AdminDTO [no=" + no + ", name=" + name + ", type=" + type + ", price=" + price + ", point=" + point
+		return "ProductDTO [no=" + no + ", name=" + name + ", type=" + type + ", price=" + price + ", point=" + point
 				+ ", discount=" + discount + ", delivery_fee=" + delivery_fee + ", stack=" + stack + ", thumb_img="
 				+ thumb_img + ", info_img=" + info_img + ", explain_img=" + explain_img + ", datetime=" + datetime
-				+ "]";
+				+ ", regdate=" + regdate + "]";
 	}
-
 	
 }
