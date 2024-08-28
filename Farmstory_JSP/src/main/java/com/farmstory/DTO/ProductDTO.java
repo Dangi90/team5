@@ -13,8 +13,23 @@ public class ProductDTO {
 	private String thumb_img;
 	private String info_img;
 	private String explain_img;
+	private String datetime;
+	
+	
+	
+	// 추가
 	private String regdate;
-	private String etc;
+	
+	public String getRegdate() {
+		return regdate;
+	}
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
+	}
+	
+	
+	
+	
 	public int getNo() {
 		return no;
 	}
@@ -101,7 +116,8 @@ public class ProductDTO {
 	public String toString() {
 		return "ProductDTO [no=" + no + ", name=" + name + ", type=" + type + ", price=" + price + ", point=" + point
 				+ ", discount=" + discount + ", delivery_fee=" + delivery_fee + ", stack=" + stack + ", thumb_img="
-				+ thumb_img + ", info_img=" + info_img + ", explain_img=" + explain_img + ", regdate=" + regdate
-				+ ", etc=" + etc + "]";
+				+ thumb_img + ", info_img=" + info_img + ", explain_img=" + explain_img + ", datetime=" + datetime
+				+ ", regdate=" + regdate + "]";
 	}
+	
 }
