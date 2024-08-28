@@ -1773,37 +1773,7 @@ pageEncoding="UTF-8"%>
 </head>
 <body>
     <div id = "wrapper">
-    <header>
-        <div>
-            <div class="htop"></div>
-            <div class="top">
-               
-            </div>
-            <div class ="logospace">
-                <a href="#" class="logo"> <img src="../images/logo.png" alt="logo" class = "headlog"></a>
-                <a href="#" class="sale"><img src="../images/head_txt_img.png" alt="htxt" class = "headlog2"></a>
-                <p>
-                    <a href="#">HOME | </a>
-                    <a href="#">로그인 | </a>
-                    <a href="#"> 회원가입 | </a>
-                    <a href="#"> 고객센터 </a>
-                </p>
-            </div>
-        </div>
-        <div>
-            <nav>
-                <ul class = "navfont">
-            <div><img src="../images/head_menu_badge.png" class = "badge"></div>          
-                 
-                    <li><a href="#">팜스토리소개</a></li>
-                    <li><a href="#">장보기</a></li>
-                    <li><a href="#">농작물이야기</a></li>
-                    <li><a href="#">이벤트</a></li>
-                    <li><a href="#">커뮤니티</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+	<jsp:include page="/WEB-INF/layout/header.jsp" />
     <div class="subtopbg1">
         <img src="../images/sub_top_bg.jpg" alt="subtopbg1">
         <div class="subtoptit1"><img src="../images/sub_top_tit2.png" alt="subtoptit1"></div>
@@ -1927,29 +1897,8 @@ pageEncoding="UTF-8"%>
               </aside>
             </article>
         </div>
-
     </main>
-  
-      <footer>
-          <div>
-              <div class="fline"></div>
-              <img src="../images/footer_logo.png" class="logo" alt="farmstoryfootlogo">
-              <div id="Paragraph">
-                  <p class="info1">
-                      (주)팜스토리 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-부산진구-123호 / 벤처기업확인 서울지방중소기업청 제 012345678-9-01234호
-                      등록번호 팜스토리01234 (2013.04.01) / 발행인 : 홍길동<br>
-                      대표 : 김철학 / 이메일 : chhak0503@gmail.com / 전화 : 01) 234-5678 / 부산광역시 부산진구 부전동 123
-                  </p>
-                  <p class="info2">
-                      copyrightⓒ 김철학(개발에반하다.) All rights reserved.
-                  </p>
-                  <p class="info3">
-                      farmstory ver1.0.1
-                  </p>
-              </div>
-          </div>
-        
-      </footer>
+   <jsp:include page="/WEB-INF/layout/footer.jsp" />
   </div>
   </body>
   </html>

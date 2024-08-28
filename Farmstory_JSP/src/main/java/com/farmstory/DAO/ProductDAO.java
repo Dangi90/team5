@@ -85,15 +85,15 @@ public class ProductDAO extends DBHelper {
         }
         return false;
     }
-
+    
     // 상품 조회 (단일)
-    public ProductDTO getProduct(int no) {
+    public ProductDTO getProduct(String no) {
         ProductDTO productDTO = null;
-        String sql = "SELECT * FROM products WHERE no=?";
+        String sql = "SELECT * FROM product WHERE no=?";
         try {
             conn = getConnection();
             psmt = conn.prepareStatement(sql);
-            psmt.setInt(1, no);
+            psmt.setString(1, no);
             rs = psmt.executeQuery();
 
             if (rs.next()) {
@@ -109,7 +109,7 @@ public class ProductDAO extends DBHelper {
             	productDTO.setThumb_img(rs.getString("thumb_img"));
             	productDTO.setInfo_img(rs.getString("info_img"));
             	productDTO.setExplain_img(rs.getString("explain_img"));
-            	productDTO.setDatetime(rs.getString("datetime"));
+            	productDTO.setRegdate(rs.getString("regdate"));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -122,7 +122,7 @@ public class ProductDAO extends DBHelper {
 	 // AdminDAO 클래스에 추가
 	    public List<ProductDTO> getAllProducts() {
 	        List<ProductDTO> productList = new ArrayList<>();
-	        String sql = "SELECT * FROM products";
+	        String sql = "SELECT * FROM product";
 	        
 	        try {
 	            conn = getConnection();
@@ -142,7 +142,7 @@ public class ProductDAO extends DBHelper {
 	                product.setThumb_img(rs.getString("thumb_img"));
 	                product.setInfo_img(rs.getString("info_img"));
 	                product.setExplain_img(rs.getString("explain_img"));
-	                product.setDatetime(rs.getString("datetime"));
+	                product.setRegdate(rs.getString("regdate"));
 	                productList.add(product);
 	            }
 	        } catch (Exception e) {
