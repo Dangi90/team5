@@ -30,6 +30,19 @@
     -->
     <!-- StudyDB 커넥션 풀 설정 -->
 	<Resource 
+		name="jdbc/farm_story"
+        auth="Container"
+        type="javax.sql.DataSource"
+        driverClassName="com.mysql.cj.jdbc.Driver"
+        url="jdbc:mysql://127.0.0.1:3306/farm_story"
+        username="root"
+        password="1234"
+        maxTotal="13"
+        maxIdle="13"
+        maxWaitMillis="3000"
+    />
+	
+	<Resource 
 		name="jdbc/jboard"
         auth="Container"
         type="javax.sql.DataSource"

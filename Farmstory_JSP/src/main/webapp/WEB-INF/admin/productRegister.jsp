@@ -17,23 +17,37 @@ pageEncoding="UTF-8"%>
 <body>
     <div id="container">
         <header>
+
             <a href="./index.do" class="logo"><img src="../images/admin_logo.jpg" alt="로고"/></a>
             <p>
                 <a href="../index.do">HOME |</a>
                 <a href="./index.do">관리페이지 |</a>
                 <a href="../member/logout.do">로그아웃 |</a>
-                <a href="#">고객센터</a>
+               <a href="../community/qna.do">고객센터</a>
             </p>
         </header>
         <main>
             <aside>
-                <h3>주요기능</h3>
-                <ul>
-                    <li class="on"><a href="#">상품관리</a></li>
-                    <li><a href="#">주문관리</a></li>
-                    <li><a href="#">회원관리</a></li>                    
-                </ul>
-            </aside>
+			    <h3>주요기능</h3>
+			    <ul>
+			        <li>상품관리
+			            <ul>
+			                <li><a href="./productList.do">상품목록</a></li>
+			                <li><a href="./productRegister.do">상품등록</a></li>
+			            </ul>
+			        </li>
+			        <li>주문관리
+			            <ul>
+			                <li><a href="./orderList.do">주문목록</a></li>
+			            </ul>
+			        </li>
+			        <li>회원관리
+			            <ul>
+			                <li><a href="./userList.do">회원목록</a></li>
+			            </ul>
+			        </li>                  
+			    </ul>
+			</aside>
             <section id="productRegister">
                 <nav>
                     <h3>상품등록</h3>
@@ -100,7 +114,7 @@ pageEncoding="UTF-8"%>
                         </table>
 
                         <p>
-                            <a href="../productList.html" class="btnCancel">취소</a>
+                            <a href="./productList.do" class="btnCancel">취소</a>
                             <input type="submit" value="상품등록"/>
                         </p>
                     </form>

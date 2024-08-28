@@ -33,43 +33,60 @@ header > p > a {
 
 /* 왼쪽 사이드 */
 main {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
+    width: 100% !important;
+    height: auto !important;
+    overflow: hidden !important;
 }
+
 main > aside {
-    float: left;
-    width: 176px;
-    height: 400px;
-    padding: 10px;
-    box-sizing: border-box;
+    float: left !important;
+    width: 176px !important;
+    height: 400px !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
 }       
 
 main > aside > h3 {            
-    padding: 5px 20px;
-    border-radius: 20px;
-    background-color: rgb(229, 229, 229);
-    border: 1px solid rgb(204, 204, 204);            
-    font-size: 14px;
+    padding: 5px 20px !important;
+    border-radius: 20px !important;
+    background-color: rgb(229, 229, 229) !important;
+    border: 1px solid rgb(204, 204, 204) !important;            
+    font-size: 14px !important;
 }
 
 main > aside > ul {
-    padding: 16px;
-    box-sizing: border-box;
+    padding: 16px !important;
+    box-sizing: border-box !important;
 }
+
 main > aside > ul > li {
-    line-height: 22px;
+    line-height: 22px !important;
 }
 
 main > aside > ul > li.on > a {
-    font-weight: bold;
-    text-decoration: underline;
+    font-weight: bold !important;
+    text-decoration: underline !important;
 }
 
 main > aside > ul > li > a:hover {
-    color:#111;
-    text-decoration: underline;
+    color:#111 !important;
+    text-decoration: underline !important;
 }
+
+/* 추가: 서브 메뉴 스타일 */
+main > aside > ul > li > ul > li {
+    padding-left: 20px !important;
+}
+
+main > aside > ul > li > ul > li > a {
+    color: #555 !important; /* 서브 메뉴 링크 색상 */
+}
+
+main > aside > ul > li > ul > li > a:hover {
+    color: #111 !important;
+    text-decoration: underline !important;
+}
+
 
 /* 메인 컨텐츠 */
 main > section {
