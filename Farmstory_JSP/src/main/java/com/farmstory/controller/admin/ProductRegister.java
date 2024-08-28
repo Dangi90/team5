@@ -4,6 +4,10 @@ import java.io.IOException;
 import com.farmstory.DTO.ProductDTO;
 import com.farmstory.service.ProductService;
 
+import com.farmstory.DTO.ProductDTO;
+import com.farmstory.service.ProductService;
+
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -14,37 +18,45 @@ import com.farmstory.DAO.ProductDAO;
 
 @WebServlet("/admin/productRegister.do")
 public class ProductRegister extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 
-    private static final long serialVersionUID = 1L;
-    
-    // ProductDAO 인스턴스를 생성하고 ProductService에 주입
-    private ProductService productService = new ProductService(new ProductDAO());
+	private ProductService service = ProductService.getInstance();
 
-    @Override
+	  @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/WEB-INF/admin/productRegister.jsp").forward(request, response);
     }
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // 폼에서 전송된 상품 정보를 DTO에 저장
-        ProductDTO product = new ProductDTO();
-        product.setName(request.getParameter("name"));
-        product.setType(request.getParameter("type"));
-        product.setPrice(Integer.parseInt(request.getParameter("price")));
-        product.setPoint(Integer.parseInt(request.getParameter("point")));
-        product.setDiscount(Integer.parseInt(request.getParameter("discount")));
-        product.setDelivery_fee(Integer.parseInt(request.getParameter("delivery_fee")));
-        product.setStack(Integer.parseInt(request.getParameter("stack")));
-        product.setThumb_img(request.getParameter("thumb_img"));
-        product.setInfo_img(request.getParameter("info_img"));
-        product.setExplain_img(request.getParameter("explain_img"));
-        product.setDatetime(request.getParameter("datetime"));
-        
-        // 서비스 클래스를 통해 상품 등록 처리
-        productService.addProduct(product);
-        
-        // 성공적으로 등록된 후 상품 목록 페이지로 리다이렉트
-        response.sendRedirect("/admin/productList.do");
-    }
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String name = req.getParameter("name");
+		String type = req.getParameter("type");
+		String price = req.getParameter("price");
+		String point = req.getParameter("point");
+		String discount = req.getParameter("discount");
+		String delivery_fee = req.getParameter("delivery_fee");
+		String stack = req.getParameter("stack");
+		String thumb_img = req.getParameter("thumb_img");
+		String info_img = req.getParameter("info_img");
+		String explain_img = req.getParameter("explain_img");
+		
+		ProductDTO dto = new ProductDTO();
+		dto.setName(name);
+		dto.setType(type);
+		dto.setPrice(strToNum(price));
+		dto.setPoint(strToNum(point));
+		dto.setDiscount(strToNum(discount));
+		dto.setDelivery_fee(strToNum(delivery_fee));
+		dto.setStack(strToNum(stack));
+		dto.setThumb_img(thumb_img);
+		dto.setInfo_img(info_img);
+		dto.setExplain_img(explain_img);
+		service.addProduct(dto);
+
+		resp.sendRedirect("/admin/productList.do");
+	}
+	
+	private int strToNum(String str) {
+		return Integer.parseInt(str);
+	}
 }
