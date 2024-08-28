@@ -7,11 +7,16 @@ import com.farmstory.DTO.ProductDTO;
 import com.farmstory.Util.DBHelper;
 
 public class ProductDAO extends DBHelper {
+	private static ProductDAO instance = new ProductDAO();
+	public static ProductDAO getInstance() {
+		return instance;
+	}
+	private ProductDAO() {}
 
     // 상품 등록
-    public boolean insertProduct(ProductDTO productDTO) {
-        String sql = "INSERT INTO products (name, type, price, point, discount, delivery_fee, stack, thumb_img, info_img, explain_img, datetime) "
-                   + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    public void insertProduct(ProductDTO productDTO) {
+        String sql = "INSERT INTO product (name, type, price, point, discount, delivery_fee, stack, thumb_img, info_img, explain_img, regdate) "
+                   + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
         try {
             conn = getConnection();
             psmt = conn.prepareStatement(sql);
@@ -26,16 +31,13 @@ public class ProductDAO extends DBHelper {
             psmt.setString(8, productDTO.getThumb_img());
             psmt.setString(9, productDTO.getInfo_img());
             psmt.setString(10, productDTO.getExplain_img());
-            psmt.setString(11, productDTO.getDatetime());
             
-            int result = psmt.executeUpdate();
-            return result > 0;
+            psmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             closeAll(); // 자원 해제
         }
-        return false;
     }
 
     // 상품 업데이트
