@@ -16,7 +16,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import com.farmstory.DAO.ProductDAO;
 
-@WebServlet("/admin/ProductRegister.do")
+@WebServlet("/admin/productRegister.do")
 public class ProductRegister extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
