@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,28 +36,28 @@ pageEncoding="UTF-8"%>
                         <table border="0">                            
                             <tr>
                                 <td>상품명</td>
-                                <td>딸기 500g</td>
+                                <td>${products.name}</td>
                             </tr>
                             <tr>
                                 <td>상품코드</td>
-                                <td>01</td>
+                                <td>${products.no}</td>
                             </tr>
                             <tr>
                                 <td>배송비</td>
-                                <td class="delivery">5,0000원</td>
+                                <td class="delivery">${products.delivery_fee}</td>
                             </tr>
                             <tr>
                                 <td>판매가격</td>
-                                <td>4,000원</td>
+                                <td>${products.price}</td>
                             </tr>
-                            <tr>
-                                <td>구매수량</td>
-                                <td class="count">1개</td>
-                            </tr>
-                            <tr>
-                                <td>합계</td>
-                                <td class="total">4,000원</td>
-                            </tr>
+          					 <tr>
+                            <td>구매수량</td>
+                            <td class="count">${count}</td>
+                      	 	</tr>
+                       		<tr>
+                            <td>합계</td>
+                            <td class="total">${products.price * count}</td>
+                        </tr>
                         </table>
                     </div>
                     <h3>주문정보 입력</h3>
@@ -89,14 +89,11 @@ pageEncoding="UTF-8"%>
                     </div>
 
                     <p>
-                        <a href="#" id="btnBuy"><img src="../images/market_btn_buy.gif" alt="구매하기"></a>
+                        <a href="./cart.do" id="btnBuy"><img src="../images/market_btn_buy.gif" alt="구매하기"></a>
                         <a href="#" id="btnShopping"><img src="../images/market_btn_shopping.gif"></a>
                     </p>
-                    <!-- 내용 끝 -->
-                    
                 </article>
             </section>
-
         </div>
 		<jsp:include page="/WEB-INF/layout/footer.jsp" />
     </div>    
