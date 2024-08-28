@@ -106,7 +106,7 @@
                 <a href="../index.jsp">HOME |</a>
                 <a href="./login.do">로그인 |</a>
                 <a href="./register.do">회원가입 |</a>
-                <a href="../admin/index.do">관리자 |</a>
+                <!-- <a href="../admin/index.do">관리자 |</a>  -->
                 <a href="#">고객센터</a>
             </p>
             <img src="../images/head_txt_img.png" alt="3만원 이상 무료배송"/>
