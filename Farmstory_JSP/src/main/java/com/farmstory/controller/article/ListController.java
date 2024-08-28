@@ -30,7 +30,7 @@ public class ListController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	String group = request.getParameter("group");
         String category = request.getParameter("cate");
-
+        
         if (category == null || group == null || category.isEmpty() || group.isEmpty()) {
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid category or group");
             return;
