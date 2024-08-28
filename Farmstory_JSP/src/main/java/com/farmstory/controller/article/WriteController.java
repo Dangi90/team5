@@ -18,22 +18,22 @@ import org.slf4j.LoggerFactory;
 
 @WebServlet("/article/write.do")
 public class WriteController extends HttpServlet {
-	private ArticleService service = ArticleService.getInstance();
+   private ArticleService service = ArticleService.getInstance();
     private ArticleDAO articleDAO = new ArticleDAO();
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-//    @Override
-//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String group = request.getParameter("group");
-//        String category = request.getParameter("cate");
-//
-//        if (group == null || group.isEmpty() || category == null || category.isEmpty()) {
-//            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid parameters");
-//            return;
-//        }
-//
-//        request.getRequestDispatcher("/article/" + group + "/write.jsp").forward(request, response);
-//    }
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String group = request.getParameter("group");
+        String category = request.getParameter("cate");
+
+        if (group == null || group.isEmpty() || category == null || category.isEmpty()) {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid parameters");
+            return;
+        }
+
+        request.getRequestDispatcher("/WEB-INF/" + group + "/" + category+"/" +"write.jsp").forward(request, response);
+    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -61,3 +61,4 @@ public class WriteController extends HttpServlet {
         response.sendRedirect("list.do?group=" + group + "&cate=" + category);
     }
 }
+/////////컨트롤러

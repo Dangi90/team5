@@ -38,7 +38,7 @@ public class ModifyController extends HttpServlet {
             }
 
             request.setAttribute("article", article);
-            request.getRequestDispatcher("/article/" + group + "/modify.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/" + group + "/" + category+"/" +"modify.jsp").forward(request, response);
 
         } catch (NumberFormatException e) {
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid article ID format");
