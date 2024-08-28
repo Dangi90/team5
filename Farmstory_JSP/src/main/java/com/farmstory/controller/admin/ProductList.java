@@ -13,18 +13,22 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @WebServlet("/admin/productList.do")
 public class ProductList extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     private ProductDAO productDAO = ProductDAO.getInstance();
-
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
+    
     // 상품 리스트를 처리하는 GET 요청
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<ProductDTO> productList = productDAO.getAllProducts();
         request.setAttribute("productList", productList);
-
+        logger.debug("productList : {}",productList);
         // JSP 페이지로 포워딩
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/admin/productList.jsp");
         dispatcher.forward(request, response);
