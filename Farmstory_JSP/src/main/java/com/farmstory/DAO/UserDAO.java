@@ -99,6 +99,7 @@ public class UserDAO extends DBHelper {
 				user.setAddr(rs.getString(8));
 				user.setRegip(rs.getString(9));
 				user.setRegdate(rs.getString(10));
+				user.setIsAdmin(rs.getString(11));
 			}
 			closeAll();
 		}catch (Exception e) {

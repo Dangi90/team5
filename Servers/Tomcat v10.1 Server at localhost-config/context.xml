@@ -122,7 +122,7 @@
         password="1234"
         driverClassName="com.mysql.cj.jdbc.Driver"
         url="jdbc:mysql://127.0.0.1:3306/farm_story"
-     />
+     ></Resource>
     
     
 </Context>

@@ -12,9 +12,16 @@ public class UserDTO {
 	private String addr;
 	private String regip;
 	private String regdate;
+	private int isAdmin;
 	
 	public String getUid() {
 		return uid;
+	}
+	public int getIsAdmin() {
+		return isAdmin;
+	}
+	public void setIsAdmin(int isAdmin) {
+		this.isAdmin = isAdmin;
 	}
 	public void setUid(String uid) {
 		this.uid = uid;
@@ -75,9 +82,13 @@ public class UserDTO {
 	}
 	@Override
 	public String toString() {
-		return "MemberDTO [uid=" + uid + ", pass=" + pass + ", name=" + name + ", nick=" + nick + ", email=" + email
+		return "UserDTO [uid=" + uid + ", pass=" + pass + ", name=" + name + ", nick=" + nick + ", email=" + email
 				+ ", hp=" + hp + ", grade=" + grade + ", addr=" + addr + ", regip=" + regip + ", regdate=" + regdate
-				+ "]";
+				+ ", isAdmin=" + isAdmin + "]";
+	}
+	public void setIsAdmin(String isAdmin) {
+		this.isAdmin = Integer.parseInt(isAdmin);
+		
 	}
 	
 	
