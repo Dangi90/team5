@@ -28,8 +28,8 @@ public enum UserService {
 		// 이메일 기본정보
 		String title = "farmstory 인증번호 입니다.";
 		String content = "<h1>인증코드는 " + code + "입니다.</h1>";
-		String sender = "chhak0503@gmail.com";
-		String appPass = "lrdd yerd ubnr cipi"; // Google 앱 비밀번호
+		String sender = "subinasa231@gmail.com";
+		String appPass = "yrso oezv dnid jttx"; // Google 앱 비밀번호
 		
 		// gmail SMTP 설정
 		Properties props = new Properties();
@@ -51,7 +51,7 @@ public enum UserService {
 		Message message = new MimeMessage(gmailSession);
 		
 		try{
-			message.setFrom(new InternetAddress(sender, "보내는사람", "UTF-8"));
+			message.setFrom(new InternetAddress("subinasa231@gmail.com", "보내는사람", "UTF-8"));
 			message.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
 			message.setSubject(title);
 			message.setContent(content, "text/html;charset=utf-8");

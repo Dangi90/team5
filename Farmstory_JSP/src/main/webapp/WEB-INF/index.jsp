@@ -1,22 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>팜스토리</title>
-<link rel="stylesheet"
-	href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css" />
-<link rel="stylesheet" href="./css/style.css" />
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+	<title>팜스토리</title>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css" />
+	<link rel="stylesheet" href="./css/style.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 <script>
 	$(function() {
 		$('.slider > ul').bxSlider({
@@ -52,9 +46,8 @@
 			</div>
 
 			<div class="quick">
-				<a href="#"><img src="./images/main_banner_sub1_tit.png"
-					alt="오늘의 식단"></a> <a href="#"><img
-					src="./images/main_banner_sub2_tit.png" alt="나도 요리사"></a>
+				<a href="./member/login.do"><img src="./images/main_banner_sub1_tit.png" alt="오늘의 식단"></a> 
+				<a href="#"><img src="./images/main_banner_sub2_tit.png" alt="나도 요리사"></a>
 			</div>
 
 			<div class="latest">

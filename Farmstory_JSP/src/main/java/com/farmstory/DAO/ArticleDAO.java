@@ -44,7 +44,6 @@ public class ArticleDAO extends DBHelper {
 				article.setContent(rs.getString("content"));
 				article.setRegdate(rs.getString("regdate"));
 				
-				article.setViews(rs.getInt("views"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

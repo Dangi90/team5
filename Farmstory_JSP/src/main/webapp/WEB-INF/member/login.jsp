@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -123,21 +122,21 @@ pageEncoding="UTF-8"%>
         <div id="user">
 		      <div class="box">
 		        <main>
-		            <form>
+		            <form action="./login.do" method="post">
 		                <section>
 		                    <div class="section-login">
 		                        <div class="input-container">
 		                            <div>
 		                                <div class="input-group">
 		                                    <img src="../images/login_ico_id.png" alt="아이디 아이콘">
-		                                    <input type="text" placeholder="아이디 입력">
+		                                    <input type="text" name = "uid" placeholder="아이디 입력">
 		                                </div>
 		                                <div class="input-group">
 		                                    <img src="../images/login_ico_pw.png" alt="비밀번호 아이콘">
-		                                    <input type="password" placeholder="비밀번호 입력">
+		                                    <input type="password" name = "pass" placeholder="비밀번호 입력">
 		                                </div>
 		                            </div>
-		                            <input type="button" value="로그인">
+		                            <button type="submit" >로그인</button>
 		                        </div>
 		                    </div>
 		                </section>
