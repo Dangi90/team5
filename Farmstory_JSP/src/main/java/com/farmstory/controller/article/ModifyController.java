@@ -13,7 +13,8 @@ import java.io.IOException;
 @WebServlet("/article/modify.do")
 public class ModifyController extends HttpServlet {
 
-    private ArticleDAO articleDAO = new ArticleDAO();
+	private static final long serialVersionUID = 1L;
+	private ArticleDAO articleDAO = new ArticleDAO();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -181,7 +181,7 @@ window.onload = function(){
 		
 		const code = registerForm.auth.value;
 		
-		fetch('Farmstory_JSP/member/checkUser.do', {
+		fetch('/Farmstory_JSP/member/checkUser.do', {
 				method: 'POST',
 				body: JSON.stringify({"code":code})
 			})
