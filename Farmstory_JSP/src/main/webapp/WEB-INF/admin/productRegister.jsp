@@ -44,16 +44,16 @@ pageEncoding="UTF-8"%>
                         <table border="0">
                             <tr>
                                 <td>상품명</td>
-                                <td><input type="text" name="productName"/></td>
+                                <td><input type="text" name="name"/></td>
                             </tr>
                             <tr>
                                 <td>구분</td>
                                 <td>
                                     <select name="type">
-                                        <option>구분</option>
-                                        <option>과일</option>
-                                        <option>야채</option>
-                                        <option>곡류</option>
+                                        <option >구분</option>
+                                        <option value="fruit">과일</option>
+                                        <option value="vegetable">야채</option>
+                                        <option value="grains">곡류</option>
                                     </select>
                                 </td>
                             </tr>
@@ -64,30 +64,30 @@ pageEncoding="UTF-8"%>
                             <tr>
                                 <td>배송비</td>
                                 <td>
-                                    <label><input type="radio" name="delivery">2,000원</label>                                    
-                                    <label><input type="radio" name="delivery">3,000원</label>
-                                    <label><input type="radio" name="delivery">5,000원</label>
-                                    <label><input type="radio" name="delivery">무료</label>
+                                    <label><input type="radio" name="delivery_fee" value="2000">2,000원</label>                                    
+                                    <label><input type="radio" name="delivery_fee" value="3000">3,000원</label>
+                                    <label><input type="radio" name="delivery_fee" value="5000">5,000원</label>
+                                    <label><input type="radio" name="delivery_fee" value="0">무료</label>
                                 </td>
                             </tr>
                             <tr>
                                 <td>재고</td>
-                                <td><input type="text" name="stock"/></td>
+                                <td><input type="text" name="stack"/></td>
                             </tr>
                             <tr>
                                 <td>상품이미지</td>
                                 <td>
                                     <p>
                                         <span>상품목록 이미지(약 120 x 120)</span>
-                                        <input type="file" name="thumb120"/>
+                                        <input type="file" name="thumb_img"/>
                                     </p>
                                     <p>
                                         <span>기본정보 이미지(약 240 x 240)</span>
-                                        <input type="file" name="thumb240"/>
+                                        <input type="file" name="info_img"/>
                                     </p>
                                     <p>
                                         <span>상품설명 이미지(약 750 x Auto)</span>
-                                        <input type="file" name="thumb750"/>
+                                        <input type="file" name="explain_img"/>
                                     </p>
                                 </td>
                             </tr>
