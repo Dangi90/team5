@@ -15,22 +15,36 @@ pageEncoding="UTF-8"%>
 <body>
     <div id="container">
         <header>
-            <a href="./Farmstory_JSP/index.do" class="logo"><img src="../images/admin_logo.jpg" alt="로고"/></a>
+            <a href="/Farmstory_JSP/index.do" class="logo"><img src="../images/admin_logo.jpg" alt="로고"/></a>
             <p>
-                <a href="/">HOME |</a>
-                <a href="#">로그아웃 |</a>
-                <a href="#">고객센터</a>
+                <a href="/Farmstory_JSP/index.do">HOME |</a>
+                <a href="/Farmstory_JSP/index.do">로그아웃 |</a>
+                <a href="/Farmstory_JSP/community/qna.do">고객센터</a>
             </p>
         </header>
         <main>
             <aside>
-                <h3>주요기능</h3>
-                <ul>
-                    <li><a href="./productList.do">상품관리</a></li>
-                    <li><a href="./orderList.do">주문관리</a></li>
-                    <li><a href="./userList.do">회원관리</a></li>                    
-                </ul>
-            </aside>
+			    <h3>주요기능</h3>
+			    <ul>
+			        <li>상품관리
+			            <ul>
+			                <li><a href="./productList.do">상품목록</a></li>
+			                <li><a href="./productRegister.do">상품등록</a></li>
+			            </ul>
+			        </li>
+			        <li>주문관리
+			            <ul>
+			                <li><a href="./orderList.do">주문목록</a></li>
+			            </ul>
+			        </li>
+			        <li>회원관리
+			            <ul>
+			                <li><a href="./userList.do">회원목록</a></li>
+			            </ul>
+			        </li>                  
+			    </ul>
+			</aside>
+
             <section>
                 <nav>
                     <h3>관리자 메인</h3>
@@ -38,8 +52,8 @@ pageEncoding="UTF-8"%>
 
                 <article>
                     <h3>
-                        <a href="#">상품현황</a>
-                        <a href="#" class="more">+ 더보기</a>
+                        <a href="./productList.do">상품현황</a>
+                        <a href="./productList.do" class="more">+ 더보기</a>
                     </h3>
                     <table border="0">
                         <tr>
@@ -67,8 +81,8 @@ pageEncoding="UTF-8"%>
 
                 <article>
                     <h3>
-                        <a href="#">주문현황</a>
-                        <a href="#" class="more">+ 더보기</a>
+                        <a href="./orderList.do">주문현황</a>
+                        <a href="./orderList.do" class="more">+ 더보기</a>
                     </h3>
                     <table border="0">
                         <tr>
@@ -97,8 +111,8 @@ pageEncoding="UTF-8"%>
                 </article>
                 <article>
                     <h3>
-                        <a href="#">회원현황</a>
-                        <a href="#" class="more">+ 더보기</a>
+                        <a href="./userList.do">회원현황</a>
+                        <a href="./userList.do" class="more">+ 더보기</a>
                     </h3>
                     <table border="0">
                         <tr>

@@ -30,22 +30,35 @@ pageEncoding="UTF-8"%>
 <body>
     <div id="container">
         <header>
-            <a href="./index.html" class="logo"><img src="../images/admin_logo.jpg" alt="로고"/></a>
+            <a href="/Farmstory_JSP/index.do" class="logo"><img src="../images/admin_logo.jpg" alt="로고"/></a>
             <p>
-                <a href="#">HOME |</a>
-                <a href="#">로그아웃 |</a>
-                <a href="#">고객센터</a>
+                <a href="/Farmstory_JSP/index.do">HOME |</a>
+                <a href="/Farmstory_JSP/index.do">로그아웃 |</a>
+                <a href="/Farmstory_JSP/community/qna.do">고객센터</a>
             </p>
         </header>
         <main>
             <aside>
-                <h3>주요기능</h3>
-                <ul>
-                    <li><a href="#">상품관리</a></li>
-                    <li><a href="#">주문관리</a></li>
-                    <li class="on"><a href="#">회원관리</a></li>                    
-                </ul>
-            </aside>
+			    <h3>주요기능</h3>
+			    <ul>
+			        <li>상품관리
+			            <ul>
+			                <li><a href="./productList.do">상품목록</a></li>
+			                <li><a href="./productRegister.do">상품등록</a></li>
+			            </ul>
+			        </li>
+			        <li>주문관리
+			            <ul>
+			                <li><a href="./orderList.do">주문목록</a></li>
+			            </ul>
+			        </li>
+			        <li>회원관리
+			            <ul>
+			                <li><a href="./userList.do">회원목록</a></li>
+			            </ul>
+			        </li>                  
+			    </ul>
+			</aside>
             <section id="orderList">
                 <nav>
                     <h3>회원목록</h3>
@@ -65,63 +78,75 @@ pageEncoding="UTF-8"%>
                             <th>가입일</th>
                             <th>확인</th>
                         </tr>
-                        <tr>
-                            <td><input type="checkbox" name=""/></td>
-                            <td>a101</td>
-                            <td>김유신</td>                            
-                            <td>유신101</td>
-                            <td>yusin101@naver.com</td>
-                            <td>010-1234-1001</td>
-                            <td>
-                                <select name="grade">
-                                    <option>1</option>
-                                    <option selected>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </td>
-                            <td>2023-01-01 13:06:14</td>
-                            <td><a href="#" class="showPopup">[상세확인]</a></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name=""/></td>
-                            <td>a102</td>
-                            <td>김춘추</td>                            
-                            <td>춘추102</td>
-                            <td>chunchu102@naver.com</td>
-                            <td>010-1234-1002</td>
-                            <td>
-                                <select name="grade">
-                                    <option>1</option>
-                                    <option selected>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </td>
-                            <td>2023-01-02 13:06:14</td>
-                            <td><a href="#" class="showPopup">[상세확인]</a></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name=""/></td>
-                            <td>a103</td>
-                            <td>장보고</td>                            
-                            <td>보고103</td>
-                            <td>bogo103@naver.com</td>
-                            <td>010-1234-1003</td>
-                            <td>
-                                <select name="grade">
-                                    <option>1</option>
-                                    <option selected>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </td>
-                            <td>2023-01-03 13:06:14</td>
-                            <td><a href="#" class="showPopup">[상세확인]</a></td>
-                        </tr>
+                        <tbody>
+                            <c:forEach var="user" items="${users}">
+                                <tr>
+                                    <td><input type="checkbox" name="uid" value="${user.uid}"/></td>
+                                    <td>${user.uid}</td>
+                                    <td>${user.name}</td>
+                                    <td>${user.nick}</td>
+                                    <td>${user.email}</td>
+                                    <td>${user.hp}</td>
+                                    <td>
+                                    	<select name="grade" value="${user.grade}">
+	                                    	<option>1</option>
+		                                    <option>2</option>
+		                                    <option>3</option>
+		                                    <option>4</option>
+		                                    <option>5</option>
+                                    	</select>
+                                   	</td>
+                                    <td>${user.regdate}</td>
+                                    <td><a href="#" class="showPopup">[상세확인]</a></td>
+                                </tr>
+                            </c:forEach>
+                        </tbody>
+                            <tbody>
+                            <c:forEach var="user" items="${users}">
+                                <tr>
+                                    <td><input type="checkbox" name="uid" value="${user.uid}"/></td>
+                                    <td>${user.uid}</td>
+                                    <td>${user.name}</td>
+                                    <td>${user.nick}</td>
+                                    <td>${user.email}</td>
+                                    <td>${user.hp}</td>
+                                    <td>
+                                    	<select name="grade" value="${user.grade}">
+	                                    	<option>1</option>
+		                                    <option>2</option>
+		                                    <option>3</option>
+		                                    <option>4</option>
+		                                    <option>5</option>
+                                    	</select>
+                                   	</td>
+                                    <td>${user.regdate}</td>
+                                    <td><a href="#" class="showPopup">[상세확인]</a></td>
+                                </tr>
+                            </c:forEach>
+                        </tbody>
+                        <tbody>
+                            <c:forEach var="user" items="${users}">
+                                <tr>
+                                    <td><input type="checkbox" name="uid" value="${user.uid}"/></td>
+                                    <td>${user.uid}</td>
+                                    <td>${user.name}</td>
+                                    <td>${user.nick}</td>
+                                    <td>${user.email}</td>
+                                    <td>${user.hp}</td>
+                                    <td>
+                                    	<select name="grade" value="${user.grade}">
+	                                    	<option>1</option>
+		                                    <option>2</option>
+		                                    <option>3</option>
+		                                    <option>4</option>
+		                                    <option>5</option>
+                                    	</select>
+                                   	</td>
+                                    <td>${user.regdate}</td>
+                                    <td><a href="#" class="showPopup">[상세확인]</a></td>
+                                </tr>
+                            </c:forEach>
+                        </tbody>
                     </table>
 
                     <p>
@@ -156,48 +181,42 @@ pageEncoding="UTF-8"%>
                 <article>  
                     <h3>기본정보</h3>
                     <table border="0">
+                        
                         <tr>
                             <td>아이디</td>
-                            <td>a101</td>
+                            <td>${user.uid}</td>
                         </tr>
                         <tr>
                             <td>이름</td>
-                            <td>김유신</td>
+                            <td>${user.name}</td>
                         </tr>
                         <tr>
                             <td>별명</td>
-                            <td>유신101</td>
+                            <td>${user.nick}</td>
                         </tr>
                         <tr>
                             <td>이메일</td>
-                            <td>yusin101@naver.com</td>
+                            <td>${user.email}</td>
                         </tr>
                         <tr>
                             <td>휴대폰</td>
-                            <td>010-1234-1001</td>
+                            <td>${user.hp}</td>
                         </tr>
                         <tr>
                             <td>등급</td>
-                            <td>2등급(준회원)</td>
+                            <td>${user.grade}</td>
                         </tr>
                         <tr>
                             <td>주소</td>
-                            <td>
-                                <p>
-                                    부산광역시 부산진구 대연동 120
-                                </p>
-                                <p>
-                                    한빛빌딩 10층
-                                </p>
-                            </td>
+                            <td>${user.addr}</td>
                         </tr>
                         <tr>
                             <td>아이피</td>
-                            <td>192.168.10.112</td>
+                            <td>${user.regip}</td>
                         </tr>
                         <tr>
                             <td>회원가입일</td>
-                            <td>2023-01-01 13:06:14</td>
+                            <td>${user.regdate}</td>
                         </tr>
                     </table>
                 </article>
