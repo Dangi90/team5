@@ -60,7 +60,8 @@ CREATE TABLE Product (
     thumb_img VARCHAR(100) NOT NULL,
     info_img VARCHAR(100) NOT NULL,
     explain_img VARCHAR(100) NOT NULL,
-    regdate DATETIME DEFAULT NOW()
+    regdate DATETIME DEFAULT NOW(),
+    etc TEXT
 );
 
 -- Order 테이블 생성
