@@ -33,7 +33,7 @@ public class ProductService {
 
 	// 상품 조회 (단일)
 	public ProductDTO getProduct(int no) {
-		return productDAO.getProduct(no);
+		return productDAO.getProduct(String.valueOf(no));
 	}
 
     // 상품 조회 (단일)

@@ -53,7 +53,7 @@ public class ProductRegister extends HttpServlet {
 		dto.setExplain_img(explain_img);
 		service.addProduct(dto);
 
-		 response.sendRedirect("/admin/productList.do");
+		resp.sendRedirect("/admin/productList.do");
 	}
 	
 	private int strToNum(String str) {

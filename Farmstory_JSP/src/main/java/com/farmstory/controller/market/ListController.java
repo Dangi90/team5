@@ -17,7 +17,7 @@ import java.util.List;
 public class ListController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
-    private ProductDAO productDAO = new ProductDAO();
+    private ProductDAO productDAO = ProductDAO.getInstance();
 
     // 상품 리스트를 처리하는 GET 요청
     @Override

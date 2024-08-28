@@ -16,7 +16,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/market/view.do")
 public class ViewController extends HttpServlet{
 	private static final long serialVersionUID = 1L;
-	private ProductDAO productDAO = new ProductDAO();
+	private ProductDAO productDAO = ProductDAO.getInstance();
 	
 	
 	@Override

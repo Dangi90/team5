@@ -57,7 +57,7 @@ public class ProductDAO extends DBHelper {
             psmt.setString(8, productDTO.getThumb_img());
             psmt.setString(9, productDTO.getInfo_img());
             psmt.setString(10, productDTO.getExplain_img());
-            psmt.setString(11, productDTO.getDatetime());
+            psmt.setString(11, productDTO.getRegdate());
             psmt.setInt(12, productDTO.getNo());
             
             int result = psmt.executeUpdate();
