@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>팜스토리</title>
@@ -10,10 +9,9 @@ pageEncoding="UTF-8"%>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-    <link rel="stylesheet" href="../css/styleAdmin.css">    
+    <link rel="stylesheet" href="/Farmstory_JSP/css/styleAdmin.css">    
     <script>
         $(function(){
-
             $('.showPopup').click(function(e){
                 e.preventDefault();
                 $('#orderPopup').show();
@@ -22,7 +20,6 @@ pageEncoding="UTF-8"%>
             $('#orderPopup .btnClose').click(function(){
                 $('#orderPopup').hide();
             });
-
         });
     </script>
 </head>
@@ -30,9 +27,9 @@ pageEncoding="UTF-8"%>
 <body>
     <div id="container">
         <header>
-            <a href="./index.html" class="logo"><img src="../images/admin_logo.jpg" alt="로고"/></a>
+            <a href="./index.do" class="logo"><img src="../images/admin_logo.jpg" alt="로고"/></a>
             <p>
-                <a href="#">HOME |</a>
+                <a href="./index.do">HOME |</a>
                 <a href="#">로그아웃 |</a>
                 <a href="#">고객센터</a>
             </p>
@@ -52,7 +49,6 @@ pageEncoding="UTF-8"%>
                 </nav>
 
                 <article>
-
                     <table border="0">
                         <tr>
                             <th><input type="checkbox" name="all"/></th>
@@ -66,18 +62,22 @@ pageEncoding="UTF-8"%>
                             <th>주문일</th>
                             <th>확인</th>
                         </tr>
-                        <tr>
-                            <td><input type="checkbox" name=""/></td>
-                            <td>1001</td>
-                            <td>사과 500g</td>                            
-                            <td>4,000원</td>
-                            <td>2</td>
-                            <td>3,000원</td>
-                            <td>11,000원</td>
-                            <td>김유신</td>
-                            <td>2023-01-01 13:06:14</td>
-                            <td><a href="#" class="showPopup">[상세확인]</a></td>
-                        </tr>
+                        <tbody>
+                            <c:forEach var="order" items="${orders}">
+                                <tr>
+                                    <td><input type="checkbox" name="orderId" value="${order.id}"/></td>
+                                    <td>${order.product_no}</td>
+                                    <td>${order.product_name}</td>
+                                    <td>${order.product_price}원</td>
+                                    <td>${order.count}개</td>
+                                    <td>${order.product_delivery_fee}원</td>
+                                    <td>${order.total_price}원</td>
+                                    <td>${order.receiver}</td>
+                                    <td>${order.order_date}</td>
+                                    <td><a href="#" class="showPopup">[상세확인]</a></td>
+                                </tr>
+                            </c:forEach>
+                        </tbody>
                     </table>
 
                     <p>
@@ -102,7 +102,7 @@ pageEncoding="UTF-8"%>
             </p>
         </footer>
 
-        <div id="orderPopup">
+        <div id="orderPopup" style="display:none;">
             <section>
                 <nav>
                     <h1>상세주문내역</h1>
@@ -113,46 +113,34 @@ pageEncoding="UTF-8"%>
                     <h3>기본정보</h3>
                     <table border="0">
                         <tr>
-                            <td rowspan="7" class="thumb"><img src="../images//sample_item1.jpg" alt="사과 500g"></td>
+                            <td rowspan="7" class="thumb"><img src="../images/sample_item1.jpg" alt="상품 이미지"></td>
                             <td>상품번호</td>
-                            <td>1011</td>
+                            <td>${orderDetail.product_no}</td>
                         </tr>
                         <tr>
                             <td>상품명</td>
-                            <td>사과 500g</td>
+                            <td>${orderDetail.product_name}</td>
                         </tr>
                         <tr>
                             <td>판매가격</td>
-                            <td>4,000원</td>
+                            <td>${orderDetail.product_price}원</td>
                         </tr>
                         <tr>
                             <td>수량</td>
-                            <td>2개</td>
+                            <td>${orderDetail.count}개</td>
                         </tr>
                         <tr>
                             <td>배송비</td>
-                            <td>3,000원</td>
+                            <td>${orderDetail.product_delivery_fee}원</td>
                         </tr>
                         <tr>
                             <td>합계</td>
-                            <td>11,000원</td>
+                            <td>${orderDetail.total_price}원</td>
                         </tr>
                         <tr>
                             <td>주문자</td>
-                            <td>홍길동</td>
+                            <td>${orderDetail.receiver}</td>
                         </tr>                        
-                    </table>
-
-                    <h3>배송지 정보</h3>
-                    <table border="0">
-                        <tr>
-                            <td>받는분</td>
-                            <td>홍길동</td>
-                        </tr>
-                        <tr>
-                            <td>배송지</td>
-                            <td>부산광역시 부산진구 대연동 120 루미너스 10층</td>
-                        </tr>
                     </table>
                 </article>
             </section>
