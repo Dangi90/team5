@@ -14,6 +14,7 @@ public class ProductDTO {
 	private String info_img;
 	private String explain_img;
 	private String regdate;
+	private String etc;
 	public int getNo() {
 		return no;
 	}
@@ -90,11 +91,17 @@ public class ProductDTO {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
+	public String getEtc() {
+		return etc;
+	}
+	public void setEtc(String etc) {
+		this.etc = etc;
+	}
 	@Override
 	public String toString() {
 		return "ProductDTO [no=" + no + ", name=" + name + ", type=" + type + ", price=" + price + ", point=" + point
 				+ ", discount=" + discount + ", delivery_fee=" + delivery_fee + ", stack=" + stack + ", thumb_img="
-				+ thumb_img + ", info_img=" + info_img + ", explain_img=" + explain_img + ", regdate=" + regdate + "]";
+				+ thumb_img + ", info_img=" + info_img + ", explain_img=" + explain_img + ", regdate=" + regdate
+				+ ", etc=" + etc + "]";
 	}
-	
 }

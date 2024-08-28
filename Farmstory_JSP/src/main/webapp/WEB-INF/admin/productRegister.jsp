@@ -40,7 +40,7 @@ pageEncoding="UTF-8"%>
                 </nav>
 
                 <article>
-                    <form action="#" method="post">
+                    <form action="/Farmstory_JSP/admin/productRegister.do" method="post">
                         <table border="0">
                             <tr>
                                 <td>상품명</td>
