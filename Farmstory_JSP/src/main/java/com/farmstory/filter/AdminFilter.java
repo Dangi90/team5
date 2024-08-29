@@ -6,7 +6,6 @@ import com.farmstory.DTO.UserDTO;
 
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
@@ -15,26 +14,35 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebFilter(urlPatterns = {"/article/modify.do", "/article/write.do"})
-public class LoginFilter implements Filter {
+@WebFilter(urlPatterns = {"/admin/*"})
+public class AdminFilter implements Filter {
 
 	@Override
-	public void doFilter(ServletRequest arg0, ServletResponse arg1, FilterChain arg2) throws IOException, ServletException {
-		System.out.println("로그인 필터 실행");
-		
+	public void doFilter(ServletRequest arg0, ServletResponse arg1, FilterChain arg2)
+			throws IOException, ServletException {
+		System.out.println("어드민 필터");
 		// 로그인 여부 확인
 		HttpServletRequest req = (HttpServletRequest) arg0;
 		HttpSession session = req.getSession();
-		
+
 		UserDTO sessUser = (UserDTO) session.getAttribute("sessUser");
 		System.out.println(sessUser);
-		if(sessUser == null) {
+		if (sessUser == null) {
 			// 로그인을 하지 않으면 로그인 페이지로 이동
 			HttpServletResponse resp = (HttpServletResponse) arg1;
 			resp.sendRedirect("/Farmstory_JSP/member/login.do");
-		}else {
-			// 로그인 상태이면 다음 필터 이동(Controller 요청)
-			arg2.doFilter(arg0, arg1);
+		} else {
+			// 관리자가 아니면 메인으로
+			if (sessUser.getIsAdmin() == 0) {
+				HttpServletResponse resp = (HttpServletResponse) arg1;
+				resp.sendRedirect("/Farmstory_JSP/member/login.do");
+			// 관리자면 다음 필터
+			} else if (sessUser.getIsAdmin() == 1) {
+				arg2.doFilter(arg0, arg1);
+			}
+
 		}
+
 	}
+
 }
