@@ -45,7 +45,7 @@ public class LoginController extends HttpServlet {
 	    if (user != null) {
 	        HttpSession session = req.getSession();
 	        session.setAttribute("sessUser", user);
-
+	        
 	        // 관리자가 맞을 경우 -> 관리자 페이지로 리다이렉트
 	        if (user.getIsAdmin() == 1) {
 	            resp.sendRedirect("/Farmstory_JSP/admin/index.do");

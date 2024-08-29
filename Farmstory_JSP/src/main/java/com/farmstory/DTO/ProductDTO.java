@@ -19,14 +19,8 @@ public class ProductDTO {
 	
 	// 추가
 	private String regdate;
-	
-	public String getRegdate() {
-		return regdate;
-	}
-	public void setRegdate(String regdate) {
-		this.regdate = regdate;
-	}
-	
+	private String etc;
+
 	
 	
 	
