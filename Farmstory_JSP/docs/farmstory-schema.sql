@@ -6,7 +6,8 @@ USE farm_story;
 CREATE TABLE Terms (
     term_id INT AUTO_INCREMENT PRIMARY KEY,
     term_content1 TEXT NOT NULL,
-    term_content2 TEXT NOT NULL
+    term_content2 TEXT NOT NULL,
+    FOREIGN KEY (user_uid) REFERENCES User(uid) ON DELETE CASCADE;
 );
 
 -- User 테이블 생성
@@ -63,7 +64,7 @@ CREATE TABLE Product (
     regdate DATETIME DEFAULT NOW(),
     etc TEXT,
     user_uid VARCHAR(50) NOT NULL,
-    FOREIGN KEY (user_uid) REFERENCES User(uid)
+    FOREIGN KEY (user_uid) REFERENCES User(uid) ON DELETE CASCADE
 );
 
 -- Order 테이블 생성
