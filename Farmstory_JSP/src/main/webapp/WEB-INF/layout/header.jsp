@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <header>
-			<a href="./index.do" class="logo"><img src="/Farmstory_JSP/images/logo.png" alt="로고" /></a>
+			<a href="/Farmstory_JSP/index.do" class="logo"><img src="/Farmstory_JSP/images/logo.png" alt="로고" /></a>
 			<p>
 				<a href="./index.do">HOME |</a> 
 				<c:if test="${sessUser != null}">

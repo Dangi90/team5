@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +31,6 @@ pageEncoding="UTF-8"%>
 <body>
     <div id="container">
         <header>
-
             <a href="./index.do" class="logo"><img src="../images/admin_logo.jpg" alt="로고"/></a>
             <p>
                 <a href="../index.do">HOME |</a>
@@ -65,21 +65,21 @@ pageEncoding="UTF-8"%>
                 <nav>
                     <h3>회원목록</h3>
                 </nav>
-
-                <article>
-
+  <article>
                     <table border="0">
-                        <tr>
-                            <th><input type="checkbox" name="all"/></th>
-                            <th>아이디</th>
-                            <th>이름</th>
-                            <th>별명</th>
-                            <th>이메일</th>
-                            <th>휴대폰</th>
-                            <th>등급</th>
-                            <th>가입일</th>
-                            <th>확인</th>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" name="all"/></th>
+                                <th>아이디</th>
+                                <th>이름</th>
+                                <th>별명</th>
+                                <th>이메일</th>
+                                <th>휴대폰</th>
+                                <th>등급</th>
+                                <th>가입일</th>
+                                <th>확인</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <c:forEach var="user" items="${users}">
                                 <tr>
@@ -89,61 +89,7 @@ pageEncoding="UTF-8"%>
                                     <td>${user.nick}</td>
                                     <td>${user.email}</td>
                                     <td>${user.hp}</td>
-                                    <td>
-                                    	<select name="grade" value="${user.grade}">
-	                                    	<option>1</option>
-		                                    <option>2</option>
-		                                    <option>3</option>
-		                                    <option>4</option>
-		                                    <option>5</option>
-                                    	</select>
-                                   	</td>
-                                    <td>${user.regdate}</td>
-                                    <td><a href="#" class="showPopup">[상세확인]</a></td>
-                                </tr>
-                            </c:forEach>
-                        </tbody>
-                            <tbody>
-                            <c:forEach var="user" items="${users}">
-                                <tr>
-                                    <td><input type="checkbox" name="uid" value="${user.uid}"/></td>
-                                    <td>${user.uid}</td>
-                                    <td>${user.name}</td>
-                                    <td>${user.nick}</td>
-                                    <td>${user.email}</td>
-                                    <td>${user.hp}</td>
-                                    <td>
-                                    	<select name="grade" value="${user.grade}">
-	                                    	<option>1</option>
-		                                    <option>2</option>
-		                                    <option>3</option>
-		                                    <option>4</option>
-		                                    <option>5</option>
-                                    	</select>
-                                   	</td>
-                                    <td>${user.regdate}</td>
-                                    <td><a href="#" class="showPopup">[상세확인]</a></td>
-                                </tr>
-                            </c:forEach>
-                        </tbody>
-                        <tbody>
-                            <c:forEach var="user" items="${users}">
-                                <tr>
-                                    <td><input type="checkbox" name="uid" value="${user.uid}"/></td>
-                                    <td>${user.uid}</td>
-                                    <td>${user.name}</td>
-                                    <td>${user.nick}</td>
-                                    <td>${user.email}</td>
-                                    <td>${user.hp}</td>
-                                    <td>
-                                    	<select name="grade" value="${user.grade}">
-	                                    	<option>1</option>
-		                                    <option>2</option>
-		                                    <option>3</option>
-		                                    <option>4</option>
-		                                    <option>5</option>
-                                    	</select>
-                                   	</td>
+                                    <td>${user.grade}</td>
                                     <td>${user.regdate}</td>
                                     <td><a href="#" class="showPopup">[상세확인]</a></td>
                                 </tr>
@@ -152,18 +98,9 @@ pageEncoding="UTF-8"%>
                     </table>
 
                     <p>
-                        <a href="#" class="orderDelete">선택수정</a>                        
+                        <a href="#" class="userDelete">선택삭제</a>
                     </p>
-                    
-                    <p class="paging">
-                        <a href="#"><</a>
-                        <a href="#" class="on">[1]</a>
-                        <a href="#">[2]</a>
-                        <a href="#">[3]</a>
-                        <a href="#">[4]</a>
-                        <a href="#">[5]</a>
-                        <a href="#">></a>
-                    </p>
+                   
                 </article>
             </section>
         </main>
