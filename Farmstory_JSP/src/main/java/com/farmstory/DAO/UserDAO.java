@@ -1,5 +1,6 @@
 package com.farmstory.DAO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -109,7 +110,35 @@ public class UserDAO extends DBHelper {
 		return user;
 	}
 	public List<UserDTO> selectUsers() {
-		return null;
+	    List<UserDTO> users = new ArrayList<>();
+	    
+	    try {
+	        conn = getConnection();
+	        psmt = conn.prepareStatement(SQL.SELECT_USERS);  // SQL.SELECT_USERS 는 아래 SQL 클래스에 정의합니다.
+	        rs = psmt.executeQuery();
+	        
+	        while (rs.next()) {
+	            UserDTO user = new UserDTO();
+	            user.setUid(rs.getString("uid"));
+	            user.setPass(rs.getString("pass"));
+	            user.setName(rs.getString("name"));
+	            user.setNick(rs.getString("nick"));
+	            user.setEmail(rs.getString("email"));
+	            user.setHp(rs.getString("hp"));
+	            user.setGrade(rs.getString("grade"));
+	            user.setAddr(rs.getString("addr"));
+	            user.setRegip(rs.getString("regip"));
+	            user.setRegdate(rs.getString("regDate"));
+	            user.setIsAdmin(rs.getInt("isAdmin"));
+	            
+	            users.add(user);
+	        }
+	        closeAll();
+	    } catch (Exception e) {
+	        logger.error("selectUsers Exception", e);
+	    }
+	    
+	    return users;
 	}
 	public void updateUser(UserDTO dto) {}
 	public void deleteUser(String uid) {}
