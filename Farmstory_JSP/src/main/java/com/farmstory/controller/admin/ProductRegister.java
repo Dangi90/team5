@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.farmstory.DTO.ProductDTO;
+import com.farmstory.DTO.UserDTO;
 import com.farmstory.controller.exception.BadRequestException;
 import com.farmstory.service.ProductService;
 import com.farmstory.DTO.ProductDTO;
@@ -17,6 +18,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import com.farmstory.DAO.ProductDAO;
 
@@ -52,7 +54,11 @@ public class ProductRegister extends HttpServlet {
 	    if (name == null || name.trim().isEmpty() || type == null || type.trim().isEmpty()) {
 	    	throw new BadRequestException("Name과 Type은 필수 입력 항목입니다.");
 	    }
-		
+		HttpSession session = req.getSession();
+		UserDTO user = (UserDTO) session.getAttribute("sessUser");
+		logger.debug("userDto : {}", user);
+		if(user == null)
+			throw new RuntimeException("로그인이 되어있지 않습니다.");
 		
 		dto.setName(name);
 		dto.setType(type);
@@ -65,6 +71,7 @@ public class ProductRegister extends HttpServlet {
 		dto.setInfo_img(info_img);
 		dto.setExplain_img(explain_img);
 		dto.setEtc(etc);
+		dto.setUser_uid(user.getUid());
 
 		logger.debug("productDTO : {}", dto);
 		
