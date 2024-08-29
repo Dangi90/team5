@@ -110,7 +110,7 @@ input[type="button"] {
 				</aside>
 				<article>
 					<nav>
-						<img src="/Farmstory_JSP/images/sub_nav_tit_cate3_story.png"
+						<img src="/Farmstory_JSP/images/sub_nav_tit_cate3_school.png"
 							alt="농작물이야기" />
 						<p>
 							HOME > 농작물이야기 > 귀농학교 > <em>글 수정하기</em>

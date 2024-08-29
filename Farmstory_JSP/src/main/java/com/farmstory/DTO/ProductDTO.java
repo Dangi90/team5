@@ -18,6 +18,7 @@ public class ProductDTO {
 	// 추가
 	private String regdate;
 	private String user_uid;
+
 	
 	
 	public int getNo() {

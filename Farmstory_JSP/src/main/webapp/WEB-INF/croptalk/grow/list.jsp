@@ -161,10 +161,10 @@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
           <article>
             <nav>
               <img
-                src="/Farmstory_JSP/images/sub_nav_tit_cate3_story.png"
+                src="/Farmstory_JSP/images/sub_nav_tit_cate3_grow.png"
                 alt="농작물이야기"
               />
-              <p>HOME > 농작물이야기 > <em>농작물이야기</em></p>
+              <p>HOME > 농작물이야기 > <em>텃밭가꾸기</em></p>
             </nav>
 
             <!-- Total과 게시판 목록 시작 -->
