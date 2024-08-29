@@ -100,25 +100,8 @@
 </head>
 <body>
     <div id="container">
-        <header>
-               <a href="/Farmstory_JSP/index.do" class="logo"><img src="../images/logo.png" alt="로고"/></a>
-            <p>
-                <a href="../index.jsp">HOME |</a>
-                <a href="./login.do">로그인 |</a>
-                <a href="./register.do">회원가입 |</a>
-                <!-- <a href="../admin/index.do">관리자 |</a>  -->
-                <a href="#">고객센터</a>
-            </p>
-            <img src="../images/head_txt_img.png" alt="3만원 이상 무료배송"/>
-            
-            <ul class="gnb">
-                <li><a href="../introduction/hello.do">팜스토리소개</a></li>
-                <li><a href="../market/list.do"><img src="../images/head_menu_badge.png" alt="30%"/>장보기</a></li>
-                <li><a href="../croptalk/story.do">농작물이야기</a></li>
-                <li><a href="../event/info.do">이벤트</a></li>
-                <li><a href="../community/notice.do">커뮤니티</a></li>
-            </ul>
-        </header>
+    <jsp:include page="/WEB-INF/layout/header.jsp" />
+        
         <div id="user">
 		      <div class="box">
 		        <main>
