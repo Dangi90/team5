@@ -8,6 +8,10 @@ INSERT INTO User (uid, pass, name, nick, email, hp, grade, addr, regip, regdate)
 ('user1', SHA2('a123!', 256), '홍길동', 'hong', 'hong@example.com', '01012345678', 'A', '서울시 강남구', '192.168.0.1', NOW()),
 ('user2', SHA2('a123!', 256), '김철수', 'kim', 'kim@example.com', '01087654321', 'B', '부산시 해운대구', '192.168.0.2', NOW());
 
+-- 관리자 데이터 삽입 (uid:admin / pass:admin1234!)
+INSERT INTO `user` (`uid`, `pass`, `name`, `nick`, `email`, `hp`, `grade`, `addr`, `regip`, `regdate`, `isAdmin`) VALUES 
+('admin', SHA2('admin1234!',256), '관리자', '관리자', 'admin@gmail.com', '01012340001', NULL, NULL, '0:0:0:0:0:0:0:1', '2024-08-28 15:14:38', 1);
+
 -- Article 테이블에 임시 데이터 삽입
 INSERT INTO Article (user_uid, title, content, regdate, views, `group`, cate) VALUES
 ('user1', '첫 번째 게시글', '첫 번째 게시글 내용입니다.', NOW(), 10, '공지사항', '공지'),
