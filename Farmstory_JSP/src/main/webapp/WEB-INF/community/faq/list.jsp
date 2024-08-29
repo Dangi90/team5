@@ -4,8 +4,8 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>팜스토리::텃밭가꾸기</title>
-   <link rel="stylesheet" href="/Farmstory_JSP/css/style.css" />
+    <title>팜스토리::자주묻는질문</title>
+    <link rel="stylesheet" href="/Farmstory_JSP/css/style.css"/>
     <style>
     /* 테이블 스타일 */
     table {
@@ -118,26 +118,27 @@
 </head>
 <body>
     <div id="container">
-       <jsp:include page="/WEB-INF/layout/header.jsp" />
+        <jsp:include page="/WEB-INF/layout/header.jsp" />
 
         <div id="sub">
-            <div><img src="/Farmstory_JSP/images/sub_top_tit3.png" alt="CROP TALK"></div>
-            <section class="croptalk">
+            <div><img src="/Farmstory_JSP/images/sub_top_tit5.png" alt="COMMUNITY"></div>
+            <section class="community">
                 <aside>
-                    <img src="/Farmstory_JSP/images/sub_aside_cate3_tit.png" alt="농작물이야기"/>
+                    <img src="/Farmstory_JSP/images/sub_aside_cate5_tit.png" alt="커뮤니티"/>
 
                     <ul class="lnb">
-					    <li><a href="list.jsp?group=${param.group}&cate=list">농작물이야기</a></li>
-					    <li class="on"><a href="grow.jsp?group=${param.group}&cate=list">텃밭가꾸기</a></li>
-					    <li><a href="school.jsp?group=${param.group}&cate=school">귀농학교</a></li>
+    				<li><a href="./notice.do?group=${param.group}&cate=notice">공지사항</a></li>
+    				<li><a href="./menu.do?group=${param.group}&cate=menu">오늘의식단</a></li>
+   					<li><a href="./chef.do?group=${param.group}&cate=chef">나도요리사</a></li>
+    				<li><a href="./qna.do?group=${param.group}&cate=qna">1:1고객문의</a></li>
+  					<li class="on"><a href="./faq.do?group=${param.group}&cate=faq">자주묻는질문</a></li>
 					</ul>
-                    
                 </aside>
                 <article>
                     <nav>
-                        <img src="/Farmstory_JSP/images/sub_nav_tit_cate3_grow.png" alt="텃밭가꾸기"/>
+                        <img src="/Farmstory_JSP/images/sub_nav_tit_cate5_faq.png" alt="자주묻는질문"/>
                         <p>
-                            HOME > 농작물이야기 > <em>텃밭가꾸기</em>
+                            HOME > 커뮤니티 > <em>자주묻는질문</em>
                         </p>
                     </nav>
 
@@ -182,13 +183,14 @@
                             <input type="radio" name="searchOption" value="and" checked> and
                             <input type="radio" name="searchOption" value="or"> or
                         </form>
-                    </div>                
-                    
+                    </div>
                 </article>
             </section>
-        </div>
 
-       <jsp:include page="/WEB-INF/layout/footer.jsp" />
+        </div>
+        
+        
+        <jsp:include page="/WEB-INF/layout/footer.jsp" />
     </div>    
 </body>
 </html>
