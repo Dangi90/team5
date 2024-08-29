@@ -20,7 +20,8 @@ CREATE TABLE User (
     grade VARCHAR(10),
     addr VARCHAR(100),
     regip VARCHAR(20),
-    regdate DATETIME DEFAULT NOW()
+    regdate DATETIME DEFAULT NOW(),
+    isAdmin INT DEFAULT 0
 );
 
 -- Article 테이블 생성
