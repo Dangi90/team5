@@ -2,6 +2,7 @@ package com.farmstory.controller.admin;
 
 import com.farmstory.DAO.ProductDAO;
 import com.farmstory.DTO.ProductDTO;
+import com.farmstory.DTO.UserDTO;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -17,62 +18,24 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @WebServlet("/admin/productList.do")
-public class ProductList extends HttpServlet {
+public class ProductList extends HttpServlet{
+	private static final long serialVersionUID = 1L;
 
-    private static final long serialVersionUID = 1L;
-    private ProductDAO productDAO = ProductDAO.getInstance();
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
-    
-    // 상품 리스트를 처리하는 GET 요청
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<ProductDTO> productList = productDAO.getAllProducts();
-        request.setAttribute("productList", productList);
-        logger.debug("productList : {}",productList);
-        // JSP 페이지로 포워딩
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/admin/productList.jsp");
-        dispatcher.forward(request, response);
-    }
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	    // ProductDAO의 인스턴스 얻기
+	    ProductDAO dao = ProductDAO.getInstance();
+	    
+	    // Product 목록 가져오기 (ProductDTO 리스트)
+	    List<ProductDTO> products = dao.selectProducts();
+	    
+	    // JSP에 Product 목록 전달
+	    req.setAttribute("products", products);
+	    
+	    // JSP로 포워딩
+	    RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/admin/productList.jsp");
+	    dispatcher.forward(req, resp);
+	}
 
-    // 상품 추가를 처리하는 POST 요청
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // POST 요청 처리는 주로 상품 추가, 수정, 삭제 등을 담당합니다.
-        String action = request.getParameter("action");
-
-        if ("add".equals(action)) {
-            ProductDTO productDTO = new ProductDTO();
-            productDTO.setName(request.getParameter("name"));
-            productDTO.setType(request.getParameter("type"));
-            productDTO.setPrice(Integer.parseInt(request.getParameter("price")));
-            productDTO.setDelivery_fee(Integer.parseInt(request.getParameter("delivery_fee")));
-            productDTO.setStack(Integer.parseInt(request.getParameter("stack")));
-            productDTO.setThumb_img(request.getParameter("thumb_img"));
-            productDTO.setInfo_img(request.getParameter("info_img"));
-            productDTO.setExplain_img(request.getParameter("explain_img"));
-
-            productDAO.insertProduct(productDTO);
-            response.sendRedirect("productList.do");
-
-        } else if ("delete".equals(action)) {
-            int no = Integer.parseInt(request.getParameter("no"));
-            productDAO.deleteProduct(no);
-            response.sendRedirect("productList.do");
-
-        } else if ("update".equals(action)) {
-            ProductDTO productDTO = new ProductDTO();
-            productDTO.setNo(Integer.parseInt(request.getParameter("no")));
-            productDTO.setName(request.getParameter("name"));
-            productDTO.setType(request.getParameter("type"));
-            productDTO.setPrice(Integer.parseInt(request.getParameter("price")));
-            productDTO.setDelivery_fee(Integer.parseInt(request.getParameter("delivery_fee")));
-            productDTO.setStack(Integer.parseInt(request.getParameter("stack")));
-            productDTO.setThumb_img(request.getParameter("thumb_img"));
-            productDTO.setInfo_img(request.getParameter("info_img"));
-            productDTO.setExplain_img(request.getParameter("explain_img"));
-
-            productDAO.updateProduct(productDTO);
-            response.sendRedirect("productList.do");
-        }
-    }
 }

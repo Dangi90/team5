@@ -3,14 +3,22 @@ package com.farmstory.DAO;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.farmstory.DTO.ProductDTO;
+import com.farmstory.DTO.UserDTO;
 import com.farmstory.Util.DBHelper;
+import com.farmstory.Util.SQL;
 
 public class ProductDAO extends DBHelper {
 	private static ProductDAO instance = new ProductDAO();
 	public static ProductDAO getInstance() {
 		return instance;
 	}
+	
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	
 	public ProductDAO() {}
 
     // 상품 등록
@@ -155,5 +163,40 @@ public class ProductDAO extends DBHelper {
 	        }
 	        return productList;
     }
+	    
+	    public List<ProductDTO> selectProducts() {
+		    List<ProductDTO> products = new ArrayList<>();
+		    
+		    try {
+		        conn = getConnection();
+		        psmt = conn.prepareStatement(SQL.SELECT_PRODUCTS);  // SQL.SELECT_USERS 는 아래 SQL 클래스에 정의합니다.
+		        rs = psmt.executeQuery();
+		        
+		        while (rs.next()) {
+		            ProductDTO product = new ProductDTO();
+		            product.setNo(rs.getInt("no"));
+		            product.setName(rs.getString("name"));
+		            product.setType(rs.getString("type"));
+		            product.setPrice(rs.getInt("price"));
+		            product.setPoint(rs.getInt("point"));
+		            product.setDiscount(rs.getInt("discount"));
+		            product.setDelivery_fee(rs.getInt("delivery_fee"));
+		            product.setStack(rs.getInt("stack"));
+		            product.setThumb_img(rs.getString("thumb_img"));
+		            product.setInfo_img(rs.getString("info_img"));
+		            product.setExplain_img(rs.getString("explain_img"));
+		            product.setRegdate(rs.getString("regdate"));
+		            product.setEtc(rs.getString("etc"));
+		            product.setUser_uid(rs.getString("user_uid"));
+		            
+		            products.add(product);
+		        }
+		        closeAll();
+		    } catch (Exception e) {
+		        logger.error("selectProducts Exception", e);
+		    }
+		    
+		    return products;
+		}
 
 }

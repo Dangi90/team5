@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -32,8 +33,7 @@
                 <a href="../index.do">HOME |</a>
                 <a href="./index.do">관리페이지 |</a>
                 <a href="../member/logout.do">로그아웃 |</a>
-                <a href="../community/qna.do">고객센터</a>
-
+            
             </p>
         </header>
         <main>
@@ -64,7 +64,7 @@
                 </nav>
 
                 <article>
-                    <table border="0">
+                  <form id="orderForm" action="deleteOrder.do" method="post">
                         <tr>
                             <th><input type="checkbox" name="all"/></th>
                             <th>주문번호</th>
@@ -80,7 +80,7 @@
                         <tbody>
                             <c:forEach var="order" items="${orders}">
                                 <tr>
-                                    <td><input type="checkbox" name="user_id" value="${order.user_id}"/></td>
+                                    <td><input type="checkbox" name="uid" value="${order.user_id}"/></td>
                                     <td>${order.product_no}</td>
                                     <td>${order.product_name}</td>
                                     <td>${order.product_price}원</td>
@@ -96,7 +96,7 @@
                     </table>
 
                     <p>
-                        <a href="./orderList.do" class="orderDelete">선택삭제</a>                        
+                        <button type="submit" class="userDelete">선택삭제</button>                       
                     </p>
                   
                 </article>
