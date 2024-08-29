@@ -138,21 +138,21 @@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
             />
 
             <ul class="lnb">
-              <li>
+              <li class="on">
                 <a
-                  href="/Farmstory_JSP/article/list.do?group=${param.group}&cate=${param.cate}"
+                  href="/Farmstory_JSP/article/list.do?group=${param.group}&cate=story"
                   >농작물이야기</a
                 >
               </li>
               <li>
                 <a
-                  href="/Farmstory_JSP/article/list.do?group=${param.group}&cate=grow${param.cate}"
+                  href="/Farmstory_JSP/article/list.do?group=${param.group}&cate=grow"
                   >텃밭가꾸기</a
                 >
               </li>
               <li>
                 <a
-                  href="/Farmstory_JSP/article/list.do?group=${param.group}&cate=school${param.cate}"
+                  href="/Farmstory_JSP/article/list.do?group=${param.group}&cate=school"
                   >귀농학교</a
                 >
               </li>

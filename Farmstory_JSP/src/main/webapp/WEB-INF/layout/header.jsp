@@ -4,13 +4,13 @@
 <header>
 			<a href="/Farmstory_JSP/index.do" class="logo"><img src="/Farmstory_JSP/images/logo.png" alt="로고" /></a>
 			<p>
-				<a href="./index.do">HOME |</a> 
+				<a href="/Farmstory_JSP/index.do">HOME |</a> 
 				<c:if test="${sessUser != null}">
-					<a href="./member/logout.do">로그아웃 |</a> 
+					<a href="/Farmstory_JSP/member/logout.do">로그아웃 |</a> 
 				</c:if>
 				<c:if test="${sessUser == null}">
-					<a href="./member/login.do">로그인 |</a> 
-					<a href="./member/register.do">회원가입 |</a> 
+					<a href="/Farmstory_JSP/member/login.do">로그인 |</a> 
+					<a href="/Farmstory_JSP/member/register.do">회원가입 |</a> 
 				</c:if>
 				<!--  <a href="./admin/index.do">관리자 |</a>  -->
 				<a href="#">고객센터</a>

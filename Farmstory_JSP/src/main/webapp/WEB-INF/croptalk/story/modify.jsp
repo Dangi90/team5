@@ -95,14 +95,32 @@
             <div><img src="/Farmstory_JSP/images/sub_top_tit3.png" alt="CROP TALK"></div>
             <section class="croptalk">
                 <aside>
-                    <img src="/Farmstory_JSP/images/sub_aside_cate3_tit.png" alt="농작물이야기"/>
+            <img
+              src="/Farmstory_JSP/images/sub_aside_cate3_tit.png"
+              alt="농작물이야기"
+            />
 
-                    <ul class="lnb">
-                        <li class="on"><a href="list.jsp?group=${param.group}&cate=${param.cate}">농작물이야기</a></li>
-                        <li><a href="/Farmstory_JSP/article/list.do?group=${param.group}&cate=grow">텃밭가꾸기</a></li>
-                        <li><a href="/Farmstory_JSP/article/list.do?group=${param.group}&cate=school">귀농학교</a></li>
-                    </ul>
-                </aside>
+            <ul class="lnb">
+              <li class="on">
+                <a
+                  href="/Farmstory_JSP/article/list.do?group=${param.group}&cate=story"
+                  >농작물이야기</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/Farmstory_JSP/article/list.do?group=${param.group}&cate=grow"
+                  >텃밭가꾸기</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/Farmstory_JSP/article/list.do?group=${param.group}&cate=school"
+                  >귀농학교</a
+                >
+              </li>
+            </ul>
+          </aside>
                 <article>
                     <nav>
                         <img src="/Farmstory_JSP/images/sub_nav_tit_cate3_story.png" alt="농작물이야기"/>
