@@ -11,7 +11,7 @@ public class ProductDAO extends DBHelper {
 	public static ProductDAO getInstance() {
 		return instance;
 	}
-	private ProductDAO() {}
+	public ProductDAO() {}
 
     // 상품 등록
     public void insertProduct(ProductDTO productDTO) {
