@@ -22,7 +22,7 @@ public class OrderDAO extends DBHelper {
     // 상품 등록
 	public void insertOrder(OrderDTO OrderDTO) {
 	    String sql = "INSERT INTO `Order` "
-	    		+ "set product_no = ?, product_name = ?, product_price = ?, count = ?, product_delivery_fee = ?, total_price = ?, user_id = ?, hp = ?, receiver = ?, receive_addr = ?";
+	    		+ "set product_no = ?, product_name = ?, product_price = ?, count = ?, product_delivery_fee = ?, total_price = ?, user_id = ?, receiver = ?, receive_addr = ?";
 	    try {
 	        conn = getConnection();
 	        psmt = conn.prepareStatement(sql);
@@ -34,9 +34,8 @@ public class OrderDAO extends DBHelper {
 	        psmt.setInt(5, OrderDTO.getProduct_delivery_fee());
 	        psmt.setInt(6, OrderDTO.getTotal_price());
 	        psmt.setString(7, OrderDTO.getUser_id());
-	        psmt.setString(8, OrderDTO.getHp());
-	        psmt.setString(9, OrderDTO.getReceiver());
-	        psmt.setString(10, OrderDTO.getReceive_addr());
+	        psmt.setString(8, OrderDTO.getReceiver());
+	        psmt.setString(9, OrderDTO.getReceive_addr());
 	        
 	        psmt.executeUpdate();
 	    } catch (Exception e) {
@@ -163,7 +162,7 @@ public class OrderDAO extends DBHelper {
 	    //cart 전체 조회
 	    public List<OrderDTO> selectCartOrders() {
 	        List<OrderDTO> OrderList = new ArrayList<>();
-	        String sql = "SELECT a.*, b.`name`, c.`type`, c.`thumb_img` FROM `Order` AS a "
+	        String sql = "SELECT a.*, b.`name`, b.`hp`, c.`type`, c.`thumb_img` FROM `Order` AS a "
 	        			+ "JOIN `User` AS b "
 	        			+ "ON a.`user_id` = b.`uid` "
 	        			+ "JOIN `Product` AS c "
@@ -196,6 +195,7 @@ public class OrderDAO extends DBHelper {
 	            }
 	        } catch (Exception e) {
 	        	logger.debug(e.getMessage());
+	        	logger.error("error",e);
 	        } finally {
 	            closeAll();
 	        }
