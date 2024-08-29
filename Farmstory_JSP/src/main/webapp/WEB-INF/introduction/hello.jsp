@@ -9,26 +9,8 @@ pageEncoding="UTF-8"%>
 </head>
 <body>
     <div id="container">
-        <header>
-            <a href="../index.jsp" class="logo"><img src="../images/logo.png" alt="로고"/></a>
-             <p>
-                <a href="../index.jsp">HOME |</a>
-                <a href="/Farmstory_JSP/member/login.do">로그인 |</a>
-                <a href="/Farmstory_JSP/member/register.do">회원가입 |</a>
-                <a href="./admin/index.do">관리자 |</a>
-                <a href="#">고객센터</a>
-            </p>
-            <img src="../images/head_txt_img.png" alt="3만원 이상 무료배송"/>
-            
-            <ul class="gnb">
-                <li><a href="/Farmstory_JSP/introduction/hello.do">팜스토리소개</a></li>
-                <li><a href="/Farmstory_JSP/market/list.do"><img src="../images/head_menu_badge.png" alt="30%"/>장보기</a></li>
-                <li><a href="/Farmstory_JSP/croptalk/story.do">농작물이야기</a></li>
-                <li><a href="/Farmstory_JSP/event/info.do">이벤트</a></li>
-                <li><a href="/Farmstory_JSP/community/notice.do">커뮤니티</a></li>
-           	</ul>
-        </header>
-
+        <jsp:include page="/WEB-INF/layout/header.jsp" />
+        
         <div id="sub">
             <div><img src="../images/sub_top_tit1.png" alt="INTRODUCTION"></div>
             <section class="introduction">
