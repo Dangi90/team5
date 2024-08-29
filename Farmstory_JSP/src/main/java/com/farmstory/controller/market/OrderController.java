@@ -21,9 +21,11 @@ import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/market/order.do")
 public class OrderController extends HttpServlet {
-    private static final long serialVersionUID = 1L; 
-    private ProductDAO productDAO = new ProductDAO();
-    private Logger logger = LoggerFactory.getLogger(this.getClass()); 
+
+    private static final long serialVersionUID = 1L;
+    private ProductDAO productDAO = ProductDAO.getInstance();
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
+
     
     private OrderService service = OrderService.getInstance();
     

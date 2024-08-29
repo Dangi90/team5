@@ -15,8 +15,8 @@ public class ProductDAO extends DBHelper {
 
     // 상품 등록
     public void insertProduct(ProductDTO productDTO) {
-        String sql = "INSERT INTO product (name, type, price, point, discount, delivery_fee, stack, thumb_img, info_img, explain_img, regdate) "
-                   + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
+        String sql = "INSERT INTO product (name, type, price, point, discount, delivery_fee, stack, thumb_img, info_img, explain_img, regdate, user_uid) "
+                   + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(),?)";
         try {
             conn = getConnection();
             psmt = conn.prepareStatement(sql);
@@ -31,6 +31,7 @@ public class ProductDAO extends DBHelper {
             psmt.setString(8, productDTO.getThumb_img());
             psmt.setString(9, productDTO.getInfo_img());
             psmt.setString(10, productDTO.getExplain_img());
+            psmt.setString(11, productDTO.getUser_uid());
             
             psmt.executeUpdate();
         } catch (Exception e) {

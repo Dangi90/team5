@@ -1,0 +1,119 @@
+* [33m37539c3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m 에러페이지
+* [33mf4d5774[m product register api 주소 수정
+* [33m388db98[m 통합 후 에러난 부분 수정
+* [33m534b0eb[m product 충돌 수정
+* [33m16065b5[m market
+[31m|[m * [33m79a3346[m[33m ([m[1;32mfeature/search[m[33m)[m 검색
+[31m|[m [32m|[m * [33mee6de02[m[33m ([m[1;31morigin/subin[m[33m)[m market
+[31m|[m [32m|[m[31m/[m  
+[31m|[m[31m/[m[32m|[m   
+* [32m|[m [33m0da54f4[m admin jsp 충돌 해결
+[33m|[m [32m|[m * [33mceea1a1[m[33m ([m[1;31morigin/sohui[m[33m)[m admin jsp 충돌 해결
+[33m|[m [32m|[m[33m/[m  
+[33m|[m[33m/[m[32m|[m   
+* [32m|[m [33m1a1858c[m admin 정리
+[32m|[m[32m/[m  
+* [33m7a53140[m login-update
+* [33m8bd2dd0[m git ignore 수정
+* [33md342686[m croptab > story페이지 추가
+* [33mc3940b6[m article 생성 리스트 가져오기, 생성 완료
+* [33m16019ef[m article 테이블에 group추가
+* [33m2ff6d7c[m 한글 깨짐 수정
+*   [33m6151905[m Merge pull request #21 from Dangi90/joonwoo
+[35m|[m[36m\[m  
+[35m|[m * [33mb460c7e[m 마켓 멤버 jsp변환
+* [36m|[m   [33ma0e6eb0[m Merge pull request #22 from Dangi90/subin
+[1;31m|[m[1;32m\[m [36m\[m  
+[1;31m|[m * [36m|[m [33m69a58ab[m controller update
+[1;31m|[m * [36m|[m   [33me929c7f[m Merge branch 'main' of https://github.com/Dangi90/team5 into subin
+[1;31m|[m [1;33m|[m[1;31m\[m [36m\[m  
+[1;31m|[m [1;33m|[m[1;31m/[m [36m/[m  
+[1;31m|[m[1;31m/[m[1;33m|[m [36m|[m   
+* [1;33m|[m [36m|[m [33m01e063b[m 마켓 멤버 jsp변환
+[1;34m|[m * [36m|[m   [33mab2e3ad[m Merge branch 'main' of https://github.com/Dangi90/team5 into subin
+[1;34m|[m [1;35m|[m[1;34m\[m [36m\[m  
+[1;34m|[m [1;35m|[m[1;34m/[m [36m/[m  
+[1;34m|[m[1;34m/[m[1;35m|[m [36m|[m   
+* [1;35m|[m [36m|[m [33me6fd8ef[m jsp update_subin
+[1;36m|[m * [36m|[m [33m01d2595[m jsp update_subin
+[1;36m|[m[1;36m/[m [36m/[m  
+* [36m|[m [33m535198f[m html -> jsp 변환
+* [36m|[m [33m6fa86ae[m 2차충돌해결
+* [36m|[m [33m59e82b3[m Update croptalk
+* [36m|[m [33ma4d2cdd[m termsCOntroller 충돌 해결
+* [36m|[m [33m552cf01[m Merge pull request #15 from Dangi90/joonwoo
+[31m|[m[36m\[m[36m|[m 
+[31m|[m * [33mfa207a9[m adminController
+* [32m|[m [33m9d24b36[m 필요없는 article 컨트롤러 제거
+* [32m|[m [33m34023ba[m hp 길이 13으로 수정
+* [32m|[m [33m4686adc[m layout 생성 (header, footer)
+* [32m|[m [33mf79f67a[m Merge pull request #14 from Dangi90/joonwoo
+[33m|[m[32m\[m[32m|[m 
+[33m|[m * [33m0cacb72[m insert dummy sql
+[33m|[m[33m/[m  
+[33m|[m * [33m50ef85f[m[33m ([m[1;31morigin/kl[m[33m)[m Update croptalk
+[33m|[m [35m|[m * [33mb462712[m[33m ([m[1;31morigin/feature-branch[m[33m)[m 한거없음 오후에열심히하겠음
+[33m|[m [35m|[m[33m/[m  
+[33m|[m[33m/[m[35m|[m   
+* [35m|[m   [33m035086c[m Merge pull request #12 from Dangi90/feature/member-service
+[1;31m|[m[1;32m\[m [35m\[m  
+[1;31m|[m * [35m|[m [33ma0c1cb8[m 회원 관리 서비스 완료
+[1;31m|[m[1;31m/[m [35m/[m  
+* [35m|[m [33m3b5034c[m 회원가입 기능 완료
+* [35m|[m [33mf110d82[m 컨트롤러 member 폴더 추가
+[35m|[m[35m/[m  
+*   [33m589c794[m Merge branch 'main' of https://github.com/Dangi90/team5
+[1;33m|[m[1;34m\[m  
+[1;33m|[m *   [33mdb4cf24[m Merge pull request #9 from Dangi90/subin
+[1;33m|[m [1;35m|[m[1;36m\[m  
+[1;33m|[m [1;35m|[m * [33m76aae5b[m 2024-08-26 subin <a> link update
+* [1;35m|[m [1;36m|[m [33m459d543[m login
+[1;35m|[m[1;35m/[m [1;36m/[m  
+* [1;36m|[m   [33mb0cb905[m Merge branch 'main' of https://github.com/Dangi90/team5
+[31m|[m[32m\[m [1;36m\[m  
+[31m|[m * [1;36m|[m [33me4f67f8[m Merge pull request #8 from Dangi90/subin
+[31m|[m [33m|[m[1;36m\[m[1;36m|[m 
+[31m|[m [33m|[m * [33md225f7f[m a link subin
+[31m|[m [33m|[m[33m/[m  
+[31m|[m * [33m98970b0[m 컨트롤러 생성
+[31m|[m * [33m3ad641b[m erd terms 수정
+[31m|[m *   [33m4820fee[m Merge pull request #7 from Dangi90/subin
+[31m|[m [35m|[m[36m\[m  
+[31m|[m [35m|[m * [33mabe2961[m Server Upload
+[31m|[m * [36m|[m [33m18d5f44[m Merge pull request #6 from Dangi90/subin
+[31m|[m [1;31m|[m[36m\[m[36m|[m 
+[31m|[m [1;31m|[m * [33m0074549[m update subin
+[31m|[m * [1;32m|[m [33mf4271c9[m erd articlefile 추가
+[31m|[m [1;32m|[m[1;32m/[m  
+* [1;32m/[m [33m97755f4[m 보드
+[1;32m|[m[1;32m/[m  
+* [33macd5ccb[m erd 추가
+*   [33m1297a18[m Merge pull request #5 from Dangi90/subin
+[1;33m|[m[1;34m\[m  
+[1;33m|[m * [33mdc3505b[m JSP수정
+* [1;34m|[m [33ma38d7a1[m Merge pull request #4 from Dangi90/subin
+[1;35m|[m[1;34m\[m[1;34m|[m 
+[1;35m|[m * [33mc6ea11e[m 2024-08-26
+[1;35m|[m[1;35m/[m  
+* [33m2b21bc3[m community 수정
+* [33mfb348fe[m cart수정
+* [33m6aa80ae[m FarmStory
+* [33m14f3f93[m FarmStory 추가
+*   [33m6ace3b1[m Merge pull request #3 from Dangi90/sohuigim
+[31m|[m[32m\[m  
+[31m|[m * [33m52a5611[m[33m ([m[1;31morigin/sohuigim[m[33m)[m sohuigim
+* [32m|[m   [33m53fd6ca[m Merge pull request #2 from Dangi90/kyunglim
+[33m|[m[34m\[m [32m\[m  
+[33m|[m * [32m|[m [33m8d0d856[m final
+[33m|[m [32m|[m[32m/[m  
+* [32m|[m   [33m6adda1a[m Merge pull request #1 from Dangi90/joonwoo
+[32m|[m[36m\[m [32m\[m  
+[32m|[m [36m|[m[32m/[m  
+[32m|[m[32m/[m[36m|[m   
+[32m|[m * [33mac8351c[m 5
+[32m|[m * [33ma087a71[m test
+* [36m|[m [33m761b05a[m test
+* [36m|[m [33m06bbd75[m Update README.md
+[36m|[m[36m/[m  
+* [33md038968[m final_1
+* [33m47af5aa[m first commit
