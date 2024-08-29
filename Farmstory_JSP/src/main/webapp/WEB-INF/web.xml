@@ -38,4 +38,10 @@
     <location>/error/400error.jsp</location>
   </error-page>
 
+	<error-page>
+	    <exception-type>com.farmstory.controller.exception.BadRequestException</exception-type>
+	    <location>/error/400error.jsp</location>
+	</error-page>
+
+
 </web-app>
