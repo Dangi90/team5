@@ -19,7 +19,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@WebServlet("/article/list.do?group=aaa&cate=bbb")
+@WebServlet("/article/list.do")
 public class ListController extends HttpServlet {
 
 	private ArticleDAO articleDAO = new ArticleDAO();
@@ -31,7 +31,6 @@ public class ListController extends HttpServlet {
 			throws ServletException, IOException {
 		String group = request.getParameter("group");
 		String category = request.getParameter("cate");
-
 		if (category == null || group == null || category.isEmpty() || group.isEmpty()) {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid category or group");
 			return;

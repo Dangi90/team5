@@ -18,10 +18,10 @@
 			<img src="/Farmstory_JSP/images/head_txt_img.png" alt="3만원 이상 무료배송" />
 
 			<ul class="gnb">
-				<li><a href="./introduction/hello.do">팜스토리소개</a></li>
-				<li><a href="./market/list.do"><img src="/Farmstory_JSP/images/head_menu_badge.png" alt="30%" />장보기</a></li>
+				<li><a href="/Farmstory_JSP/introduction/hello.do">팜스토리소개</a></li>
+				<li><a href="/Farmstory_JSP/market/list.do"><img src="/Farmstory_JSP/images/head_menu_badge.png" alt="30%" />장보기</a></li>
 				<li><a href="/Farmstory_JSP/article/list.do?group=croptalk&cate=story">농작물이야기</a></li>
-				<li><a href="/farmstory_JSP/article/list.do?group=event&cate=info">이벤트</a></li>
-				<li><a href="/farmstory_JSP/article/list.do?group=community&cate=notic"">커뮤니티</a></li>
+				<li><a href="/Farmstory_JSP/article/list.do?group=event&cate=info">이벤트</a></li>
+				<li><a href="/Farmstory_JSP/article/list.do?group=community&cate=notice">커뮤니티</a></li>
 			</ul>
 		</header>
