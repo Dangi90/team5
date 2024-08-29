@@ -62,6 +62,7 @@ pageEncoding="UTF-8"%>
   </head>
   <body>
     <div id="container">
+
       <jsp:include page="/WEB-INF/layout/header.jsp" />
 
       <div id="user">
@@ -189,6 +190,7 @@ pageEncoding="UTF-8"%>
             <a href="./login.do" class="btnCancel">취소</a>
             <input type="submit" class="btnSubmit" value="회원가입" />
           </div>
+
         </form>
       </div>
       <footer>

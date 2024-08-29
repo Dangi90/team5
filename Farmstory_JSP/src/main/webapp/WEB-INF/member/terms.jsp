@@ -33,6 +33,7 @@ pageEncoding="UTF-8"%>
   </head>
   <body>
     <div id="container">
+
       <jsp:include page="/WEB-INF/layout/header.jsp" />
 
       <main>
@@ -85,6 +86,7 @@ pageEncoding="UTF-8"%>
           <em>Copyright(C)홍길동 All rights reserved.</em>
         </p>
       </footer>
+
     </div>
   </body>
 </html>

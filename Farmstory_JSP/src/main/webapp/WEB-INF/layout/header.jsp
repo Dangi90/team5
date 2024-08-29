@@ -6,14 +6,17 @@
 			<p>
 				<a href="/Farmstory_JSP/index.do">HOME |</a> 
 				<c:if test="${sessUser != null}">
-					<a href="/Farmstory_JSP/member/logout.do">로그아웃 |</a> 
+					<a href="/Farmstory_JSP/member/logout.do">로그아웃 |</a>
+					<c:if test="${sessUser.isAdmin == 1}">
+						<a href="./admin/index.do">관리자 |</a>
+					</c:if> 
 				</c:if>
 				<c:if test="${sessUser == null}">
 					<a href="/Farmstory_JSP/member/login.do">로그인 |</a> 
 					<a href="/Farmstory_JSP/member/register.do">회원가입 |</a> 
 				</c:if>
-				<!--  <a href="./admin/index.do">관리자 |</a>  -->
-				<a href="#">고객센터</a>
+				
+				<!--  <a href="#">고객센터</a>  -->
 			</p>
 			<img src="/Farmstory_JSP/images/head_txt_img.png" alt="3만원 이상 무료배송" />
 

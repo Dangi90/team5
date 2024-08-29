@@ -20,8 +20,7 @@ pageEncoding="UTF-8"%>
                 <a href="../index.do">HOME |</a>
                 <a href="./index.do">관리페이지 |</a>
                 <a href="../member/logout.do">로그아웃 |</a>
-
-                <a href="../community/qna.do">고객센터</a>
+              
             </p>
         </header>
         <main>

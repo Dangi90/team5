@@ -101,6 +101,7 @@ pageEncoding="UTF-8"%>
   </head>
   <body>
     <div id="container">
+
       <jsp:include page="/WEB-INF/layout/header.jsp" />
 
       <div id="user">
