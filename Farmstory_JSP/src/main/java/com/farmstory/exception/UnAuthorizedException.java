@@ -1,24 +1,24 @@
-package com.farmstory.controller.exception;
+package com.farmstory.exception;
 
-public class BadRequestException extends RuntimeException {
+public class UnAuthorizedException extends RuntimeException {
 	private static final long serialVersionUID = 1L;
 
-	public BadRequestException() {
+	public UnAuthorizedException() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public BadRequestException(String message, Throwable cause) {
+	public UnAuthorizedException(String message, Throwable cause) {
 		super(message, cause);
 		// TODO Auto-generated constructor stub
 	}
 
-	public BadRequestException(String message) {
+	public UnAuthorizedException(String message) {
 		super(message);
 		// TODO Auto-generated constructor stub
 	}
 
-	public BadRequestException(Throwable cause) {
+	public UnAuthorizedException(Throwable cause) {
 		super(cause);
 		// TODO Auto-generated constructor stub
 	}

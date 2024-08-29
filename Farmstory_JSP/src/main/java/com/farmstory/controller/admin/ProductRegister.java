@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import com.farmstory.DTO.ProductDTO;
 import com.farmstory.DTO.UserDTO;
-import com.farmstory.controller.exception.BadRequestException;
+import com.farmstory.exception.UnAuthorizedException;
 import com.farmstory.service.ProductService;
 import com.farmstory.DTO.ProductDTO;
 import com.farmstory.service.ProductService;
@@ -52,13 +52,13 @@ public class ProductRegister extends HttpServlet {
 		
 		// 파라미터 값이 빈 값인지 확인
 	    if (name == null || name.trim().isEmpty() || type == null || type.trim().isEmpty()) {
-	    	throw new BadRequestException("Name과 Type은 필수 입력 항목입니다.");
+	    	throw new com.farmstory.exception.BadRequestException("Name과 Type은 필수 입력 항목입니다.");
 	    }
 		HttpSession session = req.getSession();
 		UserDTO user = (UserDTO) session.getAttribute("sessUser");
 		logger.debug("userDto : {}", user);
 		if(user == null)
-			throw new RuntimeException("로그인이 되어있지 않습니다.");
+			throw new  UnAuthorizedException("로그인이 되어있지 않습니다.");
 		
 		dto.setName(name);
 		dto.setType(type);

@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>팜스토리::글 보기</title>
-    <link rel="stylesheet" href="/farmstory/css/style.css"/>
+    <link rel="stylesheet" href="/Farmstory_JSP/css/style.css"/>
     <style>
         /* 테이블 스타일 */
         table {
@@ -71,10 +71,10 @@
         <jsp:include page="/WEB-INF/layout/header.jsp" />
 
         <div id="sub">
-            <div><img src="/farmstory/images/sub_top_tit3.png" alt="CROP TALK"></div>
+            <div><img src="/Farmstory_JSP/images/sub_top_tit3.png" alt="CROP TALK"></div>
             <section class="croptalk">
                 <aside>
-                    <img src="/farmstory/images/sub_aside_cate3_tit.png" alt="농작물이야기"/>
+                    <img src="/Farmstory_JSP/images/sub_aside_cate3_tit.png" alt="농작물이야기"/>
 
                     <ul class="lnb">
                         <li class="on"><a href="list.jsp?group=${param.group}&cate=${param.cate}">농작물이야기</a></li>
@@ -84,7 +84,7 @@
                 </aside>
                 <article>
                     <nav>
-                        <img src="/farmstory/images/sub_nav_tit_cate3_tit1.png" alt="농작물이야기"/>
+                        <img src="/Farmstory_JSP/images/sub_nav_tit_cate3_story.png" alt="농작물이야기"/>
                         <p>
                             HOME > 농작물이야기 > <em>글 보기</em>
                         </p>
@@ -101,9 +101,9 @@
                         </tr>
                         <tr>
                             <th>작성자</th>
-                            <td>${article.writer}</td>
+                            <td>${article.nick}</td>
                             <th>작성시간</th>
-                            <td>${article.createdAt}</td>
+                            <td>${article.regdate}</td>
                         </tr>
                         <tr>
                             <th>내용</th>
@@ -113,8 +113,8 @@
 
                     <!-- 버튼 그룹 -->
                     <div class="button-group">
-                        <button type="button" class="btn-secondary" onclick="location.href='list.jsp'">목록으로</button>
-                        <button type="button" onclick="location.href='modify.jsp?id=${article.id}'">수정하기</button>
+                        <button type="button" class="btn-secondary" onclick="location.href='/Farmstory_JSP/article/list.do?group=${group}&cate=${cate}'">목록으로</button>
+                        <button type="button" onclick="location.href='/Farmstory_JSP/article/modify.do?group=${group}&cate=${cate}&no=${no}'">수정하기</button>
                     </div>
                     <!-- 글 보기 끝 -->
 

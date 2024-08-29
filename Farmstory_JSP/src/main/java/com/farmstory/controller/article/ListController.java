@@ -40,6 +40,8 @@ public class ListController extends HttpServlet {
 		logger.debug("article doGet : {}", articles);
 
 		request.setAttribute("articles", articles);
+		request.setAttribute("group", group);
+		request.setAttribute("cate", category);
 
 		// 동적으로 JSP 파일 경로를 설정
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/" + group + "/" + category+ "/" + "list.jsp");

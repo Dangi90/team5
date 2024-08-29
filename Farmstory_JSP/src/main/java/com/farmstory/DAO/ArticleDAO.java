@@ -29,7 +29,7 @@ public class ArticleDAO extends DBHelper {
 
 	// 특정 ID의 게시글 조회
 	public ArticleDTO getArticleById(int id) {
-		String sql = "SELECT * FROM articles WHERE id = ?";
+		String sql = "SELECT * FROM article WHERE no = ?";
 		ArticleDTO article = null;
 
 		try (Connection conn = getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -38,7 +38,7 @@ public class ArticleDAO extends DBHelper {
 
 			if (rs.next()) {
 				article = new ArticleDTO();
-				article.setNo(rs.getInt("id"));
+				article.setNo(rs.getInt("no"));
 				article.setUserUid(rs.getString("user_uid"));
 				article.setTitle(rs.getString("title"));
 				article.setContent(rs.getString("content"));
@@ -53,13 +53,12 @@ public class ArticleDAO extends DBHelper {
 
 	// 게시글 수정
 	public void updateArticle(ArticleDTO article) {
-		String sql = "UPDATE articles SET title = ?, content = ?, user_uid = ?, regdate = NOW() WHERE id = ?";
+		String sql = "UPDATE article SET title = ?, content = ?, regdate = NOW() WHERE no = ?";
 
 		try (Connection conn = getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
 			pstmt.setString(1, article.getTitle());
 			pstmt.setString(2, article.getContent());
-			pstmt.setString(3, article.getUserUid());
-			pstmt.setInt(4, article.getNo());
+			pstmt.setInt(3, article.getNo());
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -68,7 +67,7 @@ public class ArticleDAO extends DBHelper {
 
 	// 게시글 삭제
 	public void deleteArticle(int id) {
-		String sql = "DELETE FROM articles WHERE id = ?";
+		String sql = "DELETE FROM article WHERE no = ?";
 
 		try (Connection conn = getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
 			pstmt.setInt(1, id);
@@ -137,5 +136,48 @@ public class ArticleDAO extends DBHelper {
 		}
 
 		return articles;
+	}
+	
+	
+	public ArticleWithNickDTO getArticleByCategoryWithNickByNo(int no) {
+		String sql = "SELECT article.*, nick FROM article LEFT JOIN user ON user.uid = article.user_uid WHERE `no`=?";
+		ArticleWithNickDTO article = null;
+		try (Connection conn = getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setInt(1, no);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next())
+			{
+				article = new ArticleWithNickDTO();
+				article.setNo(rs.getInt(1));
+				article.setUserUid(rs.getString(2));
+				article.setTitle(rs.getString(3));
+				article.setContent(rs.getString(4));
+				article.setRegdate(rs.getString(5));
+				article.setViews(rs.getInt(6));
+				article.setGroup(rs.getString(7));
+				article.setCate(rs.getString(8));
+				article.setNick(rs.getString(9));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			closeAll();
+		}
+
+		return article;
+	}
+
+	public void increaseViews(int no) {
+		String sql= "UPDATE `article` SET `views` = `views`+1 WHERE `no`=?";
+		try (Connection conn = getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setInt(1, no);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			closeAll();
+		}
+
 	}
 }

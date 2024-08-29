@@ -114,7 +114,7 @@
                     <!-- 글 수정하기 시작 -->
                     <h2>수정</h2>
                     <form action="modify.do?group=${param.group}&cate=${param.cate}" method="post">
-                        <input type="hidden" name="id" value="${article.id}">
+                        <input type="hidden" name="no" value="${article.no}">
                         <table class="form-table">
                             <tr>
                                 <th><label for="title">제목</label></th>

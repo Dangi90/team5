@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>500 - 서버 오류</title>
+<title>400 - 잘못된 요청</title>
 <style>
 body {
 	font-family: 'Arial', sans-serif;
@@ -36,8 +36,8 @@ a {
 </script>
 </head>
 <body>
-	<h1>500</h1>
-	<p>서버에서 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.</p>
+	<h1>401</h1>
+	<p>로그인이 되어있지 않습니다.</p>
 	<p><%=exception != null ? exception.getMessage() : "알 수 없는 오류가 발생했습니다."%></p>
 	<a href="javascript:void(0);" onclick="goBack();">이전 페이지로 돌아가기</a>
 </body>

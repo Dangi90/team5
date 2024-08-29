@@ -39,8 +39,12 @@
   </error-page>
 
 	<error-page>
-	    <exception-type>com.farmstory.controller.exception.BadRequestException</exception-type>
+	    <exception-type>com.farmstory.exception.BadRequestException</exception-type>
 	    <location>/error/400error.jsp</location>
+	</error-page>
+	<error-page>
+	    <exception-type>com.farmstory.exception.UnAuthorizedException</exception-type>
+	    <location>/error/401error.jsp</location>
 	</error-page>
 
  -->
