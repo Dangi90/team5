@@ -98,12 +98,12 @@
                 <aside>
                     <img src="/Farmstory_JSP/images/sub_aside_cate5_tit.png" alt="커뮤니티"/>
 
-                    <ul class="lnb">
-    				<li><a href="./notice.do?group=${param.group}&cate=notice">공지사항</a></li>
-    				<li><a href="./menu.do?group=${param.group}&cate=menu">오늘의식단</a></li>
-   					<li class="on"><a href="./chef.do?group=${param.group}&cate=chef">나도요리사</a></li>
-    				<li><a href="./qna.do?group=${param.group}&cate=qna">1:1고객문의</a></li>
-  					<li><a href="./faq.do?group=${param.group}&cate=faq">자주묻는질문</a></li>
+                   <ul class="lnb">
+ 				 	  <li><a href="./list.do?group=${param.group}&cate=notice">공지사항</a></li>
+   					 <li><a href="./list.do?group=${param.group}&cate=menu">오늘의식단</a></li>
+   					 <li  class="on"><a href="./list.do?group=${param.group}&cate=chef">나도요리사</a></li>
+   					 <li><a href="./list.do?group=${param.group}&cate=qna">1:1고객문의</a></li>
+   					 <li><a href="./list.do?group=${param.group}&cate=faq">자주묻는질문</a></li>
 					</ul>
 
                 </aside>

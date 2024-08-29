@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>팜스토리:: 1:1고객문의 글 보기</title>
-    <link rel="stylesheet" href="/farmstory/css/style.css"/>
+    <link rel="stylesheet" href="/Farmstory_JSP/css/style.css"/>
     <style>
 /* 테이블 스타일 */
 table {
@@ -103,9 +103,9 @@ table td {
                         </tr>
                         <tr>
                             <th>작성자</th>
-                            <td>${article.writer}</td>
+                            <td>${article.nick}</td>
                             <th>작성시간</th>
-                            <td>${article.createdAt}</td>
+                            <td>${article.regdate}</td>
                         </tr>
                         <tr>
                             <th>내용</th>
@@ -115,8 +115,10 @@ table td {
 
                     <!-- 버튼 그룹 -->
                     <div class="button-group">
-                        <button type="button" class="btn-secondary" onclick="location.href='list.jsp'">목록으로</button>
-                        <button type="button" onclick="location.href='modify.jsp?id=${article.id}'">수정하기</button>
+                        <button type="button" class="btn-secondary"
+							onclick="location.href='/Farmstory_JSP/article/list.do?group=${group}&cate=${cate}'">목록으로</button>
+						<button type="button"
+							onclick="location.href='/Farmstory_JSP/article/modify.do?group=${group}&cate=${cate}&no=${no}'">수정하기</button>
                     </div>
                     <!-- 글 보기 끝 -->
 

@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>팜스토리:: 자주묻는질문 글 보기</title>
-    <link rel="stylesheet" href="/farmstory/css/style.css"/>
+    <link rel="stylesheet" href="/Farmstory_JSP/css/style.css"/>
     <style>
 /* 테이블 스타일 */
 table {
@@ -73,16 +73,17 @@ table td {
         <div id="sub">
             <div><img src="/Farmstory_JSP/images/sub_top_tit5.png" alt="COMMUNITY"></div>
             <section class="community">
-                <aside>
+               <aside>
                     <img src="/Farmstory_JSP/images/sub_aside_cate5_tit.png" alt="커뮤니티"/>
 
-                    <ul class="lnb">
-    				<li><a href="./notice.do?group=${param.group}&cate=notice">공지사항</a></li>
-    				<li><a href="./menu.do?group=${param.group}&cate=menu">오늘의식단</a></li>
-   					<li><a href="./chef.do?group=${param.group}&cate=chef">나도요리사</a></li>
-    				<li><a href="./qna.do?group=${param.group}&cate=qna">1:1고객문의</a></li>
-  					<li class="on"><a href="./faq.do?group=${param.group}&cate=faq">자주묻는질문</a></li>
+                   <ul class="lnb">
+ 				 	  <li ><a href="./list.do?group=${param.group}&cate=notice">공지사항</a></li>
+   					 <li><a href="./list.do?group=${param.group}&cate=menu">오늘의식단</a></li>
+   					 <li><a href="./list.do?group=${param.group}&cate=chef">나도요리사</a></li>
+   					 <li><a href="./list.do?group=${param.group}&cate=qna">1:1고객문의</a></li>
+   					 <li class="on"><a href="./list.do?group=${param.group}&cate=faq">자주묻는질문</a></li>
 					</ul>
+
                 </aside>
                 <article>
                     <nav>
@@ -103,9 +104,9 @@ table td {
                         </tr>
                         <tr>
                             <th>작성자</th>
-                            <td>${article.writer}</td>
+                            <td>${article.nick}</td>
                             <th>작성시간</th>
-                            <td>${article.createdAt}</td>
+                            <td>${article.regdate}</td>
                         </tr>
                         <tr>
                             <th>내용</th>
@@ -114,9 +115,9 @@ table td {
                     </table>
 
                     <!-- 버튼 그룹 -->
-                    <div class="button-group">
-                        <button type="button" class="btn-secondary" onclick="location.href='list.jsp'">목록으로</button>
-                        <button type="button" onclick="location.href='modify.jsp?id=${article.id}'">수정하기</button>
+                     <div class="button-group">
+                        <button type="button" class="btn-secondary" onclick="location.href='/Farmstory_JSP/article/list.do?group=${group}&cate=${cate}'">목록으로</button>
+                        <button type="button" onclick="location.href='/Farmstory_JSP/article/modify.do?group=${group}&cate=${cate}&no=${no}'">수정하기</button>
                     </div>
                     <!-- 글 보기 끝 -->
 
