@@ -1,7 +1,10 @@
 package com.farmstory.DAO;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.naming.NamingException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -140,6 +143,68 @@ public class UserDAO extends DBHelper {
 	    
 	    return users;
 	}
-	public void updateUser(UserDTO dto) {}
-	public void deleteUser(String uid) {}
+    public void deleteUser(String uid) {
+        String sql = "DELETE FROM `user` WHERE `uid`=?";
+        try {
+            conn = getConnection();
+            psmt = conn.prepareStatement(sql);
+            psmt.setString(1, uid);
+            psmt.executeUpdate();
+            closeAll();
+        } catch (Exception e) {
+            logger.error("deleteUser Exception", e);
+        }
+    }
+
+    public void deleteUsers(String[] uids) {
+        try {
+            conn = getConnection();
+            String sql = "DELETE FROM `user` WHERE `uid`=?";
+            psmt = conn.prepareStatement(sql);
+            for (String uid : uids) {
+                psmt.setString(1, uid);
+                psmt.addBatch();  // batch로 여러유저 한번에 지우기
+            }
+            psmt.executeBatch(); 
+            conn.commit(); 
+        } catch (SQLException e) {
+            logger.error("deleteUsers Exception", e);
+        } catch (NamingException e) {
+			e.printStackTrace();
+		} 
+    }
+    public UserDTO selectUserById(String uid) {
+        UserDTO user = null;
+        
+        try {
+            conn = getConnection();
+            psmt = conn.prepareStatement(SQL.SELECT_USER_BY_ID);
+            psmt.setString(1, uid);
+            
+            rs = psmt.executeQuery();
+            
+            if (rs.next()) {
+                user = new UserDTO();
+                user.setUid(rs.getString("uid"));
+                user.setPass(rs.getString("pass"));
+                user.setName(rs.getString("name"));
+                user.setNick(rs.getString("nick"));
+                user.setEmail(rs.getString("email"));
+                user.setHp(rs.getString("hp"));
+                user.setGrade(rs.getString("grade"));
+                user.setAddr(rs.getString("addr"));
+                user.setRegip(rs.getString("regip"));
+                user.setRegdate(rs.getString("regdate"));
+                user.setIsAdmin(rs.getInt("isAdmin"));
+            }
+            closeAll();
+        } catch (Exception e) {
+            logger.error("selectUserById Exception", e);
+        }
+        
+        return user;
+    }
+	public void updateUser(UserDTO dto) {
+		
+	}
 }
