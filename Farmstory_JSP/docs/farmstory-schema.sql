@@ -58,10 +58,12 @@ CREATE TABLE Product (
     delivery_fee INT DEFAULT 0 NOT NULL,
     stack INT DEFAULT 0 NOT NULL,
     thumb_img VARCHAR(100),
-    info_img VARCHAR(100) NOT NULL,
-    explain_img VARCHAR(100) NOT NULL,
+    info_img VARCHAR(100),
+    explain_img VARCHAR(100),
     regdate DATETIME DEFAULT NOW(),
-    etc TEXT
+    etc TEXT,
+    user_uid VARCHAR(50) NOT NULL,
+    FOREIGN KEY (user_uid) REFERENCES User(uid)
 );
 
 -- Order 테이블 생성
@@ -73,14 +75,7 @@ CREATE TABLE `Order` (
     count INT DEFAULT 1,
     product_delivery_fee INT NOT NULL,
     total_price INT NOT NULL,
-    user_id VARCHAR(50) NOT NULL,
     receiver VARCHAR(20) NOT NULL,
     receive_addr VARCHAR(100) NOT NULL,
-    FOREIGN KEY (product_no) REFERENCES Product(no),
-    FOREIGN KEY (user_id) REFERENCES User(uid)
+    FOREIGN KEY (product_no) REFERENCES Product(no)
 );
-
-
-
-	
-
