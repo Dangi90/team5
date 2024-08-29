@@ -3,9 +3,9 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>팜스토리::글 수정하기</title>
+    <title>팜스토리:: 자주묻는질문 글 수정하기</title>
     <link rel="stylesheet" href="/Farmstory_JSP/css/style.css"/>
-    <style>
+     <style>
         form {
             width: 100%;
             max-width: 700px; /* 폼의 최대 가로 너비를 700px로 설정 */
@@ -89,42 +89,30 @@
 </head>
 <body>
     <div id="container">
-        <header>
-            <a href="/Farmstory_JSP/index.html" class="logo"><img src="/Farmstory_JSP/images/logo.png" alt="로고"/></a>
-            <p>
-                <a href="#">HOME |</a>
-                <a href="#">로그인 |</a>
-                <a href="#">회원가입 |</a>
-                <a href="#">고객센터</a>
-            </p>
-            <img src="/Farmstory_JSP/images/head_txt_img.png" alt="3만원 이상 무료배송"/>
-            
-            <ul class="gnb">
-                <li><a href="#">팜스토리소개</a></li>
-                <li><a href="#"><img src="/Farmstory_JSP/images/head_menu_badge.png" alt="30%"/>장바구니</a></li>
-                <li><a href="#">농작물이야기</a></li>
-                <li><a href="#">이벤트</a></li>
-                <li><a href="#">커뮤니티</a></li>
-            </ul>
-        </header>
+        <jsp:include page="/WEB-INF/layout/header.jsp" />
+
+           <div id="container">
+        <jsp:include page="/WEB-INF/layout/header.jsp" />
 
         <div id="sub">
-            <div><img src="/Farmstory_JSP/images/sub_top_tit3.png" alt="CROP TALK"></div>
-            <section class="croptalk">
+            <div><img src="/Farmstory_JSP/images/sub_top_tit5.png" alt="COMMUNITY"></div>
+            <section class="community">
                 <aside>
-                    <img src="/Farmstory_JSP/images/sub_aside_cate3_tit.png" alt="농작물이야기"/>
+                    <img src="/Farmstory_JSP/images/sub_aside_cate5_tit.png" alt="커뮤니티"/>
 
                     <ul class="lnb">
-                        <li class="on"><a href="list.jsp?group=${param.group}&cate=${param.cate}">농작물이야기</a></li>
-                        <li><a href="grow.jsp?group=${param.group}&cate=grow">텃밭가꾸기</a></li>
-                        <li><a href="school.jsp?group=${param.group}&cate=school">귀농학교</a></li>
-                    </ul>
+    				<li><a href="./notice.do?group=${param.group}&cate=notice">공지사항</a></li>
+    				<li><a href="./menu.do?group=${param.group}&cate=menu">오늘의식단</a></li>
+   					<li><a href="./chef.do?group=${param.group}&cate=chef">나도요리사</a></li>
+    				<li><a href="./qna.do?group=${param.group}&cate=qna">1:1고객문의</a></li>
+  					<li class="on"><a href="./faq.do?group=${param.group}&cate=faq">자주묻는질문</a></li>
+					</ul>
                 </aside>
                 <article>
                     <nav>
-                        <img src="/Farmstory_JSP/images/sub_nav_tit_cate3_tit1.png" alt="농작물이야기"/>
+                        <img src="/Farmstory_JSP/images/sub_nav_tit_cate5_faq.png" alt="자주묻는질문"/>
                         <p>
-                            HOME > 농작물이야기 > <em>글 수정하기</em>
+                            HOME > 커뮤니티 > <em>자주묻는질문</em>
                         </p>
                     </nav>
 
@@ -153,15 +141,7 @@
             </section>
         </div>
 
-        <footer>
-            <img src="/Farmstory_JSP/images/footer_logo.png" alt="로고"/>
-            <p>
-                (주)팜스토리 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-팜스토리구-123호 / 벤처기업확인 서울지방중소기업청 제 012345678-9-01234호<br />
-                등록번호 팜스토리01234 (2013.04.01) / 발행인 : 홍길동<br />
-                대표 : 홍길동 / 이메일 : email@mail.mail / 전화 : 01) 234-5678 / 경기도 성남시 잘한다구 신난다동 345<br />
-                <em>Copyright(C)홍길동 All rights reserved.</em>
-            </p>
-        </footer>
+        <jsp:include page="/WEB-INF/layout/footer.jsp" />
     </div>    
 </body>
 </html>
