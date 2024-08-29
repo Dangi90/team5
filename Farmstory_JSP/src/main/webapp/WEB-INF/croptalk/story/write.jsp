@@ -91,8 +91,8 @@
 
                     <ul class="lnb">
                         <li class="on"><a href="list.jsp?group=${param.group}&cate=${param.cate}">농작물이야기</a></li>
-                        <li><a href="grow.jsp?group=${param.group}&cate=grow">텃밭가꾸기</a></li>
-                        <li><a href="school.jsp?group=${param.group}&cate=school">귀농학교</a></li>
+                        <li><a href="/Farmstory_JSP/article/list.do?group=${param.group}&cate=grow">텃밭가꾸기</a></li>
+                        <li><a href="/Farmstory_JSP/article/list.do?group=${param.group}&cate=school">귀농학교</a></li>
                     </ul>
                 </aside>
                 <article>
