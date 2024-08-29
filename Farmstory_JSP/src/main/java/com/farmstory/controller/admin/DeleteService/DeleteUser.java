@@ -1,6 +1,5 @@
 package com.farmstory.controller.admin.DeleteService;
 
-
 import java.io.IOException;
 
 import com.farmstory.DAO.UserDAO;
@@ -26,8 +25,3 @@ public class DeleteUser extends HttpServlet {
         response.sendRedirect("userList.do");
     }
 }
-
-public class DeleteUser {
-
-}
-

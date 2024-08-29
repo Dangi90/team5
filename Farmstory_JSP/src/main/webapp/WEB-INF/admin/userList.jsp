@@ -160,56 +160,7 @@ pageEncoding="UTF-8"%>
 			<p>Copyright(C)Farmstory All rights reserved. FARMSTORY
 				ADMINISTRATOR Version 1.0.1</p>
 		</footer>
-            <section id="orderList">
-                <nav>
-                    <h3>회원목록</h3>
-                </nav>
-  <article>
-                    <table border="0">
-                        <thead>
-                            <tr>
-                                <th><input type="checkbox" name="all"/></th>
-                                <th>아이디</th>
-                                <th>이름</th>
-                                <th>별명</th>
-                                <th>이메일</th>
-                                <th>휴대폰</th>
-                                <th>등급</th>
-                                <th>가입일</th>
-                                <th>확인</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <c:forEach var="user" items="${users}">
-                                <tr>
-                                    <td><input type="checkbox" name="uid" value="${user.uid}"/></td>
-                                    <td>${user.uid}</td>
-                                    <td>${user.name}</td>
-                                    <td>${user.nick}</td>
-                                    <td>${user.email}</td>
-                                    <td>${user.hp}</td>
-                                    <td>${user.grade}</td>
-                                    <td>${user.regdate}</td>
-                                    <td><a href="#" class="showPopup">[상세확인]</a></td>
-                                </tr>
-                            </c:forEach>
-                        </tbody>
-                    </table>
-
-                    <p>
-                        <a href="#" class="userDelete">선택삭제</a>
-                    </p>
-                   
-                </article>
-            </section>
-        </main>
-        <footer>            
-            <p>                
-                Copyright(C)Farmstory All rights reserved. FARMSTORY ADMINISTRATOR Version 1.0.1
-            </p>
-        </footer>
-
-
+            
 		<div id="userPopup">
 			<section>
 				<nav>
