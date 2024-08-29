@@ -43,7 +43,7 @@ public class ListController extends HttpServlet {
 		request.setAttribute("articles", articles);
 
 		// 동적으로 JSP 파일 경로를 설정
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/" + group + "/" + category + ".jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/" + group + "/" + category+"/" +"list.jsp");
 		dispatcher.forward(request, response);
 	}
 

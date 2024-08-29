@@ -4,7 +4,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>팜스토리::농작물이야기</title>
+    <title>팜스토리::이벤트</title>
    <link rel="stylesheet" href="/Farmstory_JSP/css/style.css" />
     <style>
     /* 테이블 스타일 */
@@ -120,23 +120,22 @@
     <div id="container">
        <jsp:include page="/WEB-INF/layout/header.jsp" />
 
-        <div id="sub">
-            <div><img src="/Farmstory_JSP/images/sub_top_tit3.png" alt="CROP TALK"></div>
-            <section class="croptalk">
+  <div id="sub">
+            <div><img src="../images/sub_top_tit4.png" alt="CROP TALK"></div>
+            <section class="event">
                 <aside>
-                    <img src="/Farmstory_JSP/images/sub_aside_cate3_tit.png" alt="농작물이야기"/>
+                    <img src="../images/sub_aside_cate4_tit.png" alt="이벤트"/>
 
                     <ul class="lnb">
-                        <li class="on"><a href="list.jsp?group=${param.group}&cate=${param.cate}">농작물이야기</a></li>
-                        <li><a href="grow.jsp?group=${param.group}&cate=grow">텃밭가꾸기</a></li>
-                        <li><a href="school.jsp?group=${param.group}&cate=school">귀농학교</a></li>
+                        <li class="on"><a href="./info.do">이벤트</a></li>
                     </ul>
+
                 </aside>
                 <article>
                     <nav>
-                        <img src="/Farmstory_JSP/images/sub_nav_tit_cate3_story.png" alt="농작물이야기"/>
+                        <img src="../images/sub_nav_tit_cate4_event.png" alt="이벤트"/>
                         <p>
-                            HOME > 농작물이야기 > <em>농작물이야기</em>
+                            HOME > 이벤트 > <em>글목록</em>
                         </p>
                     </nav>
 

@@ -89,17 +89,18 @@
                 <aside>
                     <img src="/Farmstory_JSP/images/sub_aside_cate3_tit.png" alt="농작물이야기"/>
 
-                    <ul class="lnb">
-                        <li class="on"><a href="list.jsp?group=${param.group}&cate=${param.cate}">농작물이야기</a></li>
-                        <li><a href="grow.jsp?group=${param.group}&cate=grow">텃밭가꾸기</a></li>
-                        <li><a href="school.jsp?group=${param.group}&cate=school">귀농학교</a></li>
-                    </ul>
+                   <ul class="lnb">
+					    <li><a href="list.jsp?group=${param.group}&cate=list">농작물이야기</a></li>
+					    <li class="on"><a href="grow.jsp?group=${param.group}&cate=list">텃밭가꾸기</a></li>
+					    <li><a href="school.jsp?group=${param.group}&cate=school">귀농학교</a></li>
+					</ul>
+					
                 </aside>
                 <article>
                     <nav>
-                        <img src="/Farmstory_JSP/images/sub_nav_tit_cate3_story.png" alt="농작물이야기"/>
+                        <img src="/Farmstory_JSP/images/sub_nav_tit_cate3_grow.png" alt="텃밭가꾸기"/>
                         <p>
-                            HOME > 농작물이야기 > <em>글 쓰기</em>
+                            HOME > 농작물이야기 > 텃밭가꾸기 > <em>글 쓰기</em>
                         </p>
                     </nav>
 
@@ -125,7 +126,7 @@
             </section>
         </div>
 
-         <jsp:include page="/WEB-INF/layout/footer.jsp" />
+       <jsp:include page="/WEB-INF/layout/footer.jsp" />
     </div>    
 </body>
 </html>

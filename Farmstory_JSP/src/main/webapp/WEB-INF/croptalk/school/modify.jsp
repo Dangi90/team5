@@ -89,7 +89,7 @@
 </head>
 <body>
     <div id="container">
-         <jsp:include page="/WEB-INF/layout/header.jsp" />
+        <jsp:include page="/WEB-INF/layout/header.jsp" />
 
         <div id="sub">
             <div><img src="/Farmstory_JSP/images/sub_top_tit3.png" alt="CROP TALK"></div>
@@ -98,16 +98,17 @@
                     <img src="/Farmstory_JSP/images/sub_aside_cate3_tit.png" alt="농작물이야기"/>
 
                     <ul class="lnb">
-                        <li class="on"><a href="list.jsp?group=${param.group}&cate=${param.cate}">농작물이야기</a></li>
-                        <li><a href="grow.jsp?group=${param.group}&cate=grow">텃밭가꾸기</a></li>
-                        <li><a href="school.jsp?group=${param.group}&cate=school">귀농학교</a></li>
-                    </ul>
+					    <li><a href="list.jsp?group=${param.group}&cate=list">농작물이야기</a></li>
+					    <li><a href="grow.jsp?group=${param.group}&cate=grow">텃밭가꾸기</a></li>
+					    <li class="on"><a href="school.jsp?group=${param.group}&cate=list">귀농학교</a></li>
+					</ul>
+					
                 </aside>
                 <article>
                     <nav>
-                        <img src="/Farmstory_JSP/images/sub_nav_tit_cate3_story.png" alt="농작물이야기"/>
+                        <img src="/Farmstory_JSP/images/sub_nav_tit_cate3_school.png" alt="귀농학교"/>
                         <p>
-                            HOME > 농작물이야기 > 귀농학교 > <em>글 수정하기</em>
+                            HOME > 농작물이야기 > 귀농학교 ><em>글 수정하기</em>
                         </p>
                     </nav>
 
@@ -136,7 +137,7 @@
             </section>
         </div>
 
-         <jsp:include page="/WEB-INF/layout/footer.jsp" />
+        <jsp:include page="/WEB-INF/layout/footer.jsp" />
     </div>    
 </body>
 </html>

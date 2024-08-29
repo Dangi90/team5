@@ -12,8 +12,8 @@ import java.io.IOException;
 
 @WebServlet("/article/view.do")
 public class ViewController extends HttpServlet {
-
-    private ArticleDAO articleDAO = new ArticleDAO();
+	private static final long serialVersionUID = 1L;
+	private ArticleDAO articleDAO = new ArticleDAO();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -36,7 +36,7 @@ public class ViewController extends HttpServlet {
             }
 
             request.setAttribute("article", article);
-            request.getRequestDispatcher("/article/" + group + "/view.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/" + group + "/" + category+"/" +"view.jsp").forward(request, response);
 
         } catch (NumberFormatException e) {
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid article ID format");
