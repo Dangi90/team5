@@ -114,18 +114,22 @@ th {
 							</c:forEach>
 						</tbody>
 					</table>
+					<form action="/Farmstory_JSP/article/list.do?group=croptalk&cate=story" method="post">
 					<div class="search-bar">
-						<select>
-							<option>제목</option>
-							<option>타이틀</option>
-						</select> <input type="text" placeholder="검색어를 입력하세요" />
+						<select name="searchType">
+							<option value="title">제목</option>
+							<option value="content">내용</option>
+						</select> 
+						<input type="text" name="searchText" placeholder="검색어를 입력하세요" />
 						<button>검색</button>
-						<label> <input type="radio" name="search" value="and"
-							checked> and
-						</label> <label> <input type="radio" name="search" value="or">
-							or
+						<label> 
+						<input type="radio" name="searchCondition" value="and" checked> and
 						</label>
-					</div>
+						 <label> 
+						 <input type="radio" name="searchCondition" value="or"> or
+						</label>
+					</div>			
+					</form>
 					<!-- 내용 끝 -->
 
 				</article>

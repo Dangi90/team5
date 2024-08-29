@@ -6,6 +6,35 @@
     <meta charset="UTF-8">
     <title>팜스토리::장보기</title>
     <link rel="stylesheet" href="../css/style.css"/>
+    <script>
+    function updateTotal() {
+        var price = parseInt(document.getElementById('price').innerText.replace(/,/g, '').replace('원', ''));
+        var count = parseInt(document.getElementById('count').value);
+        if (isNaN(price)) price = 0; 
+        if (isNaN(count)) count = 0; 
+        var total = price * count;
+        document.getElementById('total').innerText = total.toLocaleString() + '원';
+    }
+
+    function updateOrderLink() {
+        var count = document.getElementById('count').value;
+        var productNo = document.getElementById('productNo').value;
+        var orderLink = document.getElementById('orderLink');
+        orderLink.href = "./order.do?no=" + encodeURIComponent(productNo) + "&count=" + encodeURIComponent(count);
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        var quantityInput = document.getElementById('count');
+        quantityInput.addEventListener('input', function() {
+            updateTotal();
+            updateOrderLink();
+        });
+        updateTotal();
+        updateOrderLink();
+    });
+    
+    
+    </script>
 </head>
 <body>
     <div id="container">
@@ -31,49 +60,52 @@
                     <!-- 내용 시작 -->
                     
                     <h3>기본정보</h3>
-                    
-                    <div class="basic">
-						<img src="../images/market_item_thumb.jpg" alt="딸기 500g">
-                        <table border="0">                            
-                            <tr>
-                                <td>상품명</td>
-                                <td>${products.name}</td>
-                            </tr>
-                            <tr>
-                                <td>상품코드</td>
-                                <td>${products.no}</td>
-                            </tr>
-                            <tr>
-                                <td>배송비</td>
-                                <td>
-                                    <span>${products.delivery_fee}</span>원
-                                    <em>3만원 이상 무료배송</em>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>판매가격</td>
-                                <td>${products.price}원</td>
-                            </tr>
-                            <tr>
-                                <td>구매수량</td>
-                                <td>
-                                    <input type="number" name="count" min="1" value="1">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>합계</td>
-                                <td class="total">계산필요원</td>
-                            </tr>
-
-                            <a href="/order.do" class="btnOrder">
-                                <img src="../images/market_btn_order.gif" alt="바로 구매하기"/>
-                            </a>
-
-                        </table>
-                    </div>
+		    	      <div class="basic">
+				    <img src="../images/market_item_thumb.jpg" alt="딸기 500g">
+				    <table border="0">                            
+				        <tr>
+				            <td>상품명</td>
+				            <td>${products.name}</td>
+				        </tr>
+				        <tr>
+				            <td>상품코드</td>
+				            <td>${products.no}</td>
+				        </tr>
+				        <tr>
+				            <td>배송비</td>
+				            <td>
+				                <span>${products.delivery_fee}</span>원
+				                <em>3만원 이상 무료배송</em>
+				            </td>
+				        </tr>
+				        <tr>
+				            <td>판매가격</td>
+				            <td id="price">${products.price}원</td>
+				        </tr>
+				        <tr>
+				            <td>구매수량</td>
+				            <td>
+				                <input type="number" id="count" name="count" min="1" value="1">
+				                <!-- Hidden field for product number -->
+				                <input type="hidden" id="productNo" value="${products.no}">
+				            </td>
+				        </tr>
+				        <tr>
+				            <td>합계</td>
+				            <td class="total" id="total"></td>
+				        </tr>
+				        <tr>
+				            <td colspan="2">
+				                <a id="orderLink" href="./order.do" class="btnOrder">
+				                    <img src="../images/market_btn_order.gif" alt="바로 구매하기"/>
+				                </a>
+				            </td>
+				        </tr>
+				    </table>
+					</div>
                     <h3>상품설명</h3>
                     <div class="detail">
-                        <img src="../images/market_detail_sample.jpg" alt="">
+                        <img src="../images/market_detail_sample.jpg" alt="설명">
 
                     </div>
 

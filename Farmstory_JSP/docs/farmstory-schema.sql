@@ -20,9 +20,8 @@ CREATE TABLE User (
     grade VARCHAR(10),
     addr VARCHAR(100),
     regip VARCHAR(20),
-    regdate DATETIME DEFAULT NOW(),
-    isAdmin int DEFAULT 0
-); 
+    regdate DATETIME DEFAULT NOW()
+);
 
 -- Article 테이블 생성
 CREATE TABLE Article (
@@ -52,15 +51,16 @@ CREATE TABLE Product (
     no INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     type VARCHAR(20) NOT NULL,
-    price INT DEFAULT 0,
-    point INT DEFAULT 0,
-    discount INT DEFAULT 0,
-    delivery_fee INT DEFAULT 0,
-    stack INT DEFAULT 0,
-    thumb_img VARCHAR(100) NOT NULL,
+    price INT DEFAULT 0 NOT NULL,
+    point INT DEFAULT 0 NOT NULL,
+    discount INT DEFAULT 0 NOT NULL,
+    delivery_fee INT DEFAULT 0 NOT NULL,
+    stack INT DEFAULT 0 NOT NULL,
+    thumb_img VARCHAR(100),
     info_img VARCHAR(100) NOT NULL,
     explain_img VARCHAR(100) NOT NULL,
-    regdate DATETIME DEFAULT NOW()
+    regdate DATETIME DEFAULT NOW(),
+    etc TEXT
 );
 
 -- Order 테이블 생성

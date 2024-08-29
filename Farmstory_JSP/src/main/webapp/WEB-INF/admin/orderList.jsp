@@ -27,23 +27,37 @@
 <body>
     <div id="container">
         <header>
-            <a href="./index.do" class="logo"><img src="../images/admin_logo.jpg" alt="로고"/></a>
+            <a href="/Farmstory_JSP/index.do" class="logo"><img src="../images/admin_logo.jpg" alt="로고"/></a>
             <p>
                 <a href="../index.do">HOME |</a>
                 <a href="./index.do">관리페이지 |</a>
                 <a href="../member/logout.do">로그아웃 |</a>
-                <a href="#">고객센터</a>
+                <a href="../community/qna.do">고객센터</a>
+
             </p>
         </header>
         <main>
             <aside>
-                <h3>주요기능</h3>
-                <ul>
-                    <li><a href="#">상품관리</a></li>
-                    <li class="on"><a href="#">주문관리</a></li>
-                    <li><a href="#">회원관리</a></li>                    
-                </ul>
-            </aside>
+			    <h3>주요기능</h3>
+			    <ul>
+			        <li>상품관리
+			            <ul>
+			                <li><a href="./productList.do">상품목록</a></li>
+			                <li><a href="./productRegister.do">상품등록</a></li>
+			            </ul>
+			        </li>
+			        <li>주문관리
+			            <ul>
+			                <li><a href="./orderList.do">주문목록</a></li>
+			            </ul>
+			        </li>
+			        <li>회원관리
+			            <ul>
+			                <li><a href="./userList.do">회원목록</a></li>
+			            </ul>
+			        </li>                  
+			    </ul>
+			</aside>
             <section id="orderList">
                 <nav>
                     <h3>주문목록</h3>
@@ -66,7 +80,7 @@
                         <tbody>
                             <c:forEach var="order" items="${orders}">
                                 <tr>
-                                    <td><input type="checkbox" name="orderId" value="${order.id}"/></td>
+                                    <td><input type="checkbox" name="user_id" value="${order.user_id}"/></td>
                                     <td>${order.product_no}</td>
                                     <td>${order.product_name}</td>
                                     <td>${order.product_price}원</td>
@@ -82,7 +96,7 @@
                     </table>
 
                     <p>
-                        <a href="#" class="orderDelete">선택삭제</a>                        
+                        <a href="./orderList.do" class="orderDelete">선택삭제</a>                        
                     </p>
                     
                     <p class="paging">

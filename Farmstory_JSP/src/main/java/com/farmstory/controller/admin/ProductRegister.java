@@ -1,9 +1,13 @@
 package com.farmstory.controller.admin;
 
 import java.io.IOException;
+
+import org.apache.tomcat.jakartaee.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.farmstory.DTO.ProductDTO;
 import com.farmstory.service.ProductService;
-
 import com.farmstory.DTO.ProductDTO;
 import com.farmstory.service.ProductService;
 
@@ -19,7 +23,7 @@ import com.farmstory.DAO.ProductDAO;
 @WebServlet("/admin/productRegister.do")
 public class ProductRegister extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	private ProductService service = ProductService.getInstance();
 
 	  @Override
@@ -39,6 +43,8 @@ public class ProductRegister extends HttpServlet {
 		String thumb_img = req.getParameter("thumb_img");
 		String info_img = req.getParameter("info_img");
 		String explain_img = req.getParameter("explain_img");
+		String etc = req.getParameter("etc");
+		
 		
 		ProductDTO dto = new ProductDTO();
 		dto.setName(name);
@@ -51,12 +57,22 @@ public class ProductRegister extends HttpServlet {
 		dto.setThumb_img(thumb_img);
 		dto.setInfo_img(info_img);
 		dto.setExplain_img(explain_img);
-		service.addProduct(dto);
-
+		dto.setEtc(etc);
+			
+		logger.debug("productDTO : {}", dto);
+		
+			service.addProduct(dto);
+		
+		
+		
 		resp.sendRedirect("/admin/productList.do");
 	}
 	
 	private int strToNum(String str) {
+		if(StringUtils.isBlank(str))
+		{
+			return 0;
+		}
 		return Integer.parseInt(str);
 	}
 }
