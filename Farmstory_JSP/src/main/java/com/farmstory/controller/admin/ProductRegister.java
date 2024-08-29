@@ -26,10 +26,11 @@ public class ProductRegister extends HttpServlet {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	private ProductService service = ProductService.getInstance();
 
-	  @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/admin/productRegister.jsp").forward(request, response);
-    }
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.getRequestDispatcher("/WEB-INF/admin/productRegister.jsp").forward(request, response);
+	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -44,8 +45,6 @@ public class ProductRegister extends HttpServlet {
 		String info_img = req.getParameter("info_img");
 		String explain_img = req.getParameter("explain_img");
 		String etc = req.getParameter("etc");
-		
-		
 		ProductDTO dto = new ProductDTO();
 		dto.setName(name);
 		dto.setType(type);
@@ -58,19 +57,16 @@ public class ProductRegister extends HttpServlet {
 		dto.setInfo_img(info_img);
 		dto.setExplain_img(explain_img);
 		dto.setEtc(etc);
-			
+
 		logger.debug("productDTO : {}", dto);
-		
-			service.addProduct(dto);
-		
-		
-		
-		resp.sendRedirect("/admin/productList.do");
+
+		service.addProduct(dto);
+
+		resp.sendRedirect("/Farmstory_JSP/admin/productList.do");
 	}
-	
+
 	private int strToNum(String str) {
-		if(StringUtils.isBlank(str))
-		{
+		if (str == null || str.trim().length() == 0) {
 			return 0;
 		}
 		return Integer.parseInt(str);
