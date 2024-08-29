@@ -17,7 +17,7 @@
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
 
-  <!-- Error Page Configurations -->
+ <!-- Error Page Configurations  -->
   <error-page>
     <error-code>404</error-code>
     <location>/error/404error.jsp</location>

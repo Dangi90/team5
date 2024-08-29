@@ -10,7 +10,7 @@ INSERT INTO User (uid, pass, name, nick, email, hp, grade, addr, regip, regdate)
 
 -- 관리자 데이터 삽입 (uid:admin / pass:admin1234!)
 INSERT INTO `user` (`uid`, `pass`, `name`, `nick`, `email`, `hp`, `grade`, `addr`, `regip`, `regdate`, `isAdmin`) VALUES 
-('admin', SHA2('admin1234!',256), '관리자', '관리자', 'admin@gmail.com', '01012340001', NULL, NULL, '0:0:0:0:0:0:0:1', '2024-08-28 15:14:38', 1);
+('admin', SHA2('admin1234!',256), '관리자', '관리자', 'admin@gmail.com', '01012340001', '관리자', NULL, '0:0:0:0:0:0:0:1', '2024-08-28 15:14:38', 1);
 
 -- Article 테이블에 임시 데이터 삽입
 INSERT INTO Article (user_uid, title, content, regdate, views, `group`, cate) VALUES

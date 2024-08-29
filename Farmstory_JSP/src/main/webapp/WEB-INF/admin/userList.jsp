@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -97,18 +98,9 @@ pageEncoding="UTF-8"%>
                     </table>
 
                     <p>
-                        <a href="#" class="orderDelete">선택수정</a>
+                        <a href="#" class="userDelete">선택삭제</a>
                     </p>
-
-                    <p class="paging">
-                        <a href="#"><</a>
-                        <a href="#" class="on">[1]</a>
-                        <a href="#">[2]</a>
-                        <a href="#">[3]</a>
-                        <a href="#">[4]</a>
-                        <a href="#">[5]</a>
-                        <a href="#">></a>
-                    </p>
+                   
                 </article>
             </section>
         </main>
