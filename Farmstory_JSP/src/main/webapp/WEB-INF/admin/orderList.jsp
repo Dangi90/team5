@@ -98,16 +98,7 @@
                     <p>
                         <a href="./orderList.do" class="orderDelete">선택삭제</a>                        
                     </p>
-                    
-                    <p class="paging">
-                        <a href="#"><</a>
-                        <a href="#" class="on">[1]</a>
-                        <a href="#">[2]</a>
-                        <a href="#">[3]</a>
-                        <a href="#">[4]</a>
-                        <a href="#">[5]</a>
-                        <a href="#">></a>
-                    </p>
+                  
                 </article>
             </section>
         </main>
