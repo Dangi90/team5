@@ -20,8 +20,7 @@ CREATE TABLE User (
     grade VARCHAR(10),
     addr VARCHAR(100),
     regip VARCHAR(20),
-    regdate DATETIME DEFAULT NOW(),
-    isAdmin int DEFAULT 0
+    regdate DATETIME DEFAULT NOW()
 );
 
 -- Article 테이블 생성
@@ -70,6 +69,7 @@ CREATE TABLE Product (
 CREATE TABLE `Order` (
     no INT AUTO_INCREMENT PRIMARY KEY,
     product_no INT NOT NULL,
+    user_id VARCHAR(50) NOT NULL,
     product_name VARCHAR(100) NOT NULL,
     product_price INT NOT NULL,
     count INT DEFAULT 1,
@@ -77,5 +77,6 @@ CREATE TABLE `Order` (
     total_price INT NOT NULL,
     receiver VARCHAR(20) NOT NULL,
     receive_addr VARCHAR(100) NOT NULL,
-    FOREIGN KEY (product_no) REFERENCES Product(no)
+    FOREIGN KEY (product_no) REFERENCES Product(no),
+    FOREIGN KEY (user_id) REFERENCES User(uid)
 );

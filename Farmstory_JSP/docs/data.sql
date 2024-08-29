@@ -28,6 +28,6 @@ INSERT INTO Product (name, type, price, point, discount, delivery_fee, stack, th
 ('상품2', '가전제품', 200000, 2000, 10000, 5000, 5, 'thumb2.jpg', 'info2.jpg', 'explain2.jpg', NOW(), '기타 정보 2', 'user2');
 
 -- Order 테이블에 샘플 데이터 삽입
-INSERT INTO `Order` (product_no, product_name, product_price, count, product_delivery_fee, total_price, receiver, receive_addr) VALUES
-(1, '상품1', 100000, 2, 2500, 205000, '홍길동', '서울시 강남구'),
-(2, '상품2', 200000, 1, 5000, 205000, '김철수', '부산시 해운대구');
+INSERT INTO `Order` (product_no, user_id, product_name, product_price, count, product_delivery_fee, total_price, receiver, receive_addr) VALUES
+(1, 'user1', '상품1', 100000, 2, 2500, 205000, '홍길동', '서울시 강남구'),
+(2, 'user2', '상품2', 200000, 1, 5000, 205000, '김철수', '부산시 해운대구');
