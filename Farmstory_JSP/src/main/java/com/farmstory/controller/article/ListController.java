@@ -19,7 +19,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@WebServlet("/article/list.do")
+@WebServlet("/article/list.do?group=aaa&cate=bbb")
 public class ListController extends HttpServlet {
 
 	private ArticleDAO articleDAO = new ArticleDAO();
@@ -43,7 +43,7 @@ public class ListController extends HttpServlet {
 		request.setAttribute("articles", articles);
 
 		// 동적으로 JSP 파일 경로를 설정
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/" + group + "/" + category + ".jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/" + group + "/" + category+ "/" + "list.jsp");
 		dispatcher.forward(request, response);
 	}
 
