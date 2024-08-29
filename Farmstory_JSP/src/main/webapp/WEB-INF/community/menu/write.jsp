@@ -108,7 +108,7 @@
                         </p>
                     </nav>
 
-                   <!-- 글 작성 시작 -->
+            		 <!-- 글 작성 시작 -->
                     <h2>글쓰기</h2>
                     <form action="write.do?group=${param.group}&cate=${param.cate}" method="post">
                         <div class="form-group">
