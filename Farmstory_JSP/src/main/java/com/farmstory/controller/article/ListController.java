@@ -61,6 +61,5 @@ public class ListController extends HttpServlet {
 		logger.debug("group : {}, category : {}", group, category);
 		logger.debug("searchType : {}, searchText : {},  searchCondition : {}", searchType, searchText,
 				searchCondition);
-
 	}
 }

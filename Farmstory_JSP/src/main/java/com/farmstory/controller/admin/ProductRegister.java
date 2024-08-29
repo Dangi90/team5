@@ -61,7 +61,9 @@ public class ProductRegister extends HttpServlet {
 			
 		logger.debug("productDTO : {}", dto);
 		
-		service.addProduct(dto);
+			service.addProduct(dto);
+		
+		
 		
 		resp.sendRedirect("/admin/productList.do");
 	}
