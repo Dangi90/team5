@@ -7,7 +7,7 @@
 
   <display-name>Farmstory_JSP</display-name>
 
-  <!-- Welcome File List -->
+  <!-- Welcome File List 
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.jsp</welcome-file>
@@ -16,7 +16,10 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  -->
 
+
+ <!-- Error Page Configurations  -->
 
   <error-page>
     <error-code>404</error-code>

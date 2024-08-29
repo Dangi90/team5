@@ -34,7 +34,7 @@ CREATE TABLE Article (
     views INT DEFAULT 0,
     `group` VARCHAR(20),
     cate VARCHAR(20),
-    FOREIGN KEY (user_uid) REFERENCES User(uid)
+    FOREIGN KEY (user_uid) REFERENCES User(uid) ON DELETE CASCADE
 );
 
 -- ArticleFile 테이블 생성
@@ -44,7 +44,7 @@ CREATE TABLE ArticleFile (
     stored_name VARCHAR(100),
     regdate DATETIME DEFAULT NOW(),
     article_no INT,
-    FOREIGN KEY (article_no) REFERENCES Article(no)
+    FOREIGN KEY (article_no) REFERENCES Article(no) ON DELETE CASCADE
 );
 
 -- Product 테이블 생성
@@ -78,6 +78,6 @@ CREATE TABLE `Order` (
     total_price INT NOT NULL,
     receiver VARCHAR(20) NOT NULL,
     receive_addr VARCHAR(100) NOT NULL,
-    FOREIGN KEY (product_no) REFERENCES Product(no),
-    FOREIGN KEY (user_id) REFERENCES User(uid)
+    FOREIGN KEY (product_no) REFERENCES Product(no) ON DELETE CASCADE, 
+    FOREIGN KEY (user_id) REFERENCES User(uid) ON DELETE CASCADE
 );
