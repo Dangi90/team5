@@ -36,8 +36,8 @@ a {
 </script>
 </head>
 <body>
-	<h1>400</h1>
-	<p>사용자의 요청이 잘못되었습니다.</p>
+	<h1>401</h1>
+	<p>로그인이 되어있지 않습니다.</p>
 	<p><%=exception != null ? exception.getMessage() : "알 수 없는 오류가 발생했습니다."%></p>
 	<a href="javascript:void(0);" onclick="goBack();">이전 페이지로 돌아가기</a>
 </body>

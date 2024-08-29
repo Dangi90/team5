@@ -18,18 +18,19 @@ public class ModifyController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String idParam = request.getParameter("id");
+        String no = request.getParameter("no");
         String group = request.getParameter("group");
         String category = request.getParameter("cate");
 
         // 파라미터 검증
-        if (idParam == null || idParam.isEmpty() || group == null || group.isEmpty() || category == null || category.isEmpty()) {
+        if (no == null || no.isEmpty() || group == null || group.isEmpty() || category == null || category.isEmpty()) {
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid parameters");
             return;
         }
-
+        request.setAttribute("group", group);
+		request.setAttribute("cate", category);
         try {
-            int id = Integer.parseInt(idParam);
+            int id = Integer.parseInt(no);
             ArticleDTO article = articleDAO.getArticleById(id);
 
             if (article == null) {
@@ -47,20 +48,20 @@ public class ModifyController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String idParam = request.getParameter("id");
+        String no = request.getParameter("no");
         String group = request.getParameter("group");
         String category = request.getParameter("cate");
         String userUid = request.getParameter("user_uid");
         String title = request.getParameter("title");
         String content = request.getParameter("content");
 
-        if (idParam == null || idParam.isEmpty() || group == null || group.isEmpty() || category == null || category.isEmpty()) {
+        if (no == null || no.isEmpty() || group == null || group.isEmpty() || category == null || category.isEmpty()) {
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid parameters");
             return;
         }
 
         try {
-            int id = Integer.parseInt(idParam);
+            int id = Integer.parseInt(no);
 
             ArticleDTO article = new ArticleDTO();
             article.setNo(id);

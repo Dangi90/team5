@@ -17,6 +17,7 @@ public class ProductDTO {
 	private String etc;
 	// 추가
 	private String regdate;
+	private String user_uid;
 	
 	
 	public int getNo() {
@@ -101,11 +102,17 @@ public class ProductDTO {
 	public void setEtc(String etc) {
 		this.etc = etc;
 	}
+	public String getUser_uid() {
+		return user_uid;
+	}
+	public void setUser_uid(String user_uid) {
+		this.user_uid = user_uid;
+	}
 	@Override
 	public String toString() {
 		return "ProductDTO [no=" + no + ", name=" + name + ", type=" + type + ", price=" + price + ", point=" + point
 				+ ", discount=" + discount + ", delivery_fee=" + delivery_fee + ", stack=" + stack + ", thumb_img="
 				+ thumb_img + ", info_img=" + info_img + ", explain_img=" + explain_img + ", datetime=" + datetime
-				+ ", etc=" + etc + ", regdate=" + regdate + "]";
+				+ ", etc=" + etc + ", regdate=" + regdate + ", user_uid=" + user_uid + "]";
 	}
 }
