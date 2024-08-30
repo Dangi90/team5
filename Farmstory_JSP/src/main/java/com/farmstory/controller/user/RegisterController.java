@@ -40,7 +40,7 @@ public class RegisterController extends HttpServlet {
 		String email = req.getParameter("email");
 		String hp = req.getParameter("hp");
 		String grade = req.getParameter("grade");
-		String addr = req.getParameter("addr");
+		String addr = req.getParameter("addr1");
 		String regip = req.getRemoteAddr();
 		// String regdate = req.getParameter("regdate");
 		logger.debug("grade 값 : {}", grade);
