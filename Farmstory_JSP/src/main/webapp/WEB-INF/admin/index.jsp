@@ -74,9 +74,6 @@
 						<tbody>
 							<c:forEach var="product" items="${products}">
 								<tr>
-									<td><input type="checkbox" name="" /></td>
-									<td><img src="${product.thumb_img}" class="thumb"
-										alt="상품 이미지"></td>
 									<td>${product.no}</td>
 									<td>${product.name}</td>
 									<td>${product.type}</td>
@@ -103,18 +100,18 @@
 							<th>배송비</th>
 							<th>합계</th>
 							<th>주문자</th>
-							<th>주문일</th>
+							
 						</tr>
 						<c:forEach var="order" items="${orders}">
 							<tr>
-								<td>${order.product_no}</td>
+								<td>${order.no}</td>
 								<td>${order.product_name}</td>
 								<td>${order.product_price}</td>
 								<td>${order.count}</td>
 								<td>${order.product_delivery_fee}</td>
-								<td>${order.product_total_price}</td>
+								<td>${order.total_price}</td>
 								<td>${order.receiver}</td>
-								<td>${order.datetime}</td>
+							
 							</tr>
 						</c:forEach>
 					</table>
@@ -134,17 +131,19 @@
 							<th>등급</th>
 							<th>회원가입일</th>
 						</tr>
-						<c:forEach var="user" items="${users}">
-							<tr>
-								<td>${user.uid}</td>
-								<td>${user.name}</td>
-								<td>${user.nick}</td>
-								<td>${user.hp}</td>
-								<td>${user.email}</td>
-								<td>${user.grade}</td>
-								<td>${order.datetime}</td>
-							</tr>
-						</c:forEach>
+						<tbody>
+							<c:forEach var="user" items="${users}">
+								<tr>
+									<td>${user.uid}</td>
+									<td>${user.name}</td>
+									<td>${user.nick}</td>
+									<td>${user.email}</td>
+									<td>${user.hp}</td>
+									<td>${user.grade}</td>
+									<td>${user.regdate}</td>
+								</tr>
+							</c:forEach>
+						</tbody>
 					</table>
 				</article>
 			</section>
