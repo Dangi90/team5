@@ -37,4 +37,5 @@ public class ProductList extends HttpServlet{
 	    RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/admin/productList.jsp");
 	    dispatcher.forward(req, resp);
 	}
+
 }
