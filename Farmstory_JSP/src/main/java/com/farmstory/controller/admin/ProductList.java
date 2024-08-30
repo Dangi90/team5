@@ -38,5 +38,4 @@ public class ProductList extends HttpServlet{
 	    dispatcher.forward(req, resp);
 	}
 
-
 }
