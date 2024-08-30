@@ -71,7 +71,9 @@
 
 				<article>
 					<form id="orderForm" action="deleteOrder.do" method="post">
+
 					<table border="0">
+
 						<thead>
 							<tr>
 								<th><input type="checkbox" name="all" /></th>
