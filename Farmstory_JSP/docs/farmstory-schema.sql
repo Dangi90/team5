@@ -2,14 +2,6 @@ DROP DATABASE IF EXISTS farm_story;
 CREATE DATABASE farm_story;
 USE farm_story;
 
--- Terms 테이블 생성
-CREATE TABLE Terms (
-    term_id INT AUTO_INCREMENT PRIMARY KEY,
-    term_content1 TEXT NOT NULL,
-    term_content2 TEXT NOT NULL,
-    FOREIGN KEY (user_uid) REFERENCES User(uid) ON DELETE CASCADE;
-);
-
 -- User 테이블 생성
 CREATE TABLE User (
     uid VARCHAR(50) PRIMARY KEY,
@@ -23,6 +15,15 @@ CREATE TABLE User (
     regip VARCHAR(20),
     regdate DATETIME DEFAULT NOW(),
     isAdmin INT DEFAULT 0
+);
+
+-- Terms 테이블 생성
+CREATE TABLE Terms (
+    term_id INT AUTO_INCREMENT PRIMARY KEY,
+    term_content1 TEXT NOT NULL,
+    term_content2 TEXT NOT NULL,
+    user_uid VARCHAR(50),  -- user_uid 열 추가
+    FOREIGN KEY (user_uid) REFERENCES User(uid) ON DELETE CASCADE
 );
 
 -- Article 테이블 생성
