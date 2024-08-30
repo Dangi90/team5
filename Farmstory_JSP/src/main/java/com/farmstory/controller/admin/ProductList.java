@@ -20,7 +20,7 @@ import org.slf4j.LoggerFactory;
 @WebServlet("/admin/productList.do")
 public class ProductList extends HttpServlet{
 	private static final long serialVersionUID = 1L;
-
+	Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -29,7 +29,7 @@ public class ProductList extends HttpServlet{
 	    
 	    // Product 목록 가져오기 (ProductDTO 리스트)
 	    List<ProductDTO> products = dao.selectProducts();
-	    
+	    logger.debug("products : {}", products);
 	    // JSP에 Product 목록 전달
 	    req.setAttribute("products", products);
 	    
