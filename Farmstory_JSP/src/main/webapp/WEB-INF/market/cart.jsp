@@ -853,7 +853,6 @@
 	        element.textContent = discountedPrice.toFixed(2); 
 	    });
 	});
-	
 	</script>
 </head>
 <body>
@@ -866,7 +865,7 @@
     <main>
         <div class="hello">
             <article>
-                <p>장바구니 전체(10)</p>
+                <p>장바구니 전체(5)</p>
                 <section class="cart">
                    <article class="list">
                     <nav>

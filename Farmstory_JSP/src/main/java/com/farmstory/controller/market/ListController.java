@@ -13,18 +13,28 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @WebServlet("/market/list.do")
 public class ListController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     private ProductDAO productDAO = ProductDAO.getInstance();
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     // 상품 리스트를 처리하는 GET 요청
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	ProductDTO productDTO = new ProductDTO();
+    	logger.debug(productDTO.getThumb_img());
         List<ProductDTO> products = productDAO.getAllProducts();
         request.setAttribute("products", products);
-
+        
+        
+        
+        
+        
         // JSP 페이지로 포워딩
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/market/list.jsp");
         dispatcher.forward(request, response);
