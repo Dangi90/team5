@@ -95,7 +95,7 @@
                     <!-- 내용 시작 -->
                     <h3>주문상품 확인</h3>
                     <div class="info">
-                        <img src="../images/market_item_thumb.jpg" alt="딸기 500g">
+                        <img src="../images/sample_item1.jpg" class="thumb"alt="샘플1">
                         <table border="0">                            
                             <tr>
                                 <td>상품명</td>

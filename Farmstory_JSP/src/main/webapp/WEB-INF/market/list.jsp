@@ -30,7 +30,7 @@
 
                     <!-- 내용 시작 -->
                     <p class="sort">
-                        <a href="#" class="on">전체(10) |</a>
+                        <a href="#" class="on">전체(5) |</a>
                         <a href="#">과일 |</a>
                         <a href="#">야채 |</a>
                         <a href="#">곡류</a>
@@ -38,7 +38,7 @@
                     <table border="0">
                     	<c:forEach var="products" items="${products}">
 	                        <tr>
-	                            <td><a href="../market/view.do?no=${products.no}">${products.thumb_img}</a></td>
+	                            <td><a href="../market/view.do?no=${products.no}"><img src="../images/sample_item1.jpg" class="thumb"alt="샘플1"></a></td>
 	                            <td>${products.type}</td>
 	                            <td><a href="../market/view.do?no=${products.no}">${products.name}</a></td>
 	                            <td>${products.price}</td>

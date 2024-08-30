@@ -61,7 +61,7 @@
                     
                     <h3>기본정보</h3>
 		    	      <div class="basic">
-				    <img src="../images/market_item_thumb.jpg" alt="딸기 500g">
+				    <img src="../images/sample_item1.jpg" class="thumb"alt="샘플1">
 				    <table border="0">                            
 				        <tr>
 				            <td>상품명</td>

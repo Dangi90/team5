@@ -13,7 +13,8 @@
 				</c:if>
 				<c:if test="${sessUser == null}">
 					<a href="/Farmstory_JSP/member/login.do">로그인 |</a> 
-					<a href="/Farmstory_JSP/member/register.do">회원가입 |</a> 
+					<a href="/Farmstory_JSP/member/register.do">회원가입 |</a>
+					<a href="/Farmstory_JSP/market/cart.do">장바구니 |</a>
 				</c:if>
 				
 				<!--  <a href="#">고객센터</a>  -->
