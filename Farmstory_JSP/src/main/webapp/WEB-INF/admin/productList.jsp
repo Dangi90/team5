@@ -88,7 +88,7 @@
 
 					<p>
 						<a href="#" class="productDelete">선택삭제</a> <a
-							href="./productRegister.html" class="productRegister">상품등록</a>
+							href="/Farmstory_JSP/admin/productRegister.do" class="productRegister">상품등록</a>
 					</p>
 
 				</article>
