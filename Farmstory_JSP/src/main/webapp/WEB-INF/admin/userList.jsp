@@ -112,7 +112,7 @@ pageEncoding="UTF-8"%>
 				</ul>
 			</aside>
 
-			<section id="orderList">
+			<section id="userList">
 				<nav>
 					<h3>회원목록</h3>
 				</nav>
