@@ -30,12 +30,12 @@ public class AdminFilter implements Filter {
 		if (sessUser == null) {
 			// 로그인을 하지 않으면 로그인 페이지로 이동
 			HttpServletResponse resp = (HttpServletResponse) arg1;
-			resp.sendRedirect("/Farmstory_JSP/member/login.do");
+			resp.sendRedirect("/Farmstory_JSP/member/login.do?success=101");
 		} else {
 			// 관리자가 아니면 메인으로
 			if (sessUser.getIsAdmin() == 0) {
 				HttpServletResponse resp = (HttpServletResponse) arg1;
-				resp.sendRedirect("/Farmstory_JSP/member/login.do");
+				resp.sendRedirect("/Farmstory_JSP/index.do");
 			// 관리자면 다음 필터
 			} else if (sessUser.getIsAdmin() == 1) {
 				arg2.doFilter(arg0, arg1);
