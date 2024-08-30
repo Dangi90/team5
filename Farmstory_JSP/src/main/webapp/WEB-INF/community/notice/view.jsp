@@ -69,10 +69,6 @@
 <body>
     <div id="container">
         <jsp:include page="/WEB-INF/layout/header.jsp" />
-
-      <div id="container">
-                <jsp:include page="/WEB-INF/layout/header.jsp" />
-
         <div id="sub">
             <div><img src="/Farmstory_JSP/images/sub_top_tit5.png" alt="COMMUNITY"></div>
             <section class="community">
