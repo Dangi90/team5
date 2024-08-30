@@ -1,13 +1,13 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>팜스토리::글 보기</title>
+    <title>팜스토리::커뮤니티 글 보기</title>
     <link rel="stylesheet" href="/Farmstory_JSP/css/style.css"/>
     <style>
-        /* 테이블 스타일 */
+       /* 테이블 스타일 */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -70,27 +70,34 @@
     <div id="container">
         <jsp:include page="/WEB-INF/layout/header.jsp" />
 
-        <div id="sub">
-            <div><img src="/Farmstory_JSP/images/sub_top_tit3.png" alt="CROP TALK"></div>
-            <section class="croptalk">
-                <aside>
-                    <img src="/Farmstory_JSP/images/sub_aside_cate3_tit.png" alt="농작물이야기"/>
+      <div id="container">
+                <jsp:include page="/WEB-INF/layout/header.jsp" />
 
-                    <ul class="lnb">
-                        <li class="on"><a href="list.jsp?group=${param.group}&cate=${param.cate}">농작물이야기</a></li>
-                        <li><a href="grow.jsp?group=${param.group}&cate=grow">텃밭가꾸기</a></li>
-                        <li><a href="school.jsp?group=${param.group}&cate=school">귀농학교</a></li>
-                    </ul>
+        <div id="sub">
+            <div><img src="/Farmstory_JSP/images/sub_top_tit5.png" alt="COMMUNITY"></div>
+            <section class="community">
+                <aside>
+                    <img src="/Farmstory_JSP/images/sub_aside_cate5_tit.png" alt="커뮤니티"/>
+
+                   <ul class="lnb">
+ 				 	  <li class="on"><a href="./list.do?group=${param.group}&cate=notice">공지사항</a></li>
+   					 <li><a href="./list.do?group=${param.group}&cate=menu">오늘의식단</a></li>
+   					 <li><a href="./list.do?group=${param.group}&cate=chef">나도요리사</a></li>
+   					 <li><a href="./list.do?group=${param.group}&cate=qna">1:1고객문의</a></li>
+   					 <li><a href="./list.do?group=${param.group}&cate=faq">자주묻는질문</a></li>
+					</ul>
+
                 </aside>
                 <article>
                     <nav>
-                        <img src="/Farmstory_JSP/images/sub_nav_tit_cate3_tit1.png" alt="농작물이야기"/>
+                        <img src="/Farmstory_JSP/images/sub_nav_tit_cate5_notice.png" alt="공지사항"/>
                         <p>
-                            HOME > 농작물이야기 > <em>글 보기</em>
+                            HOME > 커뮤니티 > <em>공지사항</em>
                         </p>
                     </nav>
+>
 
-                    <!-- 글 보기 시작 -->
+                   <!-- 글 보기 시작 -->
                     <h2>상세보기</h2>
                     <table>
                         <tr>
@@ -101,9 +108,9 @@
                         </tr>
                         <tr>
                             <th>작성자</th>
-                            <td>${article.writer}</td>
+                            <td>${article.nick}</td>
                             <th>작성시간</th>
-                            <td>${article.createdAt}</td>
+                            <td>${article.regdate}</td>
                         </tr>
                         <tr>
                             <th>내용</th>
@@ -113,8 +120,8 @@
 
                     <!-- 버튼 그룹 -->
                     <div class="button-group">
-                        <button type="button" class="btn-secondary" onclick="location.href='list.jsp'">목록으로</button>
-                        <button type="button" onclick="location.href='modify.jsp?id=${article.id}'">수정하기</button>
+                        <button type="button" class="btn-secondary" onclick="location.href='/Farmstory_JSP/article/list.do?group=${group}&cate=${cate}'">목록으로</button>
+                        <button type="button" onclick="location.href='/Farmstory_JSP/article/modify.do?group=${group}&cate=${cate}&no=${no}'">수정하기</button>
                     </div>
                     <!-- 글 보기 끝 -->
 
@@ -122,7 +129,7 @@
             </section>
         </div>
 
-         <jsp:include page="/WEB-INF/layout/footer.jsp" />
+        <jsp:include page="/WEB-INF/layout/footer.jsp" />
     </div>    
 </body>
 </html>

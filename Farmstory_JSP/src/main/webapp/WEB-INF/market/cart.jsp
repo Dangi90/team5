@@ -843,6 +843,18 @@
     	
     
 </style>
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+	    var discount = 0.30; // 30% 할인
+	    var priceElements = document.querySelectorAll('#endprice');
+	    priceElements.forEach(function(element) {
+	        var originalPrice = parseFloat(element.getAttribute('data-price'));
+	        var discountedPrice = originalPrice * (1 - discount);
+	        element.textContent = discountedPrice.toFixed(2); 
+	    });
+	});
+	
+	</script>
 </head>
 <body>
     <div id = "wrapper">
@@ -884,10 +896,10 @@
 								<td>${orders.type}</td>
 								<td>${orders.product_name}</td>
 								<td>${orders.count}</td>
-								<td id = "discount">10%</td>
+								<td id = "discount">30%</td>
 								<td id = "point">50p</td>
 								<td>${orders.total_price}</td>
-								<td id = "endprice">3600</td>
+            					<td id="endprice" data-price="${orders.total_price}">${orders.total_price}</td>
 							</tr>
 						</c:forEach>
 					</table>

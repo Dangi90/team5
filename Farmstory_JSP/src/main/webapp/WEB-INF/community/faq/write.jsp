@@ -6,79 +6,76 @@
     <meta charset="UTF-8">
     <title>팜스토리::자주묻는질문</title>
     <link rel="stylesheet" href="/Farmstory_JSP/css/style.css"/>
-   <style>
-        form {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 0;
-            border: none;
-            position: relative;
-        }
+  <style>
+form {
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 0;
+	border: none;
+	position: relative;
+}
 
-        h2 {
-            text-align: left;
-            margin-bottom: 20px;
-            font-size: 22px;
-            font-weight: bold;
-            color: #333;
-        }
+h2 {
+	text-align: left;
+	margin-bottom: 20px;
+	font-size: 22px;
+	font-weight: bold;
+	color: #333;
+}
 
-        .form-group {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
+.form-group {
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+}
 
-        label {
-            font-weight: bold;
-            color: #333;
-            font-size: 16px;
-            width: 80px; /* 라벨 너비 설정 */
-            margin-right: 10px;
-        }
+label {
+	font-weight: bold;
+	color: #333;
+	font-size: 16px;
+	width: 80px; /* 라벨 너비 설정 */
+	margin-right: 10px;
+}
 
-        input[type="text"],
-        textarea {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-            box-sizing: border-box;
-        }
+input[type="text"], textarea {
+	flex: 1;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 14px;
+	box-sizing: border-box;
+}
 
-        textarea {
-            resize: vertical;
-            min-height: 200px;
-        }
+textarea {
+	resize: vertical;
+	min-height: 200px;
+}
 
-        .form-buttons {
-            text-align: right;
-            margin-top: 20px;
-        }
+.form-buttons {
+	text-align: right;
+	margin-top: 20px;
+}
 
-        input[type="submit"],
-        input[type="button"] {
-            padding: 8px 16px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            font-size: 14px;
-            cursor: pointer;
-            margin-left: 10px;
-        }
+input[type="submit"], input[type="button"] {
+	padding: 8px 16px;
+	background-color: #333;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	font-size: 14px;
+	cursor: pointer;
+	margin-left: 10px;
+}
 
-        input[type="submit"]:hover,
-        input[type="button"]:hover {
-            background-color: #d9534f;
-        }
+input[type="submit"]:hover, input[type="button"]:hover {
+	background-color: #d9534f;
+}
 
-        input[type="button"] {
-            background-color: #777;
-        }
-    </style>
+input[type="button"] {
+	background-color: #777;
+}
+</style>
 </head>
 <body>
     <div id="container">
@@ -92,13 +89,12 @@
                     <img src="/Farmstory_JSP/images/sub_aside_cate5_tit.png" alt="커뮤니티"/>
 
                    <ul class="lnb">
-    				<li><a href="./notice.do?group=${param.group}&cate=notice">공지사항</a></li>
-    				<li><a href="./menu.do?group=${param.group}&cate=menu">오늘의식단</a></li>
-   					<li ><a href="./chef.do?group=${param.group}&cate=chef">나도요리사</a></li>
-    				<li><a href="./qna.do?group=${param.group}&cate=qna">1:1고객문의</a></li>
-  					<li  class="on"><a href="./faq.do?group=${param.group}&cate=faq">자주묻는질문</a></li>
+ 				 	  <li><a href="./list.do?group=${param.group}&cate=notice">공지사항</a></li>
+   					 <li><a href="./list.do?group=${param.group}&cate=menu">오늘의식단</a></li>
+   					 <li><a href="./list.do?group=${param.group}&cate=chef">나도요리사</a></li>
+   					 <li><a href="./list.do?group=${param.group}&cate=qna">1:1고객문의</a></li>
+   					 <li  class="on"><a href="./list.do?group=${param.group}&cate=faq">자주묻는질문</a></li>
 					</ul>
-
 
                 </aside>
                 <article>

@@ -57,14 +57,15 @@ public class OrderController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     	
-    	 HttpSession session = req.getSession();
-    	    UserDTO users = (UserDTO) session.getAttribute("uid");
-    	    //String uid = users.getUid();
-    	    String uid = "admin";
-    	    if(uid == null) {
-    	    	String uid1 = "admin";
-    	    	uid = uid1;
-    	    }
+        HttpSession session = req.getSession();
+        UserDTO users = (UserDTO) session.getAttribute("sessUser"); // "uid"가 아니라 "user"를 가져온다고 가정
+
+        if (users == null) {
+            resp.sendRedirect("/Farmstory_JSP/login.jsp");
+            return;
+        }
+        
+        	String uid = users.getUid(); // 이제 null이 아닙니다
     
     	    String no = req.getParameter("product_no");
     	    String count = req.getParameter("count");

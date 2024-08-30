@@ -61,6 +61,7 @@
                         window.location.href = "./cart.do"; // 구매 완료 후 장바구니 페이지로 이동
                     } else {
                         alert("구매 실패");
+                        alert("로그인 후 구매 바랍니다.");
                         console.error("Request failed: " + xhr.statusText);
                     }
                 }

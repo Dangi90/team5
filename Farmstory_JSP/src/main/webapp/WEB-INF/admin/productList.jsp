@@ -72,7 +72,7 @@
 							<th>재고</th>
 							<th>등록일</th>
 						</tr>
-						<c:forEach var="product" items="${productList}">
+						<c:forEach var="product" items="${products}">
 							<tr>
 								<td><input type="checkbox" name="" /></td>
 								<td><img src="${product.thumb_img}" class="thumb" alt="상품 이미지"></td>
@@ -84,17 +84,6 @@
 								<td>${(product.regdate).substring(0, 10)}</td>
 							</tr>
 						</c:forEach>
-						<tr>
-							<td><input type="checkbox" name="" /></td>
-							<td><img src="../images/sample_item1.jpg" class="thumb"
-								alt="샘플1"></td>
-							<td>1011</td>
-							<td>사과 500g</td>
-							<td>과일</td>
-							<td>4,000원</td>
-							<td>100</td>
-							<td>2023-01-01</td>
-						</tr>
 					</table>
 
 					<p>
