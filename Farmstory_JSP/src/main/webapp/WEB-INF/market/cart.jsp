@@ -348,7 +348,7 @@
             width: 60px;
             height: 29px;
             left: 40px;
-            top: 481px;
+            top: 930px;
 
             background: #960D1A;
 
@@ -399,54 +399,6 @@
 
         }
 
-        main .boarder .table .allcount{
-            position: absolute;
-            width: 48.2px;
-            height: 14px;
-            left: 121.39px;
-            top: 7px;
-            
-
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 12px;
-            line-height: 15px;
-            display: flex;
-            align-items: center;
-
-            color: #000000;
-
-
-        }
-
-        main .boarder .table .bdquantity{
-            position: absolute;
-            width: 286.8px;
-            height: 26px;
-            left: 0px;
-            top: calc(50% - 26px/2 - 60px);
-
-
-        }
-        main .boarder .table .bdquantity .bdquantity1_1{
-            position: absolute;
-            width: 36.2px;
-            height: 26px;
-            left: 10px;
-            top: calc(50% - 26px/2);
-
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 12px;
-            line-height: 26px;
-            /* identical to box height, or 217% */
-            display: flex;
-            align-items: center;
-
-            color: #000000;
-
 
         }
         main .boarder .table .bdquantity .bdquantity1_2{
@@ -468,100 +420,7 @@
 
 
         }
-        main .boarder .table .bdprice{
-            position: absolute;
-            width: 286.8px;
-            height: 26px;
-            left: 0px;
-            top: calc(50% - 26px/2 - 32px);
-
-        }
-        main .boarder .table .bdprice .bdprice1_1{
-            position: absolute;
-            width: 48.2px;
-            height: 26px;
-            left: 10px;
-            top: calc(50% - 26px/2);
-
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 12px;
-            line-height: 26px;
-            /* identical to box height, or 217% */
-            display: flex;
-            align-items: center;
-
-            color: #000000;
-
-
-        }
-        main .boarder .table .bdprice .bdprice1_2{
-            position: absolute;
-            width: 33.2px;
-            height: 14px;
-            left: 185.88px;
-            top: calc(50% - 14px/2 - 0.5px);
-
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 10.3125px;
-            line-height: 12px;
-            display: flex;
-            align-items: center;
-
-            color: #000000;
-
-
-        }
-        main .boarder .table .bddcprice{
-            position: absolute;
-            width: 286.8px;
-            height: 26px;
-            left: 0px;
-            top: calc(50% - 26px/2 - 4px);
-
-        }
-        main .boarder .table .bddcprice .bddcprice1_1{
-            position: absolute;
-            width: 48.2px;
-            height: 26px;
-            left: 10px;
-            top: calc(50% - 26px/2);
-
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 12px;
-            line-height: 26px;
-            /* identical to box height, or 217% */
-            display: flex;
-            align-items: center;
-
-            color: #000000;
-
-
-        }
-        main .boarder .table .bddcprice .bddcprice1_2{
-            position: absolute;
-            width: 45.2px;
-            height: 14px;
-            left: 185.88px;
-            top: calc(50% - 14px/2 - 0.5px);
-                    
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 10.5px;
-            line-height: 13px;
-            display: flex;
-            align-items: center;
-                    
-            color: #000000;
-                    
-                    
-        }
+       
         main .boarder .table .bddelfee{
             position: absolute;
             width: 286.8px;
@@ -845,12 +704,28 @@
 </style>
 	<script>
 	document.addEventListener('DOMContentLoaded', function() {
+		var point = 0.01; //point 1%
 	    var discount = 0.30; // 30% 할인
 	    var priceElements = document.querySelectorAll('#endprice');
+	    var selectAllCheckbox = document.querySelector('input[name="all"]');
+	    var checkboxes = document.querySelectorAll('input[name="orderCheck"]');
+	    
+	    selectAllCheckbox.addEventListener('change', function() {
+	        checkboxes.forEach(function(checkbox) {
+	            checkbox.checked = selectAllCheckbox.checked;
+	        });
+	    });
+	    
 	    priceElements.forEach(function(element) {
-	        var originalPrice = parseFloat(element.getAttribute('data-price'));
+	        var originalPrice = parseFloat(element.getAttribute('data-price1'));
+	        var discountedPrice = originalPrice * (1 - point);
+	        element.textContent = Math.round(discountedPrice) + "p"; 
+	    });
+	    
+	    priceElements.forEach(function(element) {
+	        var originalPrice = parseFloat(element.getAttribute('data-price2'));
 	        var discountedPrice = originalPrice * (1 - discount);
-	        element.textContent = discountedPrice.toFixed(2); 
+	        element.textContent = Math.round(discountedPrice) + "원"; 
 	    });
 	});
 	</script>
@@ -865,7 +740,6 @@
     <main>
         <div class="hello">
             <article>
-                <p>장바구니 전체(5)</p>
                 <section class="cart">
                    <article class="list">
                     <nav>
@@ -873,35 +747,40 @@
                         <p>
                             HOME > 장보기 > <em>구매리스트</em>
                         </p>
+                        <p>장바구니 전체(5)</p>
                     </nav>
                     <!-- 내용 시작 -->
                    <div>
-                   <table border="0">
-						<tr>
-							<th><input type="checkbox" name="all" /></th>
-							<th>사진</th>
-							<th>종류</th>
-							<th>상품명</th>
-							<th>수량</th>
-							<th>할인</th>
-							<th>포인트</th>
-							<th>가격</th>
-							<th>소계</th>
-						</tr>
-						<c:forEach var="orders" items="${orders}">
+                   <form action="./cart.do" method="Post">
+	                   <table border="0">
 							<tr>
-								<td><input type="checkbox" name="orderCheck" /></td>
-								<td><img src="../images/sample_item1.jpg" class="thumb"alt="샘플1"></td>
-								<td>${orders.type}</td>
-								<td>${orders.product_name}</td>
-								<td>${orders.count}</td>
-								<td id = "discount">30%</td>
-								<td id = "point">50p</td>
-								<td>${orders.total_price}</td>
-            					<td id="endprice" data-price="${orders.total_price}">${orders.total_price}</td>
+								<th><input type="checkbox" name="all" /></th>
+								<th>사진</th>
+								<th>종류</th>
+								<th>상품명</th>
+								<th>수량</th>
+								<th>단가</th>
+								<th>할인</th>
+								<th>포인트</th>
+								<th>가격</th>
+								<th>소계</th>
 							</tr>
-						</c:forEach>
+							<c:forEach var="orders" items="${orders}">
+								<tr>
+									<td><input type="checkbox" name="orderCheck" value="${orders.no}" /></td>
+									<td><img src="../images/sample_item1.jpg" class="thumb"alt="샘플1"></td>
+									<td>${orders.type}</td>
+									<td>${orders.product_name}</td>
+									<td>${orders.count}</td>
+									<td>${orders.product_price}</td>
+									<td id = "discount">30%</td>
+									<td id = "point" data-price1="${orders.total_price}">50p</td>
+									<td>${orders.total_price}원</td>
+	            					<td id="endprice" data-price2="${orders.total_price}">${orders.total_price}원</td>
+								</tr>
+							</c:forEach>
 					</table>
+					</form>
 					</div>
                     <p class="paging">
                         <a href="#"><</a>
@@ -914,11 +793,10 @@
                     </p>
                   </article>
                 </section>
-                <!-- 
                 <div class="button">
-                    <button class="deleteselect"><p>선택삭제</p></button>
+                	<button type="submit" class="deleteselect"><p>선택삭제</p></button>
                 </div>
-                -->
+                
                 <!-- 
                 <div class="boarder">
                     <div class="table">

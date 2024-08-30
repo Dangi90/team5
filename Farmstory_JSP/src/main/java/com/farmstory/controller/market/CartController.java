@@ -33,10 +33,8 @@ public class CartController extends HttpServlet{
 	    // 상품 추가를 처리하는 POST 요청
 	    @Override
 	    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	    	
 
-	            
-	            response.sendRedirect("/Farmstory_JSP/market/cart.do");
-	            
-
+	        response.sendRedirect("/Farmstory_JSP/market/cart.do");
 	    }
 }

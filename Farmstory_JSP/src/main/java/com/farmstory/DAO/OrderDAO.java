@@ -77,16 +77,19 @@ public class OrderDAO extends DBHelper {
 
     // 상품 삭제
     public boolean deleteOrder(int no) {
-        String sql = "DELETE FROM Orders WHERE no=?";
+    	String sql = "DELETE FROM Orders WHERE no=?";
+        conn = null;
+        psmt = null;
+
         try {
             conn = getConnection();
             psmt = conn.prepareStatement(sql);
             psmt.setInt(1, no);
-            
+
             int result = psmt.executeUpdate();
             return result > 0;
         } catch (Exception e) {
-        	logger.debug(e.getMessage());
+            e.printStackTrace(); // 예외 메시지 확인
         } finally {
             closeAll();
         }
